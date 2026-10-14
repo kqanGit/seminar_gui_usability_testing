@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:5173",
+  "viewports": [
+    { "name": "mobile", "width": 375, "height": 812 },
+    { "name": "desktop", "width": 1440, "height": 900 }
+  ],
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "product", "path": "/product/5" },
+    { "name": "cart", "path": "/", "setup": "addFirstProductToCart" },
+    { "name": "checkout", "path": "/", "setup": "goToCheckout" }
+  ],
+  "model": "",
+  "outDir": "out"
+}

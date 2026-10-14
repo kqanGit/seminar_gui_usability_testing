@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HeuristicFinding",
+  "type": "object",
+  "required": ["page", "viewport", "findings"],
+  "properties": {
+    "page": { "type": "string" },
+    "viewport": { "type": "string" },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["heuristic", "element", "problem", "severity", "evidence", "fix"],
+        "properties": {
+          "heuristic": { "type": "string", "enum": ["H1","H2","H3","H4","H5","H6","H7","H8","H9","H10"] },
+          "element": { "type": "string" },
+          "problem": { "type": "string" },
+          "severity": { "type": "integer", "minimum": 0, "maximum": 4 },
+          "evidence": { "type": "string", "description": "Vị trí nhìn thấy trên ảnh" },
+          "fix": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Chuẩn hóa xuống dòng để Windows/macOS/Linux không tạo diff giả
+* text=auto eol=lf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary

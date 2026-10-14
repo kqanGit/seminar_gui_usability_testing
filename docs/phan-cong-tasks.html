@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phân công Seminar T1 — GUI & Usability</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --ink: #1c1a16;
+      --muted: #5c574e;
+      --line: #d4cdc0;
+      --card: #fffdf8;
+      --a: #1a5f4a;
+      --a-soft: #e4f0eb;
+      --b: #8a4b12;
+      --b-soft: #f5ebe0;
+      --c: #1e3a6e;
+      --c-soft: #e6ecf5;
+      --shared: #3d3a35;
+      --shared-soft: #ebe7df;
+      --warn: #7a3b0e;
+      --warn-bg: #f8f0e6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, #e8dfc8 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 100% 0%, #d9e4dc 0%, transparent 50%),
+        var(--bg);
+      line-height: 1.55;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .wrap { max-width: 980px; margin: 0 auto; }
+
+    header {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.15rem;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    header .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.4rem;
+    }
+
+    h1 {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      font-weight: 600;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    header > p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 40rem;
+      font-size: 0.95rem;
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.1rem;
+    }
+
+    .toc a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--card);
+      color: var(--ink);
+    }
+
+    .toc a:hover { border-color: var(--ink); }
+
+    .toc a.a { border-left: 3px solid var(--a); }
+    .toc a.b { border-left: 3px solid var(--b); }
+    .toc a.c { border-left: 3px solid var(--c); }
+    .toc a.s { border-left: 3px solid var(--shared); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .card-head {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card.a .card-head { background: var(--a-soft); border-top: 3px solid var(--a); }
+    .card.b .card-head { background: var(--b-soft); border-top: 3px solid var(--b); }
+    .card.c .card-head { background: var(--c-soft); border-top: 3px solid var(--c); }
+
+    .role {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 0.2rem;
+    }
+
+    .card.a .role { color: var(--a); }
+    .card.b .role { color: var(--b); }
+    .card.c .role { color: var(--c); }
+
+    .card-head h2 {
+      margin: 0 0 0.25rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .anchor {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .card-body { padding: 0.75rem 1rem 1rem; }
+
+    .card-body ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .card-body li {
+      position: relative;
+      padding: 0.28rem 0 0.28rem 1rem;
+      font-size: 0.84rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .card-body li:last-child { border-bottom: none; }
+
+    .card-body li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+      width: 0.4rem;
+      height: 0.4rem;
+      border: 1.5px solid currentColor;
+      border-radius: 1px;
+      opacity: 0.4;
+    }
+
+    .card.a li::before { color: var(--a); }
+    .card.b li::before { color: var(--b); }
+    .card.c li::before { color: var(--c); }
+
+    .name-slot {
+      display: inline-block;
+      min-width: 6.5rem;
+      border-bottom: 1.5px dashed var(--line);
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    .guide {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .guide-head {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .guide.a .guide-head { background: var(--a-soft); border-top: 4px solid var(--a); }
+    .guide.b .guide-head { background: var(--b-soft); border-top: 4px solid var(--b); }
+    .guide.c .guide-head { background: var(--c-soft); border-top: 4px solid var(--c); }
+
+    .guide-head h2 {
+      margin: 0 0 0.3rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .guide-head p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .guide-body { padding: 1rem 1.25rem 1.25rem; }
+
+    .guide-body h3 {
+      margin: 1.15rem 0 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .guide-body h3:first-child { margin-top: 0; }
+
+    .steps {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps > li {
+      counter-increment: step;
+      position: relative;
+      padding: 0.65rem 0 0.65rem 2.4rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+
+    .steps > li:last-child { border-bottom: none; }
+
+    .steps > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .guide.a .steps > li::before { background: var(--a); }
+    .guide.b .steps > li::before { background: var(--b); }
+    .guide.c .steps > li::before { background: var(--c); }
+
+    .steps strong { font-weight: 600; }
+
+    .steps .sub {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .steps .sub li {
+      margin: 0.2rem 0;
+      list-style: disc;
+    }
+
+    .callout {
+      margin: 0.75rem 0 0;
+      padding: 0.7rem 0.85rem;
+      background: var(--warn-bg);
+      border-left: 3px solid var(--warn);
+      font-size: 0.84rem;
+      color: var(--ink);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .callout strong { color: var(--warn); }
+
+    code {
+      font-size: 0.82em;
+      background: var(--shared-soft);
+      padding: 0.08rem 0.3rem;
+      border-radius: 2px;
+    }
+
+    .done {
+      margin-top: 0.85rem;
+      padding: 0.75rem 0.9rem;
+      background: var(--shared-soft);
+      border-radius: 3px;
+      font-size: 0.86rem;
+    }
+
+    .done h4 {
+      margin: 0 0 0.4rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+
+    .done ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .done li { margin: 0.2rem 0; }
+
+    .shared, .timeline {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .shared { border-top: 3px solid var(--shared); }
+
+    .shared h2, .timeline h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .shared > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .shared > ul > li {
+      position: relative;
+      padding: 0.35rem 0 0.35rem 1.15rem;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .shared > ul > li:last-child { border-bottom: none; }
+
+    .shared > ul > li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 0.45rem;
+      height: 0.45rem;
+      border: 1.5px solid var(--shared);
+      border-radius: 1px;
+      opacity: 0.5;
+    }
+
+    .timeline table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .timeline th,
+    .timeline td {
+      text-align: left;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .timeline th {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      font-weight: 700;
+      background: var(--shared-soft);
+    }
+
+    .timeline td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      width: 28%;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .section-label {
+      font-family: "IBM Plex Serif", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0 0 0.85rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Seminar T1 · GUI &amp; Usability Testing</p>
+      <h1>Phân công nhiệm vụ nhóm (3 người)</h1>
+      <p>
+        Nhóm 09 — Playwright + Maze + AI Heuristic Reviewer.
+        Phần trên = tóm tắt; phần dưới = hướng dẫn làm từng bước. Cập nhật 15/10/2026.
+      </p>
+      <nav class="toc">
+        <a class="a" href="#guide-a">A · Quang</a>
+        <a class="b" href="#guide-b">B · Phúc</a>
+        <a class="c" href="#guide-c">C · Quân</a>
+        <a class="s" href="#shared">Việc chung</a>
+      </nav>
+    </header>
+
+    <p class="section-label">Tóm tắt phân công</p>
+
+    <div class="grid">
+      <article class="card a">
+        <div class="card-head">
+          <p class="role">Thành viên A</p>
+          <h2>Nguyễn Đức Quang</h2>
+          <p class="anchor">20120359 · GUI · a11y · visual · Playwright</p>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Lý thuyết GUI Testing</li>
+            <li>3 demo Playwright + 3 clip</li>
+            <li>Checklist 50 câu: chạy trên EShop + phân loại tự động/thủ công</li>
+            <li>Repo test + bài tập 1</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card b">
+        <div class="card-head">
+          <p class="role">Thành viên B</p>
+          <h2>Bửu Huỳnh Vĩnh Phúc</h2>
+          <p class="anchor">23120328 · Usability · Maze · participants</p>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Lý thuyết Usability Testing</li>
+            <li>3 demo Maze + 3 clip</li>
+            <li>Deploy + tuyển 5 người + bài tập 3</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card c">
+        <div class="card-head">
+          <p class="role">Thành viên C</p>
+          <h2>Bùi Minh Quân</h2>
+          <p class="anchor">23120337 · AI Reviewer · đóng gói</p>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Lý thuyết AI + so sánh người/AI</li>
+            <li>Script Reviewer + 1 clip AI</li>
+            <li>Board, slide, báo cáo, bài tập 2</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <p class="section-label">Hướng dẫn cụ thể</p>
+
+    <!-- ========== GUIDE A ========== -->
+    <section class="guide a" id="guide-a">
+      <div class="guide-head">
+        <h2>A (Quang) — Làm Playwright / GUI như thế nào</h2>
+        <p>Mục tiêu: lớp hiểu GUI testing và thấy 3 demo chạy được trên EShop (localhost:5173).</p>
+      </div>
+      <div class="guide-body">
+        <h3>Chuẩn bị (tuần đầu)</h3>
+        <ol class="steps">
+          <li>
+            <strong>Chạy EShop trên máy.</strong> Làm theo <code>setup_guide.md</code> của SUT; đăng nhập thử
+            <code>test@eshop.com</code> / <code>Test1234!</code>. Chụp ảnh Evidence: trang chạy được.
+          </li>
+          <li>
+            <strong>Xác nhận lỗi GUI thật</strong> (dùng làm ví dụ xuyên suốt slide):
+            <ul class="sub">
+              <li>Giỏ: “Tổng tạm tính” thay vì “Tổng cộng”; xóa không có dialog; thiếu +/-</li>
+              <li>Nút tích cực xanh lá (đặc tả: xanh dương); thiếu đúng 1 <code>&lt;h1&gt;</code></li>
+              <li>Ô tổng tiền Checkout sửa được; header thiếu badge / highlight</li>
+            </ul>
+            Chụp ảnh từng lỗi vào <code>Evidence/</code>.
+          </li>
+          <li>
+            <strong>Tạo repo nhóm</strong> (nếu chưa có): folder <code>tests/</code>, README ngắn cách chạy EShop + Playwright.
+            Mời B và C vào repo.
+          </li>
+        </ol>
+
+        <h3>Ba demo (làm lần lượt, quay clip từng cái)</h3>
+        <ol class="steps">
+          <li>
+            <strong>Demo 1 — Cài đặt.</strong>
+            <ul class="sub">
+              <li><code>npm init playwright@latest</code> trong project test</li>
+              <li>Cài <code>@axe-core/playwright</code></li>
+              <li>Chạy test mẫu → mở HTML report → quay màn hình các bước này</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Demo 2 — Cơ bản (Record &amp; Playback + Checkpoint).</strong>
+            <ul class="sub">
+              <li><code>npx playwright codegen http://localhost:5173</code></li>
+              <li>Ghi: vào trang → thêm sản phẩm vào giỏ → mở giỏ</li>
+              <li>Sửa file sinh ra: thêm <code>expect</code> kiểm tra nhãn <strong>“Tổng cộng”</strong> (sẽ fail đúng vì EShop đang ghi “Tổng tạm tính” — đó là điểm dạy)</li>
+              <li>Nhắc trên clip: đây là checkpoint GUI, không assert “giảm giá đúng 10%” (cái đó thuộc T2)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Demo 3 — Luồng phức tạp (Data-driven + visual + a11y).</strong>
+            <ul class="sub">
+              <li>Tạo <code>data/pages.json</code>: home, cart, checkout, login…</li>
+              <li>3 viewport: mobile 375, tablet 768, desktop 1440</li>
+              <li>Mỗi trang × viewport: <code>toHaveCount(1)</code> cho <code>h1</code>; ảnh có <code>alt</code>; <code>toHaveScreenshot</code>; axe WCAG 2 A/AA trên Checkout</li>
+              <li>Ghi rõ trong báo cáo: Record &amp; Playback / Data-driven / Checkpoints nằm ở demo nào</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>2 bẫy của EShop khi viết test:</strong>
+          (1) Giỏ hàng chỉ lưu trong React state (<code>CartContext.jsx</code>) nên <code>page.goto('/cart')</code> luôn ra giỏ trống —
+          trang cần trạng thái phải tự thêm sản phẩm qua UI trước (thêm trường <code>setup</code> trong <code>pages.json</code>).
+          (2) Nút “Thêm vào giỏ” phải bấm 2 lần mới ăn — đây cũng là một lỗi GUI, ghi vào Evidence.
+          Phần lớn test sẽ <em>fail — đó là kết quả mong muốn</em>; dùng <code>expect.soft</code> để một lần chạy liệt kê đủ vi phạm.
+        </div>
+
+        <div class="callout">
+          <strong>Ranh giới T1 vs T2:</strong> click/điền form chỉ để đưa UI về đúng trạng thái.
+          Checkpoint phải là thuộc tính giao diện (<code>toHaveCSS</code>, <code>toHaveAttribute</code>, screenshot, axe) — không kiểm tra nghiệp vụ.
+        </div>
+
+        <h3>Lý thuyết + bài tập lớp</h3>
+        <ol class="steps">
+          <li>
+            Viết phần lý thuyết GUI (outline mục 2 proposal): định nghĩa, checklist control, lỗi hay gặp,
+            visual regression, a11y, khi nào nên tự động / thủ công. Gửi C để ghép slide.
+          </li>
+          <li>
+            Soạn <strong>Bài tập 1</strong>: “Viết 1 test Playwright kiểm tra 1 yêu cầu FR-21 (vd. mỗi trang đúng 1 <code>&lt;h1&gt;</code>)”
+            + gợi ý 3–5 dòng + đáp án mẫu (không phát đáp án cho lớp trước buổi).
+          </li>
+        </ol>
+
+        <h3>Checklist 50 câu (A phụ trách chính)</h3>
+        <ol class="steps">
+          <li>
+            <strong>Chạy đủ 50 câu trên luồng Checkout EShop</strong> (Home → Product → Cart → Checkout, thêm Login/Quên mật khẩu nếu câu hỏi cần).
+            Ghi vào bảng <code>checklist/checklist-50.md</code> (hoặc .csv):
+            <ul class="sub">
+              <li>Cột: # · Câu hỏi · Nhóm control · Trang · Pass / Fail / N/A · Ảnh Evidence · Ánh xạ FR-21…24 / heuristic</li>
+              <li>Mỗi câu Fail phải có ảnh chụp trong <code>Evidence/checklist/</code></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Phân loại từng câu:</strong> Tự động (Playwright/axe kiểm được) · Bán tự động · Bắt buộc thủ công.
+            Những câu “Tự động” đưa vào <code>rules.json</code> / <code>pages.json</code> của Demo 3 → slide có số liệu cụ thể
+            (vd. “tự động được X/50 câu”).
+          </li>
+          <li>
+            Câu nào thiên về usability (người dùng có hiểu, có biết đang ở bước nào…) thì hỏi B cùng chấm.
+            Lỗi Fail mới phát hiện → bổ sung vào danh sách lỗi đáp án (ground truth) để C dùng chấm AI.
+          </li>
+          <li>
+            Viết phần slide “Áp dụng checklist trên EShop” (đặt ngay sau lý thuyết GUI): tổng kết Pass/Fail + 3–4 lỗi đắt giá nhất;
+            bảng đầy đủ để ở phụ lục báo cáo. Soạn bản rút gọn kèm đáp án để C đưa vào bài tập/homework.
+          </li>
+        </ol>
+
+        <div class="done">
+          <h4>Done khi có</h4>
+          <ul>
+            <li>3 clip YouTube (demo 1–3) + link gửi C</li>
+            <li>Code test trong repo, README chạy được trên máy khác</li>
+            <li>Text lý thuyết GUI + worksheet bài 1</li>
+            <li>Bảng checklist 50 câu (Pass/Fail + Evidence + phân loại tự động/thủ công)</li>
+            <li>Ảnh Evidence lỗi GUI</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GUIDE B ========== -->
+    <section class="guide b" id="guide-b">
+      <div class="guide-head">
+        <h2>B (Phúc) — Làm Maze / Usability như thế nào</h2>
+        <p>Mục tiêu: có study thật với ~5 người ngoài nhóm; lớp hiểu metric và xem được heatmap / kết quả.</p>
+      </div>
+      <div class="guide-body">
+        <h3>Chuẩn bị (làm sớm — phụ thuộc URL public)</h3>
+        <ol class="steps">
+          <li>
+            <strong>Deploy EShop ra URL public</strong> (trách nhiệm chính của B — làm đầu tiên, Maze và phần so sánh đều chờ việc này).
+            <ul class="sub">
+              <li><strong>Sửa trước khi deploy:</strong> frontend-web đang gọi cứng <code>http://localhost:3000</code> ở 13 chỗ
+                (<code>AuthContext.jsx</code>, <code>Checkout.jsx</code>, <code>Home.jsx</code>, <code>ProductDetail.jsx</code>, <code>ForgotPassword.jsx</code>, <code>Profile.jsx</code>…).
+                Nếu không sửa, máy người tham gia sẽ gọi vào localhost của chính họ → trang trắng. Đổi thành
+                <code>import.meta.env.VITE_API_URL</code> và đặt biến này = URL backend public. Làm trên branch riêng, không đụng code lỗi GUI.</li>
+              <li>Frontend: Vercel; backend (Express + SQLite): Render / Railway. Lưu ý gói free có thể “ngủ” khi không dùng
+                và file SQLite có thể bị reset khi redeploy → mở trang “đánh thức” server trước mỗi đợt test</li>
+              <li>Hoặc tạm: Cloudflare Tunnel / ngrok cho cả frontend lẫn backend — đủ cho demo, nhưng máy phải bật suốt thời gian người tham gia làm</li>
+              <li>EShop cố ý có lỗ hổng bảo mật: chỉ mở URL trong khung giờ test, chỉ dùng dữ liệu giả</li>
+              <li>Kiểm tra: mở URL trên điện thoại (4G, không cùng wifi), đăng nhập, thêm giỏ, áp mã, đặt hàng được</li>
+              <li>Gửi URL cho cả nhóm; chụp Evidence</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Chuẩn bị dữ liệu cho study.</strong>
+            <ul class="sub">
+              <li>DB chỉ có sẵn 1 tài khoản user (<code>test@eshop.com</code>) → thêm 5–6 tài khoản riêng
+                (vd. <code>p1@eshop.com</code> … <code>p6@eshop.com</code>) vào phần seed của <code>backend/database.js</code>.
+                Mỗi người tham gia một tài khoản, gửi kèm link study</li>
+              <li>Dùng mã <strong>VIP100</strong> (giảm cố định 100.000₫, đơn tối thiểu 300.000₫, tối đa 2 lần/tài khoản).
+                <strong>Không dùng SAVE10</strong>: công thức giảm % ở backend đang lỗi, sẽ làm nhiễu kết quả usability</li>
+              <li>Reset DB (<code>node database.js</code>) trước mỗi đợt test</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Tạo tài khoản Maze Free.</strong> Xác nhận còn Website / Live website test.
+            Nhớ: Free chỉ <strong>1 study/tháng</strong> → thiết kế xong trên giấy rồi mới tạo study thật.
+            <ul class="sub">
+              <li>Đưa bản thiết kế study (mission, câu SEQ, SUS, expected path) cho A và C duyệt trước khi tạo</li>
+              <li>Kiểm chứng trên Maze Help: thao tác trong cùng một trang (bấm “Áp dụng” coupon) có đo thành bước riêng được không</li>
+              <li>Chạy thử (pilot) 1 lượt với một thành viên nhóm trên URL public — chỉ để bắt lỗi kỹ thuật, <em>không tính vào kết quả</em></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Tuyển ~5 người tham gia</strong> ngoài nhóm (bạn, SV lớp khác). Không dùng thành viên nhóm
+            (đã biết website). Xin đồng ý nếu có ghi hình / moderated bổ sung.
+          </li>
+        </ol>
+
+        <h3>Ba demo</h3>
+        <ol class="steps">
+          <li>
+            <strong>Demo 1 — Cài đặt.</strong> Tạo project Maze → gắn snippet vào <code>index.html</code> (hoặc theo hướng dẫn Maze)
+            trên bản deploy → quay clip các bước + mở URL đã gắn.
+          </li>
+          <li>
+            <strong>Demo 2 — Cơ bản.</strong> 1 mission đơn giản + câu SEQ (1–7: dễ hay khó).
+            Tự làm thử 1 lượt → xem path, thời gian, checkpoint trang đích. Clip: tạo mission → làm → đọc kết quả.
+          </li>
+          <li>
+            <strong>Demo 3 — Study Checkout đầy đủ.</strong>
+            <ul class="sub">
+              <li>Mission: <em>“Bạn có 5.000.000₫ và muốn mua một món phụ kiện cho máy tính. Hãy mua một sản phẩm và dùng mã giảm giá VIP100 khi thanh toán.”</em>
+                (Phụ kiện có AirPods 6.000.000₫ và bàn phím Keychron 4.000.000₫ → chỉ bàn phím vừa ngân sách; người dùng phải tự so giá.
+                Không ghi tên nút trong mission.)</li>
+              <li>Sau mission: SEQ — “Nhiệm vụ này dễ hay khó? (1–7)”</li>
+              <li>Thành công = xác nhận đơn ở trang Thanh toán (đặt expected path / URL đích rõ)</li>
+              <li>Cuối study: bảng SUS 10 câu</li>
+              <li>Phân tích: task success, time on task, misclick, heatmap, gợi ý Maze AI (nếu Free có)</li>
+              <li>Ghi trong báo cáo: Record (Maze ghi path) / Data-driven (nhiều người) / Checkpoint (trang đích)</li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>Hạn chế Maze cần nói trên slide:</strong> Free 1 study/tháng; bước cùng một trang (vd. bấm “Áp dụng” coupon)
+          Maze có thể không tính là bước vì chỉ theo dõi khi URL đổi; unmoderated thì không hỏi lại được vì sao bị kẹt.
+        </div>
+
+        <h3>Lý thuyết + bài tập</h3>
+        <ol class="steps">
+          <li>
+            Viết lý thuyết Usability: ISO 9241-11; Rubin; Nielsen H1–H10 + severity 0–4;
+            moderated/unmoderated; think-aloud; metrics (success, time, error/misclick, SUS, SEQ); test plan 9 phần.
+            Gửi C ghép slide.
+          </li>
+          <li>
+            Soạn <strong>Bài tập 3</strong>: làm 1 mission (link study hoặc hướng dẫn tạo) + điền bảng SUS; kèm gợi ý ngắn.
+          </li>
+          <li>
+            (Tuỳ thời gian) 1–2 buổi moderated ngắn qua Meet để có think-aloud — dùng đúng mission Maze.
+          </li>
+        </ol>
+
+        <div class="done">
+          <h4>Done khi có</h4>
+          <ul>
+            <li>URL EShop public ổn định (đã bỏ localhost cứng) + 5–6 tài khoản người tham gia + 3 clip Maze</li>
+            <li>Kết quả study ~5 người (ảnh dashboard / export) trong Evidence</li>
+            <li>Text lý thuyết Usability + worksheet bài 3</li>
+            <li>Danh sách participant (ẩn thông tin nhạy cảm nếu cần)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GUIDE C ========== -->
+    <section class="guide c" id="guide-c">
+      <div class="guide-head">
+        <h2>C (Quân) — Làm AI Reviewer &amp; đóng gói như thế nào</h2>
+        <p>Mục tiêu: có script AI chạy được; có số liệu người vs AI; slide/báo cáo/homework ghép đủ để nộp.</p>
+      </div>
+      <div class="guide-body">
+        <h3>Chuẩn bị</h3>
+        <ol class="steps">
+          <li>
+            Tạo <strong>GitHub Projects</strong> board: To do / Doing / Review / Done. Mỗi task gắn người + deadline.
+            Nhắc A/B cập nhật hàng tuần; lưu biên bản họp ngắn vào repo.
+          </li>
+          <li>
+            Chạy được Playwright (xin A hướng dẫn) và mở được study Maze của B — để tự demo được cả bộ khi cần.
+          </li>
+          <li>
+            Chọn API LLM có vision (Claude hoặc GPT). Giữ key ngoài repo (<code>.env</code> + <code>.gitignore</code>).
+          </li>
+        </ol>
+
+        <h3>Xây AI Heuristic Reviewer</h3>
+        <ol class="steps">
+          <li>
+            <strong>Script Node.js</strong> (theo proposal mục 5):
+            <ul class="sub">
+              <li>Đọc <code>config.json</code>: danh sách URL / bước trên EShop</li>
+              <li>Playwright chụp màn hình từng bước</li>
+              <li>Gửi ảnh + prompt cố định (10 heuristic Nielsen) → JSON theo schema → xuất Markdown</li>
+              <li>Đổi config là chạy được website khác (điểm “tái sử dụng”)</li>
+            </ul>
+          </li>
+          <li>
+            Prompt cần ép: chỉ báo vấn đề <em>nhìn thấy trên ảnh</em>; có <code>heuristic</code>, <code>severity</code> 0–4,
+            <code>evidence</code>, <code>fix</code>. Ví dụ kỳ vọng Giỏ hàng: H3 — xóa không xác nhận, severity 3.
+          </li>
+          <li>
+            <strong>So sánh người vs AI</strong> (nội dung chính phần điểm yếu AI):
+            <ul class="sub">
+              <li>Cùng một bộ ảnh Checkout</li>
+              <li>Cả nhóm đánh giá heuristic thủ công độc lập trước</li>
+              <li>Chạy AI riêng → đếm: trùng / chỉ người / chỉ AI / false positive / lệch severity</li>
+              <li>Kỳ vọng nói trên slide: AI mạnh lỗi bề mặt; yếu lỗi phụ thuộc nghiệp vụ; severity hay lệch</li>
+            </ul>
+          </li>
+          <li>
+            Quay <strong>1 clip AI</strong>: chạy script → mở báo cáo → chỉ 1–2 chỗ AI đúng và 1 chỗ AI sai/bịa.
+          </li>
+        </ol>
+
+        <div class="callout">
+          <strong>AI Disclosure:</strong> mọi đoạn AI viết (slide, báo cáo, prompt output) nhóm review lại và ghi vào form disclosure.
+          Không nộp raw output chưa đọc.
+        </div>
+
+        <h3>Đóng gói sản phẩm + bài tập</h3>
+        <ol class="steps">
+          <li>
+            Soạn <strong>Bài tập 2 — Heuristic Showdown</strong>: ảnh Checkout + yêu cầu tìm ≥5 vi phạm heuristic,
+            rồi so với báo cáo AI (cung cấp sau hoặc tách answer key).
+          </li>
+          <li>
+            <strong>Ghép slide</strong> (nền trắng, chữ đen, chữ to): nhận text từ A/B + phần AI của mình;
+            mỗi demo có link YouTube. Format thống nhất trước khi nhồi nội dung.
+          </li>
+          <li>
+            <strong>Ghép báo cáo</strong>: mục lục theo proposal; chèn bảng so sánh tool (cả nhóm góp);
+            mục AI + bảng người vs AI; phân công + timeline; tham chiếu.
+          </li>
+          <li>
+            Thu homework: bản rút gọn Checklist 50 câu do A soạn (đáp án + cách chấm) + 3 bài nhỏ có gợi ý từ A/B/C.
+          </li>
+        </ol>
+
+        <div class="done">
+          <h4>Done khi có</h4>
+          <ul>
+            <li>Repo: script Reviewer + <code>config.json</code> mẫu + README chạy</li>
+            <li>1 clip AI + bảng số liệu người vs AI</li>
+            <li>Slide + báo cáo bản ghép (≥90% trước W06)</li>
+            <li>Task board có lịch sử; AI Disclosure điền đủ</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="shared" id="shared">
+      <h2>Việc chung — cả 3 người</h2>
+      <ul>
+        <li>Mỗi người tự chạy được EShop, Playwright, Maze và AI Reviewer (không chỉ biết tool “của mình”)</li>
+        <li>Cùng làm bảng so sánh công cụ (mục 3 proposal)</li>
+        <li>Đánh giá heuristic thủ công độc lập trước khi xem output AI</li>
+        <li>Họp ngắn mỗi tuần + biên bản; cập nhật Evidence theo tuần</li>
+        <li>Trước tuần seminar: trình bày thử với GVTH (bắt buộc — thiếu bị trừ điểm)</li>
+      </ul>
+    </section>
+
+    <section class="timeline">
+      <h2>Timeline</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mốc</th>
+            <th>Việc cần xong</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>T5 15/10 – T7 17/10</td>
+            <td>A (Quang): EShop chạy + xác nhận lỗi GUI + repo; bắt đầu checklist 50 câu.
+              B (Phúc): sửa localhost cứng + deploy URL public + tài khoản p1–p6; thiết kế study trên giấy, tuyển 5 người.
+              C (Quân): board + skeleton Reviewer; chụp bộ ảnh Checkout.
+              Cả nhóm: đánh giá heuristic thủ công độc lập trên bộ ảnh (trước khi chạy AI)</td>
+          </tr>
+          <tr>
+            <td>CN 18/10 – T3 20/10</td>
+            <td>A: 3 demo + 3 clip; xong checklist 50 câu.
+              B: pilot → tạo study thật → 5 người làm (chốt khung giờ) → 3 clip.
+              C: Reviewer chạy được + bảng người vs AI + clip AI</td>
+          </tr>
+          <tr>
+            <td>T4 21/10 – T5 22/10</td>
+            <td>Mỗi người viết phần slide + báo cáo của mình trong repo; C ghép bản nháp</td>
+          </tr>
+          <tr>
+            <td>T6 23/10 – T7 24/10</td>
+            <td>Review chéo, sửa; <strong>nộp ≥90%</strong> (slide, báo cáo, clip, bài tập) — xác nhận hạn chính xác với GVTH</td>
+          </tr>
+          <tr>
+            <td>Trước tuần seminar</td>
+            <td>Trình bày thử GVTH; sửa theo góp ý</td>
+          </tr>
+          <tr>
+            <td>Tuần seminar / W12</td>
+            <td>Trình bày + bài tập lớp; nộp bản 100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      Nguồn: proposal Nhóm 09 mục 4–8; số liệu EShop (giá, mã giảm giá, tài khoản, URL API) đối chiếu với mã nguồn <code>eshop-sut</code> ngày 15/10/2026.
+    </footer>
+  </div>
+</body>
+</html>

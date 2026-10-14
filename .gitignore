@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+.expo/
+.vite/
+
+# EShop runtime DB (tạo lại bằng `node database.js`)
+*.sqlite
+*.sqlite3
+
+# Playwright
+tests/playwright/test-results/
+tests/playwright/playwright-report/
+tests/playwright/blob-report/
+tests/playwright/playwright/.cache/
+
+# AI reviewer — output tạm (bản cuối copy sang evidence/ai/)
+ai-reviewer/out/*
+!ai-reviewer/out/.gitkeep
+
+# Video — đăng YouTube, chỉ ghi link trong videos/README.md
+*.mp4
+*.mov
+*.mkv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.log

@@ -1,0 +1,7 @@
+[
+  { "name": "home", "path": "/" },
+  { "name": "product", "path": "/product/1" },
+  { "name": "cart", "path": "/", "setup": "addFirstProductToCart" },
+  { "name": "checkout", "path": "/", "setup": "goToCheckout" },
+  { "name": "login", "path": "/login" }
+]
