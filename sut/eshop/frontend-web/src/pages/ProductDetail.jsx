@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -13,7 +15,7 @@ export default function ProductDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/products/${id}`)
+      .get(`${API_URL}/api/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error(err));
   }, [id]);

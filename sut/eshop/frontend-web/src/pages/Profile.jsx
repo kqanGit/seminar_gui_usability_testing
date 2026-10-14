@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function Profile() {
   const { user, token } = useAuth();
   const [name, setName] = useState(user?.name || "");
@@ -15,7 +17,7 @@ export default function Profile() {
     if (!token) return;
 
     axios
-      .get("http://localhost:3000/api/orders/my-orders", {
+      .get(`${API_URL}/api/orders/my-orders`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -47,7 +49,7 @@ export default function Profile() {
 
     try {
       await axios.put(
-        "http://localhost:3000/api/users/me",
+        `${API_URL}/api/users/me`,
         {
           name,
           phone,
@@ -66,7 +68,7 @@ export default function Profile() {
   const cancelOrder = async (orderId) => {
     try {
       await axios.put(
-        `http://localhost:3000/api/orders/${orderId}/cancel`,
+        `${API_URL}/api/orders/${orderId}/cancel`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

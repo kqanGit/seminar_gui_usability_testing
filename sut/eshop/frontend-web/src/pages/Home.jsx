@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
@@ -13,7 +15,7 @@ export default function Home() {
     try {
       setErrorHtml("");
       const res = await axios.get(
-        `http://localhost:3000/api/products?search=${query}`,
+        `${API_URL}/api/products?search=${query}`,
       );
       if (typeof res.data === "string" && res.data.includes("<h1>")) {
         setErrorHtml(res.data);
