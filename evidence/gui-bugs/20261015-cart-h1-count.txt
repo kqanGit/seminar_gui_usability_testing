@@ -1,0 +1,2 @@
+cart h1=0 h2=1
+checkout h1=0 h2=1
