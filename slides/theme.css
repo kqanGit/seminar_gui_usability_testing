@@ -113,9 +113,11 @@
   background: transparent; color: var(--graphite); font-family: var(--r-main-font);
   font-size: 16px; right: 22px; bottom: 16px;
 }
-.deck-footer {
-  position: fixed; left: 26px; bottom: 16px; font-size: 16px; color: var(--graphite);
-  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif; z-index: 30;
+/* footer nằm trong khung slide (được scale cùng slide) */
+.reveal .slides > section > section:not(.divider)::after,
+.reveal .slides > section.title-slide::after {
+  content: "Nhóm 09 · T1 GUI & Usability Testing"; position: absolute; left: 0; top: 668px;
+  font-size: 15px; color: var(--graphite); font-weight: 400;
 }
 
 /* ---------- Slide mở đầu mỗi phần: <!-- .slide: class="divider" data-num="02" --> ---------- */
@@ -150,6 +152,3 @@
 .title-slide .gv { font-size: 0.56em; color: var(--graphite); margin-top: 1em; }
 
 /* ---------- In PDF ---------- */
-@media print {
-  .deck-footer { display: none; }
-}

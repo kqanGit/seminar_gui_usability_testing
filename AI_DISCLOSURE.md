@@ -8,6 +8,7 @@ Theo yêu cầu "chính chủ" của môn: nhóm được dùng AI hỗ trợ nh
 | 2026-10-15 | Quân | Claude | Dựng khung repo, README, template | Toàn bộ khung repo | Quân | — |
 | 2026-10-14 → 16 | Quang | Cursor (Agent) | Evidence EShop/GUI, checklist bắt đầu, biên bản, heuristic nháp, chia commit; hỗ trợ init Playwright + Demo 2 | `evidence/`, `checklist/`, `ground-truth/`, `docs/meetings/`, `tests/playwright/` | Quang | Khoanh đỏ Evidence; sửa nhãn; review test trước push |
 | 2026-10-16 | Quân | Claude | Soạn nháp slide lý thuyết: Mở đầu, GUI Testing, Usability Testing | `slides/sections/01-mo-dau.md`, `02-ly-thuyet-gui.md`, `04-ly-thuyet-usability.md`, `slides/theme.css` | Quân, Quang (02), Phúc (04) | _(điền sau khi review)_ |
+| 2026-10-19 | Quân | Claude | Tìm, tóm tắt bài báo (rank ≥ B) và skill GitHub về GUI/usability testing; soạn slide phần nghiên cứu liên quan; slide mở đầu các phần | `docs/khao-sat/bai-bao.md`, `docs/khao-sat/agent-skills.md`, `slides/sections/08-ai-reviewer.md`, `slides/sections/0[3,5-7,9]`, `10-tong-ket.md`, `slides/SKILL.md` | Quân | _(điền sau khi review: đối chiếu hạng CORE, số star)_ |
 
 Lưu ý:
 - Kết quả do **AI Heuristic Reviewer** sinh ra là *dữ liệu thí nghiệm*, không phải nội dung nhóm viết — ghi ở `evidence/ai/`, không cần khai báo ở đây.
