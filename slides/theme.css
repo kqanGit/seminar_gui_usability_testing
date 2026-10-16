@@ -1,41 +1,155 @@
-/* Yêu cầu môn: nền trắng, chữ đen, chữ to rõ (phòng chiếu ánh sáng mạnh). */
+/*
+  Theme seminar T1 — GUI & Usability Testing (Nhóm 09)
+  Yêu cầu môn: nền trắng, chữ đen, chữ to rõ (phòng chiếu ánh sáng mạnh).
+  Ý tưởng: chất liệu "soi giao diện" của DevTools — một màu xanh focus-ring dùng tiết chế,
+  vàng dạ quang chỉ cho câu chốt. Mọi phần dùng chung file này, không tự đổi màu/cỡ chữ trong từng phần.
+*/
 :root {
-  --r-background-color: #ffffff;
-  --r-main-color: #000000;
-  --r-heading-color: #000000;
-  --r-main-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --paper: #ffffff;
+  --ink: #000000;
+  --graphite: #3d3d3d;      /* chữ phụ, tương phản ~11:1 trên nền trắng */
+  --rule: #c9ccd3;
+  --tint: #f2f4f8;           /* nền bảng xen kẽ, code */
+  --focus: #1746c9;          /* màu nhấn duy nhất: focus ring / chú thích */
+  --marker: #ffe45c;         /* vàng dạ quang cho câu chốt */
+
+  --r-background-color: var(--paper);
+  --r-main-color: var(--ink);
+  --r-heading-color: var(--ink);
+  --r-main-font: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif;
   --r-heading-font: var(--r-main-font);
-  --r-main-font-size: 36px;
+  --r-main-font-size: 34px;
   --r-heading-text-transform: none;
   --r-heading-font-weight: 700;
-  --r-link-color: #0b4fb3;
-  --r-link-color-hover: #083a85;
-  --r-code-font: Consolas, "Courier New", monospace;
+  --r-heading-letter-spacing: -0.01em;
+  --r-link-color: var(--focus);
+  --r-link-color-hover: #0f3396;
+  --r-code-font: "JetBrains Mono", Consolas, "Courier New", monospace;
+  --r-selection-background-color: var(--marker);
+  --r-selection-color: var(--ink);
 }
 
-.reveal { color: #000; }
+.reveal { color: var(--ink); }
 .reveal .slides { text-align: left; }
-.reveal h1 { font-size: 2.2em; }
-.reveal h2 { font-size: 1.5em; border-bottom: 3px solid #000; padding-bottom: 0.2em; margin-bottom: 0.6em; }
-.reveal h3 { font-size: 1.15em; }
-.reveal ul, .reveal ol { display: block; margin-left: 1.1em; }
-.reveal li { margin: 0.25em 0; line-height: 1.35; }
+.reveal .slides section { box-sizing: border-box; padding-top: 40px; }
 
-/* Bảng: chữ vẫn đủ to, có viền rõ */
-.reveal table { font-size: 0.72em; border-collapse: collapse; margin: 0; }
-.reveal table th, .reveal table td { border: 1.5px solid #000; padding: 0.3em 0.55em; }
-.reveal table th { background: #eeeeee; }
+/* ---------- Tiêu đề ---------- */
+.reveal h1 { font-size: 2.3em; line-height: 1.08; letter-spacing: -0.02em; }
+.reveal h2 {
+  font-size: 1.42em; line-height: 1.15; margin: 0 0 0.75em; padding-bottom: 0.32em;
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+}
+/* vạch xanh ngắn trên đường kẻ — "focus" vào tiêu đề */
+.reveal h2::after {
+  content: ""; position: absolute; left: 0; bottom: -5px; width: 96px; height: 8px; background: var(--focus);
+}
+.reveal h3 { font-size: 1.05em; margin-bottom: 0.4em; }
+.reveal p { line-height: 1.4; }
+.reveal strong, .reveal b { font-weight: 700; }
 
-/* Code: nền sáng, không dùng theme tối */
-.reveal pre { width: 100%; box-shadow: none; font-size: 0.55em; }
-.reveal pre code { background: #f5f5f5; color: #000; border: 1.5px solid #ccc; max-height: 560px; }
+/* ---------- Danh sách ---------- */
+.reveal ul, .reveal ol { display: block; margin-left: 1.05em; }
+.reveal li { margin: 0.28em 0; line-height: 1.35; padding-left: 0.15em; }
+.reveal ul > li::marker { color: var(--focus); }
+.reveal ol > li::marker { color: var(--focus); font-weight: 700; }
+.reveal ul ul, .reveal ol ul { font-size: 0.86em; margin-top: 0.15em; }
+.reveal ul ul > li::marker { color: var(--graphite); }
 
-/* Ảnh minh chứng */
-.reveal img { max-height: 520px; border: 1.5px solid #999; }
+/* ---------- Bảng ---------- */
+.reveal table { font-size: 0.68em; border-collapse: collapse; margin: 0; width: 100%; }
+.reveal table th, .reveal table td { border: 0; border-bottom: 1.5px solid var(--rule); padding: 0.38em 0.6em; vertical-align: top; text-align: left; line-height: 1.32; }
+.reveal table th { background: var(--ink); color: var(--paper); font-weight: 700; border-bottom: 0; }
+.reveal table tbody tr:nth-child(even) td { background: var(--tint); }
+.reveal table td:first-child { font-weight: 600; }
+.reveal table code { font-size: 0.92em; }
 
-/* Link clip demo: dùng class .clip trong markdown: <p class="clip">▶ Clip: <a href="...">...</a></p> */
-.reveal .clip { font-size: 0.8em; border-left: 6px solid #000; padding-left: 0.5em; }
+/* ---------- Code ---------- */
+.reveal code { font-family: var(--r-code-font); font-size: 0.86em; }
+.reveal :not(pre) > code { background: var(--tint); padding: 0.05em 0.28em; border-radius: 3px; }
+.reveal pre { width: 100%; box-shadow: none; font-size: 0.56em; margin: 0.6em 0; }
+.reveal pre code {
+  background: var(--tint); color: var(--ink); border-left: 6px solid var(--focus);
+  padding: 0.7em 0.9em; max-height: 520px; line-height: 1.45;
+}
 
-.title-slide .eyebrow { font-size: 0.6em; letter-spacing: 0.06em; text-transform: uppercase; }
-.title-slide .subtitle { font-size: 0.85em; }
-.title-slide .members { font-size: 0.7em; margin-top: 2em; }
+/* ---------- Ảnh minh chứng ---------- */
+.reveal img { max-height: 500px; border: 1.5px solid var(--rule); }
+
+/* ---------- Tiện ích dùng trong markdown ---------- */
+/* Câu chốt: <p class="key">…</p> */
+.reveal .key {
+  background: var(--marker); font-weight: 700; font-size: 0.86em;
+  padding: 0.45em 0.7em; margin-top: 0.8em; display: block;
+}
+/* Ghi chú nhỏ, nguồn: <p class="small">…</p> */
+.reveal .small { font-size: 0.6em; color: var(--graphite); margin-top: 0.7em; }
+/* Luồng thao tác: <p class="flow">A → B → C</p> */
+.reveal .flow {
+  font-size: 0.78em; font-weight: 700; display: inline-block; margin: 0.3em 0 0.6em;
+  padding: 0.35em 0.7em; border: 2px dashed var(--focus); color: var(--ink);
+}
+/* Link clip demo: <p class="clip">▶ Clip: <a href="...">...</a></p> */
+.reveal .clip { font-size: 0.78em; border-left: 6px solid var(--focus); padding: 0.2em 0 0.2em 0.6em; }
+
+/* Thang mức độ (severity, SEQ…): <div class="scale"><div><b>0</b>…</div>…</div> */
+.reveal .scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 0.2em 0 0.7em; }
+.reveal .scale > div { border: 2px solid var(--ink); padding: 0.4em 0.5em 0.5em; font-size: 0.62em; line-height: 1.3; min-height: 4.6em; }
+.reveal .scale > div b { display: block; font-size: 2em; line-height: 1; margin-bottom: 0.15em; }
+.reveal .scale > div:nth-child(2) { background: #e3e8f6; }
+.reveal .scale > div:nth-child(3) { background: #b9c6ec; }
+.reveal .scale > div:nth-child(4) { background: #5d7bd8; color: #fff; border-color: #5d7bd8; }
+.reveal .scale > div:nth-child(5) { background: var(--ink); color: #fff; }
+
+/* Hai cột: <div class="cols"> <div>…</div> <div>…</div> </div> */
+.reveal .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; }
+
+/* ---------- Header chạy & footer (index.html gắn data-part) ---------- */
+.reveal .slides section[data-part]::before {
+  content: attr(data-part); position: absolute; top: 0; left: 0;
+  font-size: 0.48em; color: var(--graphite); font-weight: 500;
+}
+.reveal .slide-number {
+  background: transparent; color: var(--graphite); font-family: var(--r-main-font);
+  font-size: 16px; right: 22px; bottom: 16px;
+}
+.deck-footer {
+  position: fixed; left: 26px; bottom: 16px; font-size: 16px; color: var(--graphite);
+  font-family: "Be Vietnam Pro", "Segoe UI", sans-serif; z-index: 30;
+}
+
+/* ---------- Slide mở đầu mỗi phần: <!-- .slide: class="divider" data-num="02" --> ---------- */
+.reveal .slides section.divider { display: grid !important; height: 100%; grid-template-columns: 300px 1fr; column-gap: 56px; align-content: center; padding-top: 0; }
+.reveal .slides section.divider::before { display: none; }
+.reveal .slides section.divider .part {
+  grid-row: 1 / span 3; align-self: start;
+  font-size: 4.6em; font-weight: 800; line-height: 0.9; letter-spacing: -0.04em; color: var(--focus);
+  border-top: 10px solid var(--ink); padding-top: 0.12em; margin: 0;
+}
+.reveal .slides section.divider > :not(.part) { grid-column: 2; }
+.reveal .slides section.divider h2 { font-size: 1.75em; border: 0; padding: 0; margin: 0 0 0.6em; }
+.reveal .slides section.divider h2::after { display: none; }
+.reveal .slides section.divider ul { font-size: 0.86em; margin-left: 0.9em; }
+
+/* ---------- Slide tiêu đề: phần tử h1 "được soi" như trong DevTools ---------- */
+.title-slide { padding-top: 70px !important; }
+.title-slide .eyebrow { font-size: 0.56em; color: var(--graphite); margin: 0 0 1.6em; }
+.title-slide .inspect { position: relative; display: inline-block; margin: 0 0 0.9em; }
+.title-slide .inspect h1 {
+  margin: 0; padding: 0.12em 0.22em; background: rgba(23, 70, 201, 0.10);
+  outline: 3px dashed var(--focus); outline-offset: 0;
+}
+.title-slide .inspect .tag {
+  position: absolute; left: 0; top: -1.55em; white-space: nowrap;
+  background: var(--focus); color: #fff; font-family: var(--r-code-font); font-size: 0.46em; padding: 0.18em 0.55em;
+}
+.title-slide .subtitle { font-size: 0.82em; max-width: 30em; margin: 0.4em 0 0; }
+.title-slide .members { margin-top: 1.6em; font-size: 0.6em; border-collapse: collapse; width: auto; }
+.title-slide .members td { border: 0; background: none !important; padding: 0.15em 1.4em 0.15em 0; font-weight: 400; }
+.title-slide .members td:first-child { font-weight: 600; }
+.title-slide .gv { font-size: 0.56em; color: var(--graphite); margin-top: 1em; }
+
+/* ---------- In PDF ---------- */
+@media print {
+  .deck-footer { display: none; }
+}

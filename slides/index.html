@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>T1 GUI & Usability Testing</title>
+  <title>T1 GUI & Usability Testing — Nhóm 09</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" />
@@ -14,14 +17,23 @@
   <div class="reveal">
     <div class="slides" id="slides">
       <section class="title-slide">
-        <p class="eyebrow">Software Testing · FIT@HCMUS · Nhóm 09</p>
-        <h1>GUI &amp; Usability Testing</h1>
-        <p class="subtitle">Playwright · Maze · AI Heuristic Reviewer — trên luồng Checkout của EShop</p>
-        <p class="members">Nguyễn Đức Quang · Bửu Huỳnh Vĩnh Phúc · Bùi Minh Quân</p>
+        <p class="eyebrow">Software Testing · FIT@HCMUS · Seminar nhóm 09</p>
+        <div class="inspect">
+          <span class="tag">h1 · đúng 1 thẻ trên trang (FR-21)</span>
+          <h1>GUI &amp; Usability Testing</h1>
+        </div>
+        <p class="subtitle">Kiểm thử giao diện và tính khả dụng trên luồng Checkout của EShop với Playwright, Maze và AI Heuristic Reviewer</p>
+        <table class="members">
+          <tr><td>Nguyễn Đức Quang</td><td>20120359</td></tr>
+          <tr><td>Bửu Huỳnh Vĩnh Phúc</td><td>23120328</td></tr>
+          <tr><td>Bùi Minh Quân</td><td>23120337</td></tr>
+        </table>
+        <p class="gv">Giảng viên thực hành: thầy Hồ Tuấn Thanh</p>
       </section>
       <!-- Các phần được nạp từ sections.json → sections/*.md -->
     </div>
   </div>
+  <div class="deck-footer">Nhóm 09 · T1 GUI &amp; Usability Testing</div>
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
@@ -30,13 +42,15 @@
   <script>
     (async () => {
       const container = document.getElementById('slides');
+      let names = [];
       try {
-        const names = await (await fetch('sections.json')).json();
+        names = await (await fetch('sections.json')).json();
         for (const name of names) {
           const s = document.createElement('section');
           s.setAttribute('data-markdown', `sections/${name}.md`);
           s.setAttribute('data-separator', '^\\r?\\n---\\r?\\n$');
           s.setAttribute('data-separator-notes', '^Note:');
+          s.dataset.name = name;
           container.appendChild(s);
         }
       } catch (e) {
@@ -44,15 +58,27 @@
         s.innerHTML = '<h2>Không nạp được sections.json</h2><p>Hãy mở slide qua server: <code>npx serve -l 8080</code> ở thư mục gốc repo rồi mở <code>/slides/</code></p>';
         container.appendChild(s);
       }
-      Reveal.initialize({
+      await Reveal.initialize({
         hash: true,
         slideNumber: 'c/t',
+        controls: false,
         width: 1280,
         height: 720,
         margin: 0.04,
+        center: false,
         transition: 'none',
         pdfSeparateFragments: false,
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+      // Header chạy: "Phần N · <tiêu đề slide mở đầu phần>" trên mọi slide nội dung
+      container.querySelectorAll(':scope > section[data-name]').forEach((group) => {
+        const slides = group.querySelectorAll(':scope > section');
+        const first = slides[0];
+        const num = first && first.querySelector('.part');
+        const title = first && first.querySelector('h2');
+        if (!num || !title) return;
+        const label = `Phần ${num.textContent.trim()} · ${title.textContent.trim()}`;
+        slides.forEach((sl) => { if (!sl.classList.contains('divider')) sl.dataset.part = label; });
       });
     })();
   </script>
