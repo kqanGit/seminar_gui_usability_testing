@@ -15,7 +15,9 @@ npx playwright test && npx playwright show-report
 | --- | --- | --- | --- |
 | 1. Cài đặt | init, cài axe, chạy test mẫu, mở report | — | xong |
 | 2. Cơ bản | `npx playwright codegen http://localhost:5173` → thêm `expect` nhãn "Tổng cộng" | Record & Playback, Checkpoint | xong — `tests/demo2-cart-tong-cong.spec.js` (fail = bắt G01) |
-| 3. Phức tạp | `data/pages.json` × 3 viewport: `<h1>`, `alt`, `toHaveScreenshot`, axe | Data-driven, Checkpoint | chưa (không thuộc kỳ report này) |
+| 3. Phức tạp | `data/pages.json` × 3 viewport: `<h1>`, `alt`, `toHaveScreenshot`, axe | Data-driven, Checkpoint | chưa code — **đã có plan** `scenarios-plan.md` |
+
+Plan chi tiết scenarios (S0–S1 đã có, Demo 3 + S2–S8): xem [`scenarios-plan.md`](./scenarios-plan.md).
 
 Chạy Demo 2 (cần EShop :5173 + backend :3000):
 
