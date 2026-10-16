@@ -2,6 +2,8 @@
 
 Script Node.js: Playwright chụp màn hình các bước trên EShop → gửi ảnh + prompt 10 heuristic Nielsen cho LLM có vision → nhận JSON theo schema → xuất báo cáo Markdown. Đổi `config.json` là chạy được trên website khác (tính tái sử dụng).
 
+Kịch bản 3 demo chi tiết: [`scenarios-plan.md`](scenarios-plan.md).
+
 ```text
 ai-reviewer/
 ├── config.example.json   URL + danh sách trang/bước + viewport (copy thành config.json)
