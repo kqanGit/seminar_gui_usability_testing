@@ -2,7 +2,7 @@
 
 Severity theo thang Nielsen 0–4. Trạng thái: `cần xác nhận` → `đã xác nhận` (có ảnh).
 
-Xác nhận lần 1: **2026-10-16** · Quang · SUT commit `1cd0c0f` · localhost:5173.
+Xác nhận lần 1: **2026-10-15** · Quang · SUT commit `d876fd4` · localhost:5173.
 
 | ID | Trang | Mô tả lỗi | Đặc tả / heuristic | Vị trí code | Severity | Nguồn | Ảnh | Trạng thái |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

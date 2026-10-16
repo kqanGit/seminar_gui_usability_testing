@@ -1,6 +1,6 @@
 # Checklist 50 câu — kết quả trên EShop
 
-- Người thực hiện: Quang · Ngày chạy: **2026-10-16** (bắt đầu; chưa đủ 50) · Phiên bản SUT: commit `1cd0c0f`
+- Người thực hiện: Quang · Ngày chạy: **2026-10-15** (bắt đầu; chưa đủ 50) · Phiên bản SUT: commit `d876fd4`
 - Luồng: Home → Product → Cart → Checkout (+ Login khi cần)
 - Kết quả tạm (đã chấm): Pass 4 / Fail 14 / N/A 0 · Chưa chạy: 32
 - Tự động hóa (sơ bộ trên câu đã chấm): Tự động 10 / Bán tự động 4 / Thủ công 4

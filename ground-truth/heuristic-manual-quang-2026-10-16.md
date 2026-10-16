@@ -1,6 +1,6 @@
 # Đánh giá heuristic thủ công (độc lập) — Quang
 
-- Ngày: 2026-10-16
+- Ngày: 2026-10-15
 - Bộ ảnh: Checkout / Cart trên EShop (localhost) — xem `evidence/gui-bugs/20261015-*.png`
 - Làm **trước** khi xem output AI Reviewer
 
