@@ -12,4 +12,5 @@
 | --- | --- | --- | --- | --- |
 | 2026-10-14 | Phúc (B) | `sut/eshop/frontend-web/src/{context/AuthContext,pages/Checkout,pages/ForgotPassword,pages/Home,pages/ProductDetail,pages/Profile,pages/Register}.jsx`, `.env.example` | Đổi 13 chỗ gọi cứng `http://localhost:3000` sang `import.meta.env.VITE_API_URL \|\| 'http://localhost:3000'` | Hỗ trợ cấu hình URL backend public khi deploy phục vụ study Maze |
 | 2026-10-15 | Phúc (B) | `sut/eshop/backend/database.js` | Thêm 6 tài khoản `p1@eshop.com` … `p6@eshop.com` (mật khẩu `Test1234!`) vào phần seed | Cấp tài khoản riêng cho từng người tham gia (participant) làm nhiệm vụ trên Maze |
+| 2026-10-17 | Phúc (B) | `sut/eshop/frontend-web/index.html`, `.env.example` | Gắn Maze Universal Snippet (`%VITE_MAZE_API_KEY%`) | Cho phép Maze Live Website Testing thu thập click/heatmap/path qua URL public trên Vercel |
 
