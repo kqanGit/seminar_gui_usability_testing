@@ -102,4 +102,4 @@ Note: Phần 8 dùng AI làm "người đánh giá heuristic" và so với ngư�
 
 <p class="small">Khoảng 5 người mỗi vòng đã tìm được phần lớn vấn đề (Nielsen &amp; Landauer). Cách tính SUS, viết task scenario, test plan 9 phần: Phụ lục.</p>
 
-Note: Ba nhóm chỉ số ứng với ba thành phần ISO 9241-11. Maze ở phần 07 đo đúng các chỉ số này.
+Note: Ba nhóm chỉ số ứng với ba thành phần ISO 9241-11. UXtweak + Clarity ở phần 07 đo đúng các chỉ số này.

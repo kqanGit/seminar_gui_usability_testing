@@ -7,7 +7,7 @@
 ## Khảo sát và chọn công cụ
 
 - So sánh 11 công cụ theo chi phí, độ khó, tự động hóa, AI
-- Vì sao chọn Playwright, UXtweak (thay cho Maze) và AI Heuristic Reviewer
+- Vì sao chọn Playwright, UXtweak + Clarity (thay cho Maze) và AI Heuristic Reviewer
 
 Note: Thời gian: 1,5 phút. Bảng đầy đủ 11 công cụ × 8 tiêu chí ở mục 3 của Proposal và Phụ lục.
 
@@ -18,11 +18,11 @@ Note: Thời gian: 1,5 phút. Bảng đầy đủ 11 công cụ × 8 tiêu chí 
 | Công cụ | Chi phí | Tự động hóa | Vai trò |
 | --- | --- | --- | --- |
 | **Playwright** + axe-core | Miễn phí, open-source | Fully automated | Chính: GUI |
-| **UXtweak** | Gói Free: 1 active study, 1 task | Semi-automated | Chính: usability (thay Maze) |
+| **UXtweak** + **Clarity** | Free (1 study, 1 task) + Miễn phí | Semi-automated | Chính: usability (thay Maze) |
 | **AI Heuristic Reviewer** | Trả theo lượt gọi API | Fully automated | Chính: AI |
 | Maze | Khoá Live Website Test ở bản Free | Semi-automated | Khảo sát → chuyển sang UXtweak |
-| BackstopJS · Hotjar · Clarity | Miễn phí / Free giới hạn | Auto / Semi-auto | So sánh / Bổ trợ |
+| BackstopJS · Hotjar · Lyssna | Miễn phí / Free giới hạn | Auto / Semi-auto | So sánh / Đối chiếu |
 
-<p class="key">Playwright trả lời "đúng đặc tả không", UXtweak trả lời "dùng được không", AI làm lại cả hai để so với người.</p>
+<p class="key">Playwright trả lời "đúng đặc tả không", UXtweak + Clarity trả lời "dùng được không", AI làm lại cả hai để so với người.</p>
 
-Note: Proposal ban đầu chọn Maze và đặt UXtweak làm dự phòng; khi triển khai thực tế, Maze loại khối Website Test khỏi bản Free/Trial (~$99/tháng) nên nhóm chuyển sang UXtweak. UXtweak cần EShop có URL public nên nhóm đã deploy (Vercel + Render). Chuyển ý sang Quang, phần 06.
+Note: Proposal ban đầu chọn Maze và đặt UXtweak làm dự phòng; khi triển khai thực tế, Maze loại khối Website Test khỏi bản Free/Trial (~$99/tháng) nên nhóm chuyển sang UXtweak (đo Task, SEQ, SUS, Session Replay) kết hợp Microsoft Clarity (lấy Click Heatmap & Rage Click). Nhóm đã deploy EShop lên Vercel + Render. Chuyển ý sang Quang, phần 06.
