@@ -1,0 +1,38 @@
+{
+  "page": "checkout",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập Tổng tiền thanh toán (VND)",
+      "problem": "Tổng tiền thanh toán hiển thị trong một trường nhập liệu có thể sửa đổi thay vì văn bản tĩnh, dễ dẫn đến thao tác chạm nhầm làm sai lệch số tiền thanh toán.",
+      "severity": 4,
+      "evidence": "Dưới dòng 'Tổng tiền thanh toán (VND):' là một ô input viền xám chứa giá trị màu đỏ '30000000'.",
+      "fix": "Hiển thị tổng tiền thanh toán dưới dạng văn bản tĩnh không cho phép người dùng chỉnh sửa."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Khung Xác Nhận Đơn Hàng",
+      "problem": "Thiếu nút quay lại giỏ hàng hoặc hủy thanh toán, khiến người dùng trên di động không có lối thoát rõ ràng trên giao diện khi muốn sửa đơn hàng.",
+      "severity": 3,
+      "evidence": "Cuối khung 'Xác Nhận Đơn Hàng' chỉ có duy nhất nút 'Xác Nhận Thanh Toán' màu xanh lá, không có nút 'Quay lại'.",
+      "fix": "Thêm nút 'Quay lại giỏ hàng' ở phía dưới hoặc phía trên khu vực xác nhận đơn hàng."
+    },
+    {
+      "heuristic": "H4",
+      "element": "Số tiền trong ô Tổng tiền thanh toán (VND)",
+      "problem": "Chuỗi số tiền hiển thị liền mạch không có dấu phân cách hàng nghìn, gây khó đọc và thiếu nhất quán với định dạng giá ở đầu và cuối thẻ.",
+      "severity": 2,
+      "evidence": "Giá trị trong ô là '30000000', khác với định dạng '30,000,000 ₫' tại dòng 'iPhone 15 Pro Max x 1 — 30,000,000 ₫' và 'Tổng thanh toán: 30,000,000 ₫'.",
+      "fix": "Sử dụng định dạng có dấu phân cách hàng nghìn '30,000,000 ₫' thống nhất trên toàn trang."
+    },
+    {
+      "heuristic": "H8",
+      "element": "Nút Áp dụng trong mục Mã Giảm Giá",
+      "problem": "Nút bấm bị hẹp ngang khiến nhãn chữ bị ngắt thành hai dòng và có độ tương phản màu chữ trắng trên nền cam nhạt kém rõ ràng.",
+      "severity": 2,
+      "evidence": "Cạnh ô 'NHẬP MÃ GIẢM GIÁ...', nút 'Áp dụng' màu cam nhạt bị ngắt thành 2 dòng 'Áp' và 'dụng' với chữ trắng mờ.",
+      "fix": "Mở rộng chiều ngang hoặc điều chỉnh kích thước nút để chữ 'Áp dụng' nằm trên một dòng và dùng màu nền có độ tương phản cao hơn."
+    }
+  ]
+}

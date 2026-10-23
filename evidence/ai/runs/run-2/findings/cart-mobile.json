@@ -1,0 +1,30 @@
+{
+  "page": "cart",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Bảng 'Giỏ Hàng' và các nút hành động cuối giỏ hàng",
+      "problem": "Bố cục bảng 5 cột trên màn hình di động quá hẹp khiến tiêu đề cột, tên sản phẩm, giá tiền bị ngắt dòng lộn xộn và dính sát nhau; đồng thời nút '← Mua tiếp' và 'Tiến hành thanh toán' bị ép hẹp theo chiều dọc làm chữ bị ngắt thành 3-4 dòng rất khó đọc.",
+      "severity": 3,
+      "evidence": "Trong khung 'Giỏ Hàng', tiêu đề 'Số lượng' và 'Thành tiền' dính sát nhau; giá '30,000,000 đ' bị rớt chữ 'đ' xuống dòng; ở phía dưới, nút '← Mua tiếp' bị ngắt thành 3 dòng ('← / Mua / tiếp') và nút xanh 'Tiến hành thanh toán' bị ngắt thành 4 dòng ('Tiến / hành / thanh / toán').",
+      "fix": "Chuyển bố cục bảng giỏ hàng trên di động sang dạng thẻ (card) cho từng sản phẩm và xếp hai nút '← Mua tiếp', 'Tiến hành thanh toán' nằm toàn chiều ngang (full-width) hoặc xếp chồng theo chiều dọc."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Cột 'Số lượng' trong bảng giỏ hàng",
+      "problem": "Số lượng sản phẩm chỉ hiển thị là văn bản tĩnh ('1') mà không có nút tăng/giảm hoặc ô nhập để người dùng chỉnh sửa trực tiếp số lượng trong giỏ hàng.",
+      "severity": 3,
+      "evidence": "Tại dòng sản phẩm 'iPhone 15 Pro Max', cột 'Số lượng' ở giữa chỉ hiển thị số '1' tĩnh.",
+      "fix": "Bổ sung nút tăng/giảm ('-' / '+') hoặc ô chọn số lượng phù hợp với thao tác chạm trên màn hình di động."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết 'Giỏ hàng' trên thanh điều hướng",
+      "problem": "Liên kết 'Giỏ hàng' trên thanh điều hướng không hiển thị số lượng sản phẩm hiện có trong giỏ hàng.",
+      "severity": 2,
+      "evidence": "Thanh header màu xanh phía trên hiển thị chữ 'Giỏ hàng' có gạch chân nhưng không có số lượng kèm theo dù giỏ đang có 1 sản phẩm 'iPhone 15 Pro Max'.",
+      "fix": "Thêm huy hiệu (badge) hoặc số đếm cạnh liên kết 'Giỏ hàng' (ví dụ: 'Giỏ hàng (1)')."
+    }
+  ]
+}

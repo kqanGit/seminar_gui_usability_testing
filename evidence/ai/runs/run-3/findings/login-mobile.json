@@ -1,0 +1,30 @@
+{
+  "page": "login",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H4",
+      "element": "Tiêu đề biểu mẫu 'Đăng Ký'",
+      "problem": "Biểu mẫu đăng nhập lại hiển thị tiêu đề là 'Đăng Ký', mâu thuẫn hoàn toàn với liên kết 'Đăng nhập' đang được gạch chân trên thanh điều hướng, nút 'Sign In' và liên kết 'Chưa có tài khoản? Đăng ký ngay' bên dưới.",
+      "severity": 4,
+      "evidence": "Tiêu đề chính của khung trắng ở giữa màn hình ghi rõ 'Đăng Ký', trong khi trên thanh header màu xanh mục 'Đăng nhập' được gạch chân, nút bấm màu xanh ghi 'Sign In' và dòng cuối ghi 'Chưa có tài khoản? Đăng ký ngay'.",
+      "fix": "Sửa tiêu đề biểu mẫu thành 'Đăng Nhập' để nhất quán với chức năng của trang."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Nhãn 'Username' và nút bấm 'Sign In'",
+      "problem": "Sử dụng lẫn lộn tiếng Anh và tiếng Việt trong cùng một biểu mẫu khiến giao diện thiếu tự nhiên và không đồng nhất.",
+      "severity": 2,
+      "evidence": "Nhãn ô đầu tiên là 'Username' và nút bấm là 'Sign In' (tiếng Anh), trong khi nhãn ô thứ hai là 'Mật khẩu', liên kết 'Quên mật khẩu?' và 'Chưa có tài khoản? Đăng ký ngay' lại dùng tiếng Việt.",
+      "fix": "Chuyển toàn bộ văn bản sang tiếng Việt thống nhất: thay 'Username' bằng 'Tên đăng nhập' và 'Sign In' bằng 'Đăng nhập'."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập 'Mật khẩu'",
+      "problem": "Trường nhập mật khẩu không có nút ẩn/hiện mật khẩu, gây khó khăn khi người dùng nhập liệu trên bàn phím ảo của điện thoại và dễ dẫn đến lỗi sai mật khẩu.",
+      "severity": 2,
+      "evidence": "Ô nhập phía dưới nhãn 'Mật khẩu' chỉ là khung trắng trống, không có nút hoặc biểu tượng bật/tắt hiển thị mật khẩu.",
+      "fix": "Bổ sung nút ẩn/hiện mật khẩu ở góc phải bên trong ô nhập 'Mật khẩu'."
+    }
+  ]
+}

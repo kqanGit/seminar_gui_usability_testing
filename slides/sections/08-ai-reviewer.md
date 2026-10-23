@@ -4,10 +4,10 @@
 
 <p class="part">08</p>
 
-## Ứng dụng AI: Heuristic Reviewer
+## Ứng dụng AI: Heuristic Reviewer Skill
 
 - Bài báo gốc và nhóm làm khác ở đâu
-- Kiến trúc và prompt
+- Kiến trúc Skill và thiết kế Prompt
 - 3 demo, so sánh người vs AI
 - Giới hạn của AI
 
@@ -24,114 +24,119 @@ Note: Thời gian: 6 phút (Quân). Câu mở: "Heuristic evaluation cần 3–5
 
 <p class="small">Còn 7 bài rank A*/A/Q1 khác (GPTDroid, AutoE2E, UICrit…): Phụ lục và <code>docs/khao-sat/bai-bao.md</code>.</p>
 
-<p class="key">Nhóm làm cùng câu hỏi, nhưng dùng model mới, gửi ảnh chụp màn hình thật và đo lại trên EShop.</p>
+<p class="key">Nhóm làm cùng câu hỏi, nhưng đóng gói thành Agent Skill: agent tự xem ảnh chụp màn hình thật và đo lại trên EShop.</p>
 
-Note: Nguồn: Duan, Warner, Li, Hartmann, CHI 2024, DOI 10.1145/3613904.3642782. Số liệu nhóm sẽ đặt cạnh số liệu này ở slide kết quả.
+Note: Nguồn: Duan, Warner, Li, Hartmann, CHI 2024, DOI 10.1145/3613904.3642782. Số liệu nhóm đặt cạnh số liệu này ở slide kết quả.
 
 ---
 
 ## Nhóm làm khác ở đâu?
 
-| | Skill cộng đồng | AI Heuristic Reviewer |
+| | Skill cộng đồng (Anthropic, Vercel) | Skill `nielsen-heuristic-reviewer` (Nhóm) |
 | --- | --- | --- |
-| Đầu vào | Code nguồn hoặc trình duyệt | Ảnh chụp màn hình từng bước |
-| Tiêu chí | Quy tắc web, WCAG | 10 heuristic Nielsen + severity 0–4 |
-| Đo độ chính xác AI | Không có | Người vs AI: precision, recall, lệch severity |
-| Tái sử dụng | Cài skill vào agent | Đổi `config.json` là chạy website khác |
+| Đầu vào | Code nguồn (`Cart.jsx`) hoặc trình duyệt | Ảnh chụp màn hình thực tế từng bước |
+| Tiêu chí | Quy tắc web chung, WCAG | **10 heuristic Nielsen + severity 0–4** |
+| Đo độ chính xác AI | Không có | **Người vs AI:** precision, recall, lệch severity, độ ổn định |
+| Tái sử dụng | Cài skill vào agent | Có `SKILL.md` + đổi `config.json` là chạy website khác |
 
-<p class="key">Chưa thấy skill phổ biến nào chấm heuristic theo Nielsen và đo độ chính xác so với người.</p>
+<p class="key">Chưa thấy skill phổ biến nào chấm heuristic theo Nielsen và đo độ chính xác thực nghiệm so với người.</p>
 
-Note: Danh sách 6 skill cộng đồng (webapp-testing, playwright-mcp, web-design-guidelines…) nằm ở Phụ lục. Ý tưởng tái dùng: quy trình "trinh sát rồi hành động" của webapp-testing, checklist của Vercel và ui-ux-pro-max làm đầu vào bổ sung cho prompt.
+Note: Danh sách 6 skill cộng đồng (webapp-testing ~180k star, ui-ux-pro-max ~137k star, web-design-guidelines ~32.6k star…) nằm ở Phụ lục.
 
 ---
 
-## Kiến trúc AI Heuristic Reviewer
+## Kiến trúc Skill `nielsen-heuristic-reviewer`
 
-<p class="flow">config.json → Playwright chụp ảnh → ảnh + prompt 10 heuristic → LLM vision → JSON → báo cáo</p>
+<p class="flow">Agent: chụp ảnh → subagent chấm ảnh → kiểm schema → subagent gán nhãn → người duyệt → tính chỉ số</p>
 
 | Thành phần | Việc |
 | --- | --- |
-| `config.json` | URL, trang, viewport, cách dựng trạng thái |
-| `capture.js` | Dựng trạng thái (đăng nhập, thêm giỏ) rồi chụp từng trang |
-| `review.js` | Gửi ảnh + prompt, kiểm JSON theo schema |
-| `report.js` · `compare.js` | Gộp báo cáo; so với người và ground truth |
+| `SKILL.md` · `config.json` | Quy trình cho agent; URL, trang, viewport, cách dựng trạng thái |
+| `capture.js` · `setups.js` | Đăng nhập, thêm giỏ (xử lý G10), chụp từng trang × viewport |
+| Subagent `heuristic-reviewer` | Tự xem ảnh, chấm H1–H10; **chỉ được đọc ảnh và rubric** |
+| `validate.js` · `report.js` | Kiểm JSON theo `schema.json`; gộp báo cáo |
+| Subagent `finding-labeler` | Gán nhãn nháp: khớp G01–G11, lỗi mới, hay báo nhầm |
+| `labels.csv` · `compare.js` | Người duyệt nhãn; tính precision, recall, lệch severity, độ ổn định |
 
-Note: Đổi config.json là chạy website khác: đây là điểm tái sử dụng. Chi tiết: ai-reviewer/scenarios-plan.md.
+Note: Không gọi API LLM riêng, không cần API key: model chính là model của agent (Claude Code). Subagent chấm ảnh được tách riêng để không đọc được ground truth trong repo; mỗi lần chạy là một subagent mới. Đổi config.json là chạy website khác.
 
 ---
 
-## Prompt: ép AI không bịa
+## Rubric trong Skill: ép AI không bịa
 
 - Chỉ báo vấn đề **nhìn thấy trên ảnh**, không đoán chức năng ẩn
 - Mỗi vấn đề: **H1–H10 · phần tử · vị trí · severity 0–4 · cách sửa**
-- Không báo trùng, không áp một heuristic cho mọi phần tử
-- Chỉ trả **JSON đúng schema** → sai thì gọi lại
+- Không báo trùng, tối đa 5 vấn đề mỗi ảnh
+- Rubric **không có ví dụ nào từ EShop** → không mớm đáp án
+- Sai schema → `validate.js` báo lỗi, gọi lại subagent
 
 ```json
 { "heuristic": "H3", "element": "Nút Xóa", "severity": 3,
   "problem": "Xóa ngay, không hỏi lại", "fix": "Thêm dialog xác nhận" }
 ```
 
-Note: Các luật này rút từ điểm yếu mà bài CHI 2024 ghi nhận: AI lặp gợi ý và áp nguyên tắc quá mức.
+Note: Các luật này rút từ điểm yếu mà bài CHI 2024 ghi nhận: AI lặp gợi ý và áp nguyên tắc quá mức. Rubric để tiếng Anh cho agent đọc ít token; nội dung lỗi AI viết bằng tiếng Việt.
 
 ---
 
-## Demo 1 — Cài đặt
+## Demo 1 — Cài đặt Skill & Smoke Test
 
-1. Chạy EShop (`:3000`, `:5173`)
-2. `npm install` trong `ai-reviewer/`
-3. Điền API key vào `.env`, copy `config.example.json` → `config.json`
-4. `npm run smoke`: chụp Trang chủ, gửi LLM, nhận JSON
+1. `npm install` và `npx playwright install chromium` trong `ai-reviewer/`
+2. Chép 2 subagent và skill vào `.claude/` (lệnh trong README)
+3. Mở Claude Code ở gốc repo: *"chạy skill nielsen-heuristic-reviewer, smoke test"*
+4. Agent chụp Trang chủ → subagent chấm → `npm run validate`
 
-- **Checkpoint:** JSON hợp lệ theo `schema.json`
+- **Checkpoint:** `VALID` — JSON đúng `schema.json`
 
 <p class="clip">▶ Clip AI-1 — Cài đặt: (đang quay)</p>
 
-Note: Che API key khi quay.
+Note: Không cần API key: model là model của agent.
 
 ---
 
 ## Demo 2 — Trang Giỏ hàng
 
-`npm run review -- --only cart` → tự thêm sản phẩm, chụp Giỏ, đánh giá; đối chiếu với ground truth:
+Agent chạy skill với `--only cart --viewport desktop` → thêm sản phẩm, chụp Giỏ, subagent chấm:
 
-| Lỗi | Heuristic | AI có thấy được? |
-| --- | --- | --- |
-| G02 Xóa không xác nhận | H3 · 3 | Có, nhìn thấy trên ảnh |
-| G01 "Tổng tạm tính" | H4 · 2 | Có thể |
-| G04 Nút xanh lá | H4 · 2 | Khó: AI không biết đặc tả |
-| G05 Không có `<h1>` | FR-21 | Không: không thấy trên ảnh |
+| Lỗi trên Giỏ hàng | Heuristic | Dự đoán | Kết quả AI |
+| --- | --- | --- | --- |
+| G02 Xóa không xác nhận | H3 · 3 | Thấy được trên ảnh | _(sau khi chạy)_ |
+| G03 Thiếu nút `+/-` | H3 · 2 | Thấy được trên ảnh | _(sau khi chạy)_ |
+| G01 "Tổng tạm tính" | H4 · 2 | Có thể | _(sau khi chạy)_ |
+| G04 Nút xanh lá | H4 · 2 | Khó: AI không biết đặc tả | _(sau khi chạy)_ |
+| G05 Không có `<h1>` | FR-21 | Không: không thấy trên ảnh | _(sau khi chạy)_ |
 
 <p class="clip">▶ Clip AI-2 — Giỏ hàng: (đang quay)</p>
 
-Note: Cột cuối là giả thuyết; clip sẽ cho thấy kết quả thật.
+Note: Cột "Dự đoán" là giả thuyết trước khi chạy; cột cuối điền từ report.md của lần chạy thật.
 
 ---
 
 ## Demo 3 — Toàn luồng, người vs AI, đổi website
 
-- **Data-driven:** 5 trang × 2 viewport × 3 lần chạy, đọc từ `config.json`
-- **Record & Playback:** bước đăng nhập, thêm giỏ, vào Checkout ghi bằng `playwright codegen`
-- **Checkpoint:** so ground truth (11 lỗi) và so heuristic thủ công của 3 thành viên
-- **Tái sử dụng:** đổi `config.json` sang website khác, chạy lại không sửa code
+- **Data-driven:** 5 trang × 2 viewport, đọc từ `config.json`; chạy 3 lần, mỗi lần một subagent mới
+- **Record & Playback:** đăng nhập, thêm giỏ, vào Checkout ghi bằng `playwright codegen` (`setups.js`)
+- **Checkpoint:** kiểm schema; subagent gán nhãn so 11 lỗi ground truth; **người duyệt `labels.csv`**; `npm run compare`
+- **Tái sử dụng:** `config.todomvc.json` chạy trên TodoMVC không sửa code
 
 <p class="clip">▶ Clip AI-3 — Toàn luồng: (đang quay)</p>
 
-Note: Người đánh giá heuristic thủ công trước khi xem kết quả AI.
+Note: AI gán nhãn nháp để luồng tự động không bị ngắt; người duyệt lại toàn bộ sau. Bản tóm tắt ghi rõ đã duyệt bao nhiêu dòng.
 
 ---
 
 ## Kết quả người vs AI
 
-| Chỉ số | EShop (nhóm) | Bài CHI 2024 |
+| Chỉ số | EShop (3 lần chạy) | Bài CHI 2024 (GPT-4) |
 | --- | --- | --- |
 | Precision | _(sau khi chạy)_ | AI 0,60 · người 0,83 |
-| Recall | _(sau khi chạy)_ | AI 0,38 · người 0,34 |
+| Recall trên 11 lỗi GT | _(sau khi chạy)_ | AI 0,38 · người 0,34 |
 | Chỉ người / cả hai / chỉ AI | _(sau khi chạy)_ | 62% / 29% / 9% |
 | Lệch severity | _(sau khi chạy)_ | — |
 | Ổn định qua 3 lần chạy | _(sau khi chạy)_ | — |
+| Nhãn đã được người duyệt | _(… / … dòng)_ | — |
 
-Note: Điền từ npm run compare sau Demo 3.
+Note: Điền từ evidence/ai/comparison-summary.md sau khi chạy npm run compare và người đã duyệt hết labels.csv.
 
 ---
 
@@ -143,7 +148,8 @@ Note: Điền từ npm run compare sau Demo 3.
 | Không biết đặc tả | G04 xanh lá thay vì xanh dương |
 | Không thấy lỗi cần nhiều bước | G10 bấm 2 lần mới thêm giỏ |
 | Severity lệch, kết quả đổi giữa các lần, có thể bịa | Đo ở Demo 3 |
+| AI gán nhãn cho AI có thể sai | Người duyệt `labels.csv` |
 
 <p class="key">AI là trợ lý tăng tốc; con người duyệt cuối.</p>
 
-Note: Khớp kết luận tài liệu T01 của môn: human-in-the-loop.
+Note: Khớp kết luận tài liệu T01 của môn: human-in-the-loop. Sau khi chạy, sửa tiêu đề thành "đã kiểm chứng" và thay cột phải bằng kết quả thật.

@@ -1,0 +1,38 @@
+{
+  "page": "product",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khung nội dung chi tiết sản phẩm",
+      "problem": "Trang chi tiết sản phẩm trên di động không có nút quay lại hoặc đường dẫn breadcrumb, gây bất tiện khi người dùng muốn trở về danh sách sản phẩm trước đó.",
+      "severity": 3,
+      "evidence": "Phía trên và bên trong thẻ sản phẩm 'iPhone 15 Pro Max' không có bất kỳ nút 'Quay lại' hay thanh điều hướng phân cấp nào.",
+      "fix": "Thêm nút '← Quay lại danh sách' hoặc thanh breadcrumb ngay phía trên thẻ chi tiết sản phẩm."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Hình ảnh và phần mô tả sản phẩm iPhone 15 Pro Max",
+      "problem": "Thông tin sản phẩm quá sơ sài, chỉ có khung giữ chỗ màu xám và một câu mô tả ngắn, thiếu hoàn toàn cấu hình chi tiết, tùy chọn màu sắc/dung lượng và tình trạng kho.",
+      "severity": 2,
+      "evidence": "Thẻ sản phẩm chỉ hiển thị khung xám có chữ 'iPhone 15', tiêu đề 'iPhone 15 Pro Max', giá '30,000,000 ₫' và dòng chữ 'Điện thoại cao cấp của Apple'.",
+      "fix": "Bổ sung ảnh sản phẩm thực tế, các nút chọn phiên bản (màu sắc, dung lượng) và danh sách thông số kỹ thuật chi tiết."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Ô nhập Số lượng",
+      "problem": "Ô nhập số lượng không có hai nút tăng/giảm (+/-) kích thước lớn cho thao tác chạm, buộc người dùng trên di động phải mở bàn phím ảo nếu muốn đổi số lượng.",
+      "severity": 2,
+      "evidence": "Bên cạnh nhãn 'Số lượng:' chỉ là một ô input trắng chứa số '1', không có nút '-' và '+'.",
+      "fix": "Thiết kế bộ chọn số lượng có nút '-' và '+' rõ ràng, dễ chạm ở hai bên ô số lượng."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Mục Giỏ hàng trên thanh điều hướng",
+      "problem": "Liên kết giỏ hàng trên thanh điều hướng không hiển thị số lượng sản phẩm đang có trong giỏ.",
+      "severity": 2,
+      "evidence": "Trên thanh header màu xanh, mục 'Giỏ hàng' không có số đếm (badge) đi kèm.",
+      "fix": "Hiển thị số lượng sản phẩm hiện có trong giỏ hàng bên cạnh chữ 'Giỏ hàng'."
+    }
+  ]
+}

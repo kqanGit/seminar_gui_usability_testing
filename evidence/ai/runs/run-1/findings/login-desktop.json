@@ -1,0 +1,30 @@
+{
+  "page": "login",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H4",
+      "element": "Tiêu đề Đăng Ký, nhãn Username/Mật khẩu và nút Sign In",
+      "problem": "Biểu mẫu đăng nhập bị gắn nhầm tiêu đề là 'Đăng Ký' đồng thời sử dụng pha trộn ngôn ngữ Anh - Việt thiếu nhất quán, gây nhầm lẫn nghiêm trọng cho người dùng về chức năng của trang.",
+      "severity": 4,
+      "evidence": "Trên thanh điều hướng đang gạch chân mục 'Đăng nhập' và dưới cùng ghi 'Chưa có tài khoản? Đăng ký ngay', nhưng tiêu đề chính của khung lại là 'Đăng Ký', nhãn trường đầu là 'Username', nhãn trường thứ hai là 'Mật khẩu', và nút bấm là 'Sign In'.",
+      "fix": "Đổi tiêu đề biểu mẫu thành 'Đăng Nhập' và đồng bộ toàn bộ nhãn sang tiếng Việt: 'Tên đăng nhập' (hoặc 'Tài khoản'), 'Mật khẩu', và nút 'Đăng nhập'."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập Mật khẩu",
+      "problem": "Trường nhập mật khẩu không có nút ẩn/hiện mật khẩu, khiến người dùng không thể kiểm tra lại các ký tự đã gõ để phòng tránh lỗi nhập sai.",
+      "severity": 2,
+      "evidence": "Ô nhập bên dưới nhãn 'Mật khẩu' là một khung trắng trống hoàn toàn, không có biểu tượng con mắt hay nút 'Hiện' ở góc phải.",
+      "fix": "Bổ sung nút biểu tượng con mắt ở bên phải ô 'Mật khẩu' để người dùng có thể bật/tắt chế độ hiển thị mật khẩu."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Hai ô nhập Username và Mật khẩu",
+      "problem": "Các ô nhập liệu hoàn toàn trống không có văn bản gợi ý (placeholder) để hướng dẫn định dạng tài khoản được chấp nhận.",
+      "severity": 1,
+      "evidence": "Hai ô input dưới nhãn 'Username' và 'Mật khẩu' để trống hoàn toàn, không có chữ gợi ý mờ bên trong.",
+      "fix": "Thêm placeholder gợi ý rõ ràng vào trong các ô nhập (ví dụ: 'Nhập tên đăng nhập hoặc email' và 'Nhập mật khẩu của bạn')."
+    }
+  ]
+}

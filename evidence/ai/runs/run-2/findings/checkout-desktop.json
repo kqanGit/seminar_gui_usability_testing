@@ -1,0 +1,38 @@
+{
+  "page": "checkout",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập 'Tổng tiền thanh toán (VND):'",
+      "problem": "Tổng tiền thanh toán được hiển thị trong một ô nhập liệu (input box) trông như có thể chỉnh sửa được, dễ gây nhầm lẫn cho người dùng hoặc dẫn đến việc vô tình thay đổi số tiền thanh toán.",
+      "severity": 3,
+      "evidence": "Phía dưới nhãn 'Tổng tiền thanh toán (VND):' là một khung nhập liệu viền xám nền trắng chứa chuỗi số màu đỏ '30000000'.",
+      "fix": "Hiển thị tổng tiền dưới dạng văn bản tĩnh không cho phép chỉnh sửa вместо ô nhập liệu."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Khung 'Xác Nhận Đơn Hàng'",
+      "problem": "Trang xác nhận đơn hàng chỉ có nút 'Xác Nhận Thanh Toán' mà không có nút 'Quay lại giỏ hàng' hoặc 'Hủy' để người dùng dễ dàng quay lại chỉnh sửa đơn hàng.",
+      "severity": 3,
+      "evidence": "Trong thẻ 'Xác Nhận Đơn Hàng', bên dưới dòng 'Tổng thanh toán: 30,000,000 đ' chỉ có duy nhất một nút màu xanh lá 'Xác Nhận Thanh Toán'.",
+      "fix": "Thêm nút phụ hoặc liên kết '← Quay lại giỏ hàng' bên cạnh hoặc phía dưới nút 'Xác Nhận Thanh Toán'."
+    },
+    {
+      "heuristic": "H4",
+      "element": "Giá trị trong ô 'Tổng tiền thanh toán (VND):' và các dòng giá khác",
+      "problem": "Định dạng tiền tệ và dấu phân cách hàng nghìn không nhất quán trên cùng một màn hình: ô tổng tiền hiển thị '30000000' không có dấu phẩy phân cách khiến người dùng khó đọc số tiền lớn, trong khi các chỗ khác hiển thị '30,000,000 đ'.",
+      "severity": 2,
+      "evidence": "Dòng sản phẩm ghi 'iPhone 15 Pro Max x 1 — 30,000,000 đ' và dòng cuối ghi 'Tổng thanh toán: 30,000,000 đ', nhưng ô giữa dưới nhãn 'Tổng tiền thanh toán (VND):' lại hiển thị '30000000'.",
+      "fix": "Đồng bộ định dạng hiển thị tiền tệ có dấu phân cách hàng nghìn (ví dụ: '30,000,000 đ' hoặc '30,000,000 VND') ở mọi vị trí."
+    },
+    {
+      "heuristic": "H8",
+      "element": "Mục 'Tổng tiền thanh toán (VND):' và 'Tổng thanh toán: 30,000,000 đ'",
+      "problem": "Thông tin tổng tiền bị lặp lại hai lần trong cùng một khung nhỏ mà không phân biệt rõ đâu là tạm tính (trước mã giảm giá) và đâu là tổng thanh toán cuối cùng.",
+      "severity": 2,
+      "evidence": "Phía trên khung 'Mã Giảm Giá' có mục 'Tổng tiền thanh toán (VND): 30000000', và ngay phía dưới khung 'Mã Giảm Giá' lại có dòng 'Tổng thanh toán: 30,000,000 đ'.",
+      "fix": "Loại bỏ mục tổng tiền trùng lặp hoặc đổi tên rõ ràng thành 'Tạm tính' (trước giảm giá) và 'Tổng thanh toán' (sau giảm giá)."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "page": "cart",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Bảng 'Giỏ Hàng' và cụm nút hành động phía dưới",
+      "problem": "Bố cục bảng 5 cột và các nút bấm không tương thích với màn hình dọc của điện thoại, khiến các tiêu đề cột dính liền nhau và nội dung chữ trong bảng cũng như trên nút bấm bị ép hẹp, ngắt dòng vụn vặt rất khó đọc.",
+      "severity": 3,
+      "evidence": "Ở bảng 'Giỏ Hàng', hai tiêu đề cột 'Số lượng' và 'Thành tiền' dính sát thành 'lượngtiền'; giá '30,000,000 ₫' bị rớt ký hiệu '₫' xuống dòng dưới; ở cuối thẻ, nút '← Mua tiếp' bị ngắt thành 3 dòng ('←', 'Mua', 'tiếp') và nút 'Tiến hành thanh toán' bị ngắt thành 4 dòng ('Tiến', 'hành', 'thanh', 'toán') nằm chật chội cạnh dòng 'Tổng tạm tính: 30,000,000 ₫'.",
+      "fix": "Chuyển bố cục bảng giỏ hàng trên di động sang dạng thẻ (card) cho từng sản phẩm và xếp chồng dọc phần 'Tổng tạm tính' cùng hai nút '← Mua tiếp', 'Tiến hành thanh toán' có độ rộng toàn phần (full-width)."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Cột 'Số lượng' của sản phẩm trong giỏ hàng",
+      "problem": "Người dùng không thể thay đổi số lượng sản phẩm trực tiếp trong giỏ hàng vì số lượng chỉ là văn bản tĩnh, thiếu nút tăng/giảm số lượng.",
+      "severity": 3,
+      "evidence": "Tại dòng sản phẩm 'iPhone 15 Pro Max', dưới cột 'Số lượng' chỉ hiển thị số '1' dạng chữ tĩnh nằm giữa hai mức giá '30,000,000 ₫', và cột 'Thao tác' chỉ có chữ 'Xóa'.",
+      "fix": "Cung cấp nút giảm (-), ô số lượng và nút tăng (+) có kích thước vùng chạm phù hợp trên di động để người dùng chỉnh sửa số lượng dễ dàng."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Thông tin sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Sản phẩm trong giỏ hàng thiếu hình ảnh thu nhỏ và thông tin phân loại chi tiết, khiến người dùng khó nhận diện nhanh sản phẩm đã chọn.",
+      "severity": 2,
+      "evidence": "Cột 'Sản phẩm' ở phía bên trái bảng chỉ hiển thị chữ 'iPhone 15 Pro Max' ngắt làm 3 dòng mà không có ảnh minh họa sản phẩm.",
+      "fix": "Bổ sung ảnh thu nhỏ (thumbnail) và thông số phiên bản của sản phẩm bên cạnh tên sản phẩm."
+    }
+  ]
+}

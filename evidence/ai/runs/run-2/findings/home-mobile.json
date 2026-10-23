@@ -1,0 +1,30 @@
+{
+  "page": "home",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Tiêu đề 'Danh sách sản phẩm' và thanh tìm kiếm",
+      "problem": "Tiêu đề 'Danh sách sản phẩm' và ô tìm kiếm ('Tìm kiếm...', nút 'Tìm') bị đặt chung trên một hàng ngang quá hẹp trên màn hình di động, khiến tiêu đề bị ép ngắt thành 4 dòng ('Danh / sách / sản / phẩm') rất mất cân đối và khó đọc.",
+      "severity": 3,
+      "evidence": "Phía dưới thanh header màu xanh, bên trái là chữ 'Danh / sách / sản / phẩm' bị ngắt làm 4 dòng xếp dọc, bên phải là ô 'Tìm kiếm...' và nút 'Tìm'.",
+      "fix": "Xếp tiêu đề 'Danh sách sản phẩm' nằm trên một dòng riêng toàn chiều ngang, và đặt thanh tìm kiếm cùng nút 'Tìm' ở dòng kế tiếp bên dưới."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Hình ảnh sản phẩm trên cả 5 thẻ sản phẩm",
+      "problem": "Các thẻ sản phẩm chỉ hiển thị khung chữ nhật màu xám với tên chữ thay vì hình ảnh thực tế của sản phẩm.",
+      "severity": 2,
+      "evidence": "Tất cả 5 thẻ sản phẩm đều hiển thị khung nền xám chứa chữ 'iPhone 15', 'Samsung S24', 'Macbook Pro', 'AirPods Pro', 'Keychron Q1'.",
+      "fix": "Thay thế khung giữ chỗ màu xám bằng hình ảnh thực tế của từng sản phẩm."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết 'Giỏ hàng' trên thanh điều hướng",
+      "problem": "Liên kết 'Giỏ hàng' không hiển thị số lượng sản phẩm hiện có và thanh điều hướng không đánh dấu trang hiện tại.",
+      "severity": 2,
+      "evidence": "Trên thanh header màu xanh phía trên, chữ 'Giỏ hàng' chỉ hiển thị dạng văn bản thường mà không có số đếm số lượng sản phẩm.",
+      "fix": "Hiển thị số lượng sản phẩm bên cạnh mục 'Giỏ hàng' và làm nổi bật trang đang mở trên thanh điều hướng."
+    }
+  ]
+}

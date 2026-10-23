@@ -1,0 +1,30 @@
+{
+  "page": "login",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H4",
+      "element": "Tiêu đề biểu mẫu 'Đăng Ký'",
+      "problem": "Trang đăng nhập nhưng tiêu đề chính của biểu mẫu lại ghi là 'Đăng Ký', mâu thuẫn trực tiếp với mục đang chọn trên thanh điều hướng ('Đăng nhập'), nút gửi ('Sign In') và dòng hướng dẫn tạo tài khoản ở cuối thẻ, gây nhầm lẫn nghiêm trọng cho người dùng.",
+      "severity": 4,
+      "evidence": "Ở chính giữa khung biểu mẫu, tiêu đề in đậm cỡ lớn ghi là 'Đăng Ký', trong khi trên thanh điều hướng phía trên chữ 'Đăng nhập' đang được gạch chân, nút bấm chính ghi 'Sign In' và dòng chữ dưới cùng ghi 'Chưa có tài khoản? Đăng ký ngay'.",
+      "fix": "Đổi tiêu đề biểu mẫu từ 'Đăng Ký' thành 'Đăng Nhập' để khớp với chức năng đăng nhập của trang."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Nhãn trường 'Username' và nút 'Sign In'",
+      "problem": "Giao diện trộn lẫn tiếng Anh và tiếng Việt không nhất quán ngay trong cùng một biểu mẫu đăng nhập.",
+      "severity": 2,
+      "evidence": "Trường đầu tiên dùng nhãn tiếng Anh 'Username' và nút bấm chính dùng tiếng Anh 'Sign In', trong khi trường thứ hai ghi 'Mật khẩu' và các liên kết ghi 'Quên mật khẩu?', 'Chưa có tài khoản? Đăng ký ngay' bằng tiếng Việt.",
+      "fix": "Việt hóa đồng bộ toàn bộ nhãn và nút bấm trên biểu mẫu: đổi 'Username' thành 'Tên đăng nhập' và 'Sign In' thành 'Đăng nhập'."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập 'Mật khẩu'",
+      "problem": "Ô nhập mật khẩu hoàn toàn trống, không có nút biểu tượng ẩn/hiện mật khẩu để người dùng kiểm tra lại ký tự vừa nhập trước khi bấm đăng nhập.",
+      "severity": 2,
+      "evidence": "Khung nhập liệu ngay dưới nhãn 'Mật khẩu' là một ô chữ nhật trắng trơn, không có nút hoặc biểu tượng con mắt ở góc phải để xem mật khẩu.",
+      "fix": "Thêm nút biểu tượng ẩn/hiện mật khẩu bên phải ô nhập 'Mật khẩu' giúp người dùng tránh nhập sai."
+    }
+  ]
+}

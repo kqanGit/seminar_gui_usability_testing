@@ -1,23 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "HeuristicFinding",
+  "title": "HeuristicFindingsForOneScreenshot",
   "type": "object",
   "required": ["page", "viewport", "findings"],
+  "additionalProperties": false,
   "properties": {
-    "page": { "type": "string" },
-    "viewport": { "type": "string" },
+    "page": { "type": "string", "minLength": 1 },
+    "viewport": { "type": "string", "minLength": 1 },
     "findings": {
       "type": "array",
+      "maxItems": 5,
       "items": {
         "type": "object",
         "required": ["heuristic", "element", "problem", "severity", "evidence", "fix"],
+        "additionalProperties": false,
         "properties": {
-          "heuristic": { "type": "string", "enum": ["H1","H2","H3","H4","H5","H6","H7","H8","H9","H10"] },
-          "element": { "type": "string" },
-          "problem": { "type": "string" },
+          "heuristic": { "type": "string", "enum": ["H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9", "H10"] },
+          "element": { "type": "string", "minLength": 1 },
+          "problem": { "type": "string", "minLength": 1 },
           "severity": { "type": "integer", "minimum": 0, "maximum": 4 },
-          "evidence": { "type": "string", "description": "Vị trí nhìn thấy trên ảnh" },
-          "fix": { "type": "string" }
+          "evidence": { "type": "string", "minLength": 1, "description": "Where in the screenshot" },
+          "fix": { "type": "string", "minLength": 1 }
         }
       }
     }

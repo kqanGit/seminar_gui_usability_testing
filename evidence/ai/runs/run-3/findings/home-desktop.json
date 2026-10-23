@@ -1,0 +1,30 @@
+{
+  "page": "home",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H2",
+      "element": "Hình ảnh đại diện của 5 thẻ sản phẩm",
+      "problem": "Tất cả sản phẩm chỉ hiển thị khung màu xám chứa chữ viết tắt thay vì hình ảnh thực tế của sản phẩm, đồng thời tên chữ trong khung xám không khớp đầy đủ với tên sản phẩm bên dưới.",
+      "severity": 2,
+      "evidence": "Trong danh sách sản phẩm, các khung ảnh đều là hình chữ nhật màu xám ghi chữ 'iPhone 15' (cho 'iPhone 15 Pro Max'), 'Samsung S24' (cho 'Samsung Galaxy S24 Ultra'), 'Macbook Pro' (cho 'MacBook Pro M3'), 'AirPods Pro' (cho 'Tai nghe AirPods Pro 2') và 'Keychron Q1' (cho 'Bàn phím cơ Keychron Q1').",
+      "fix": "Thay thế các khung xám placeholder bằng ảnh chụp thực tế, rõ nét của từng sản phẩm tương ứng."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Khu vực phía trên 'Danh sách sản phẩm'",
+      "problem": "Trang danh sách sản phẩm bao gồm nhiều loại thiết bị khác nhau (điện thoại, laptop, tai nghe, bàn phím) nhưng chỉ có ô tìm kiếm từ khóa mà không có bộ lọc theo danh mục hay công cụ sắp xếp theo giá.",
+      "severity": 2,
+      "evidence": "Phía trên lưới 5 sản phẩm chỉ có tiêu đề 'Danh sách sản phẩm', ô nhập 'Tìm kiếm...' và nút 'Tìm', hoàn toàn không có thanh lọc danh mục hoặc menu sắp xếp giá.",
+      "fix": "Bổ sung bộ lọc theo danh mục sản phẩm (Điện thoại, Laptop, Phụ kiện) và tùy chọn sắp xếp theo giá (tăng dần, giảm dần)."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Thanh điều hướng phía trên ('EShop', 'Giỏ hàng', 'Đăng nhập', 'Đăng ký')",
+      "problem": "Thanh điều hướng không có mục 'Trang chủ/Sản phẩm' được đánh dấu đang hoạt động và mục 'Giỏ hàng' không hiển thị số lượng sản phẩm hiện có trong giỏ.",
+      "severity": 1,
+      "evidence": "Trên thanh header màu xanh dương, cả ba liên kết 'Giỏ hàng', 'Đăng nhập', 'Đăng ký' đều hiển thị cùng một kiểu chữ trắng không gạch chân và chữ 'Giỏ hàng' không kèm theo con số báo số lượng.",
+      "fix": "Hiển thị trạng thái trang hiện tại trên thanh điều hướng và thêm số đếm sản phẩm cạnh mục 'Giỏ hàng' (ví dụ: 'Giỏ hàng (0)')."
+    }
+  ]
+}

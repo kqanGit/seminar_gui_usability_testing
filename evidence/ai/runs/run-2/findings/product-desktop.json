@@ -1,0 +1,30 @@
+{
+  "page": "product",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khung chi tiết sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Trang chi tiết sản phẩm không có nút 'Quay lại' hoặc thanh điều hướng phân cấp (breadcrumb) để người dùng dễ dàng quay về danh sách sản phẩm.",
+      "severity": 3,
+      "evidence": "Trong và ngoài khung chi tiết sản phẩm 'iPhone 15 Pro Max' chỉ có duy nhất nút 'Thêm vào giỏ hàng', không có liên kết hay nút quay lại danh sách sản phẩm.",
+      "fix": "Thêm đường dẫn breadcrumb (ví dụ: 'Trang chủ > iPhone 15 Pro Max') hoặc nút '← Quay lại danh sách sản phẩm' ở phía trên khung chi tiết."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Khung hình ảnh sản phẩm 'iPhone 15'",
+      "problem": "Khu vực ảnh sản phẩm chỉ hiển thị một hình vuông màu xám với dòng chữ 'iPhone 15' thay vì hình ảnh thực tế của sản phẩm, hơn nữa tên chữ trong khung ảnh ('iPhone 15') còn không khớp hoàn toàn với tên sản phẩm ('iPhone 15 Pro Max').",
+      "severity": 2,
+      "evidence": "Bên trái khung chi tiết là hình vuông lớn nền xám có chữ 'iPhone 15', bên phải là tiêu đề 'iPhone 15 Pro Max'.",
+      "fix": "Hiển thị hình ảnh chụp thực tế của sản phẩm 'iPhone 15 Pro Max'."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Khu vực thông tin sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Thông tin mô tả sản phẩm quá sơ sài (chỉ có một câu ngắn 'Điện thoại cao cấp của Apple') và không hiển thị các thông số quan trọng như dung lượng, màu sắc hay tình trạng còn hàng.",
+      "severity": 2,
+      "evidence": "Dưới giá '30,000,000 đ' chỉ có một dòng chữ nhỏ 'Điện thoại cao cấp của Apple' và khoảng trống lớn trước mục 'Số lượng: 1'.",
+      "fix": "Bổ sung thông tin chi tiết về thông số kỹ thuật, tình trạng tồn kho và các tùy chọn phiên bản sản phẩm."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "page": "cart",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Cột 'Số lượng' trong bảng giỏ hàng",
+      "problem": "Số lượng sản phẩm chỉ hiển thị dạng văn bản tĩnh ('1'), không có nút tăng/giảm hoặc ô nhập liệu để người dùng điều chỉnh số lượng trực tiếp trong giỏ hàng.",
+      "severity": 3,
+      "evidence": "Trong bảng 'Giỏ Hàng', tại dòng sản phẩm 'iPhone 15 Pro Max', dưới cột 'Số lượng' chỉ hiển thị chữ số '1' thuần túy.",
+      "fix": "Thay số tĩnh bằng bộ điều khiển tăng/giảm số lượng (nút '-' / '+' kèm ô nhập số) để người dùng dễ dàng thay đổi số lượng sản phẩm."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết 'Giỏ hàng' trên thanh điều hướng",
+      "problem": "Liên kết 'Giỏ hàng' trên thanh điều hướng phía trên không hiển thị số lượng sản phẩm hiện có trong giỏ dù giỏ hàng đang chứa 1 sản phẩm.",
+      "severity": 2,
+      "evidence": "Góc trên bên phải thanh header màu xanh hiển thị chữ 'Giỏ hàng' được gạch chân nhưng không có huy hiệu (badge) hoặc con số đi kèm, trong khi bảng bên dưới có 'iPhone 15 Pro Max' với số lượng '1'.",
+      "fix": "Hiển thị thêm số lượng mặt hàng bên cạnh hoặc trên liên kết 'Giỏ hàng' (ví dụ: 'Giỏ hàng (1)')."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Hành động 'Xóa' trong cột 'Thao tác'",
+      "problem": "Nút xóa sản phẩm chỉ là một chữ 'Xóa' nhỏ màu đỏ nằm sát dòng dữ liệu mà không có khung nút rõ ràng hay cảnh báo/phân tách trực quan, dễ dẫn đến thao tác bấm nhầm.",
+      "severity": 2,
+      "evidence": "Ở cột ngoài cùng bên phải 'Thao tác' của dòng 'iPhone 15 Pro Max', hành động xóa chỉ là chữ 'Xóa' màu đỏ không có viền nút hay biểu tượng thùng rác.",
+      "fix": "Thiết kế lại nút 'Xóa' có vùng bấm rõ ràng (kèm biểu tượng thùng rác) và thêm bước xác nhận hoặc tùy chọn hoàn tác sau khi xóa."
+    }
+  ]
+}

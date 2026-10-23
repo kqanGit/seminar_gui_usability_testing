@@ -1,0 +1,30 @@
+{
+  "page": "login",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H4",
+      "element": "Tiêu đề biểu mẫu 'Đăng Ký'",
+      "problem": "Biểu mẫu đăng nhập lại hiển thị tiêu đề là 'Đăng Ký', trái ngược hoàn toàn với mục 'Đăng nhập' đang được gạch chân trên thanh điều hướng, nút 'Sign In' và dòng 'Chưa có tài khoản? Đăng ký ngay' bên dưới.",
+      "severity": 4,
+      "evidence": "Đầu khung biểu mẫu hiển thị tiêu đề in đậm 'Đăng Ký', trong khi thanh điều hướng gạch chân chữ 'Đăng nhập', nút hành động ghi 'Sign In' và dòng cuối ghi 'Chưa có tài khoản? Đăng ký ngay'.",
+      "fix": "Đổi tiêu đề biểu mẫu từ 'Đăng Ký' thành 'Đăng Nhập'."
+    },
+    {
+      "heuristic": "H4",
+      "element": "Nhãn 'Username' và nút 'Sign In'",
+      "problem": "Giao diện sử dụng lẫn lộn tiếng Anh ('Username', 'Sign In') và tiếng Việt ('Mật khẩu', 'Quên mật khẩu?', 'Chưa có tài khoản? Đăng ký ngay') trên cùng một màn hình.",
+      "severity": 2,
+      "evidence": "Nhãn ô đầu tiên là 'Username' và nút xanh dương ghi 'Sign In', trong khi nhãn ô thứ hai là 'Mật khẩu' và các liên kết xung quanh đều bằng tiếng Việt.",
+      "fix": "Việt hóa đồng bộ các thành phần trong biểu mẫu: đổi 'Username' thành 'Tên đăng nhập' và 'Sign In' thành 'Đăng nhập'."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Ô nhập 'Mật khẩu'",
+      "problem": "Ô nhập mật khẩu thiếu chức năng ẩn/hiện mật khẩu, khiến người dùng trên thiết bị di động dễ nhập sai mà không thể kiểm tra lại.",
+      "severity": 2,
+      "evidence": "Ô nhập dưới nhãn 'Mật khẩu' chỉ là khung trắng trống, không có biểu tượng con mắt hay nút bật/tắt hiển thị mật khẩu.",
+      "fix": "Bổ sung nút ẩn/hiện mật khẩu ở bên phải bên trong ô nhập 'Mật khẩu'."
+    }
+  ]
+}

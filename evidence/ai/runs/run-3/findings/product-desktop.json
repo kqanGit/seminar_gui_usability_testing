@@ -1,0 +1,38 @@
+{
+  "page": "product",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khu vực điều hướng quanh thẻ chi tiết sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Trang chi tiết sản phẩm không có nút 'Quay lại' hay thanh điều hướng phân cấp (breadcrumb) để người dùng dễ dàng quay về trang danh sách sản phẩm.",
+      "severity": 2,
+      "evidence": "Toàn bộ vùng nội dung chỉ có khung trắng chứa 'iPhone 15 Pro Max' và thanh header phía trên chỉ có 'EShop', 'Giỏ hàng', 'Đăng nhập', 'Đăng ký', không có liên kết '← Quay lại danh sách sản phẩm' hay breadcrumb.",
+      "fix": "Thêm thanh breadcrumb (ví dụ: 'Trang chủ > Điện thoại > iPhone 15 Pro Max') hoặc nút '← Quay lại danh sách' ở phía trên thẻ sản phẩm."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Khung ảnh xám 'iPhone 15' và dòng mô tả 'Điện thoại cao cấp của Apple'",
+      "problem": "Trang chi tiết sản phẩm thiếu hình ảnh thực tế và thông tin thiết yếu (thông số kỹ thuật, màu sắc, dung lượng lưu trữ, tình trạng còn hàng) để người dùng ra quyết định mua hàng.",
+      "severity": 2,
+      "evidence": "Bên trái thẻ sản phẩm chỉ là khung hình vuông màu xám ghi chữ 'iPhone 15' (không khớp hoàn toàn với tên 'iPhone 15 Pro Max'), bên phải dưới giá '30,000,000 ₫' chỉ có duy nhất một dòng chữ 'Điện thoại cao cấp của Apple'.",
+      "fix": "Hiển thị ảnh chụp thực tế của sản phẩm và bổ sung đầy đủ thông số kỹ thuật, tùy chọn dung lượng/màu sắc cũng như trạng thái tồn kho."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Trường nhập 'Số lượng: 1'",
+      "problem": "Ô nhập số lượng không hiển thị nút cộng/trừ (+/-) trực quan và không cho biết giới hạn số lượng tồn kho tối đa có thể đặt mua.",
+      "severity": 1,
+      "evidence": "Cạnh nhãn 'Số lượng:' là một ô vuông trắng chỉ hiển thị số '1', không có nút tăng/giảm rõ ràng hay thông tin số lượng hàng còn lại.",
+      "fix": "Bổ sung nút giảm (-) và tăng (+) hai bên ô số lượng, đồng thời hiển thị số lượng sản phẩm còn trong kho."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Mục 'Giỏ hàng' trên thanh điều hướng",
+      "problem": "Liên kết 'Giỏ hàng' trên thanh điều hướng không hiển thị số lượng sản phẩm hiện có trong giỏ.",
+      "severity": 1,
+      "evidence": "Ở góc trên bên phải, liên kết chỉ hiển thị chữ 'Giỏ hàng' thuần túy, không có huy hiệu số lượng sản phẩm.",
+      "fix": "Hiển thị số lượng sản phẩm hiện có bên cạnh chữ 'Giỏ hàng' (ví dụ: 'Giỏ hàng (0)')."
+    }
+  ]
+}

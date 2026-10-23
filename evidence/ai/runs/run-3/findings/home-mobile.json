@@ -1,0 +1,38 @@
+{
+  "page": "home",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Tiêu đề 'Danh sách sản phẩm' và cụm ô 'Tìm kiếm...'",
+      "problem": "Tiêu đề trang và thanh tìm kiếm bị ép nằm trên cùng một hàng ngang trên màn hình hẹp của điện thoại, khiến tiêu đề 'Danh sách sản phẩm' bị bóp nghẹt và ngắt thành 4 dòng dọc rất mất thẩm mỹ và khó đọc.",
+      "severity": 3,
+      "evidence": "Ở ngay dưới thanh header màu xanh, tiêu đề bên trái bị ngắt mỗi từ một dòng ('Danh', 'sách', 'sản', 'phẩm') nằm chật chội bên cạnh ô nhập 'Tìm kiếm...' và nút 'Tìm' ở bên phải.",
+      "fix": "Xếp chồng dọc trên giao diện di động: đặt tiêu đề 'Danh sách sản phẩm' trên một dòng riêng, bên dưới là ô 'Tìm kiếm...' và nút 'Tìm' chiếm toàn bộ chiều ngang."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Hình ảnh đại diện của các sản phẩm trong danh sách",
+      "problem": "Khung ảnh sản phẩm chỉ hiển thị hộp màu xám chứa chữ viết tắt thay vì hình ảnh thực tế của sản phẩm.",
+      "severity": 2,
+      "evidence": "Tất cả 5 thẻ sản phẩm đều hiển thị hình chữ nhật xám có chữ 'iPhone 15', 'Samsung S24', 'Macbook Pro', 'AirPods Pro', 'Keychron Q1' thay vì hình chụp sản phẩm thật.",
+      "fix": "Hiển thị ảnh chụp thực tế của từng sản phẩm và đảm bảo tên hiển thị đồng nhất."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Khu vực điều khiển phía trên danh sách sản phẩm",
+      "problem": "Thiếu công cụ lọc theo danh mục và sắp xếp theo giá để người dùng di động tìm nhanh sản phẩm mà không phải cuộn trang dài qua nhiều loại thiết bị khác nhau.",
+      "severity": 2,
+      "evidence": "Đầu trang chỉ có ô 'Tìm kiếm...' và nút 'Tìm', người dùng phải cuộn dọc qua cả điện thoại ('iPhone 15 Pro Max'), laptop ('MacBook Pro M3'), tai nghe ('Tai nghe AirPods Pro 2') và bàn phím ('Bàn phím cơ Keychron Q1').",
+      "fix": "Thêm nút lọc danh mục và menu sắp xếp giá ngay dưới thanh tìm kiếm."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Thanh điều hướng phía trên ('EShop', 'Giỏ hàng', 'Đăng nhập', 'Đăng ký')",
+      "problem": "Thanh điều hướng không chỉ báo người dùng đang ở trang chủ/danh sách sản phẩm và mục 'Giỏ hàng' không hiển thị số lượng mặt hàng hiện có.",
+      "severity": 1,
+      "evidence": "Trên thanh màu xanh đầu trang, các chữ 'Giỏ hàng', 'Đăng nhập', 'Đăng ký' không có trạng thái đánh dấu trang hiện tại và chữ 'Giỏ hàng' không có số đếm đi kèm.",
+      "fix": "Đánh dấu rõ trang hiện tại trên thanh điều hướng và hiển thị số lượng sản phẩm cạnh mục 'Giỏ hàng'."
+    }
+  ]
+}

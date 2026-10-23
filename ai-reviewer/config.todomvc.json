@@ -1,0 +1,11 @@
+{
+  "siteName": "TodoMVC (Playwright demo)",
+  "baseUrl": "https://demo.playwright.dev/todomvc/#",
+  "viewports": [
+    { "name": "desktop", "width": 1440, "height": 900 }
+  ],
+  "pages": [
+    { "name": "todomvc", "path": "/", "setup": "seedTodoItems" }
+  ],
+  "outDir": "out/todomvc"
+}

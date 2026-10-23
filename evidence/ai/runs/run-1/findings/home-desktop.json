@@ -1,0 +1,30 @@
+{
+  "page": "home",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H6",
+      "element": "Hình ảnh và thông tin trên các thẻ sản phẩm",
+      "problem": "Các thẻ sản phẩm chỉ hiển thị khung màu xám với tên rút gọn thay vì hình ảnh thực tế và thông số cơ bản, buộc người dùng phải bấm vào từng mục mới nhận diện được sản phẩm.",
+      "severity": 2,
+      "evidence": "Cả 5 thẻ sản phẩm ('iPhone 15 Pro Max', 'Samsung Galaxy S24 Ultra', 'MacBook Pro M3', 'Tai nghe AirPods Pro 2', 'Bàn phím cơ Keychron Q1') đều chỉ có khung xám ghi chữ 'iPhone 15', 'Samsung S24', 'Macbook Pro', 'AirPods Pro', 'Keychron Q1'.",
+      "fix": "Hiển thị ảnh chụp thực tế của từng sản phẩm kèm theo các thông tin tóm tắt quan trọng (như dung lượng, màu sắc, kết nối)."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Khu vực phía trên Danh sách sản phẩm",
+      "problem": "Trang danh sách sản phẩm thuộc nhiều nhóm thiết bị khác nhau nhưng chỉ có ô tìm kiếm từ khóa, thiếu bộ lọc danh mục và công cụ sắp xếp theo giá.",
+      "severity": 2,
+      "evidence": "Phía trên lưới sản phẩm chỉ có tiêu đề 'Danh sách sản phẩm', ô 'Tìm kiếm...' và nút 'Tìm', không có bộ lọc danh mục hay menu sắp xếp.",
+      "fix": "Bổ sung thanh lọc theo danh mục (Điện thoại, Laptop, Phụ kiện) và tùy chọn sắp xếp theo giá (thấp đến cao, cao đến thấp)."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Thanh điều hướng phía trên",
+      "problem": "Thanh điều hướng không làm nổi bật vị trí trang hiện tại và mục giỏ hàng không hiển thị số lượng sản phẩm đang có.",
+      "severity": 2,
+      "evidence": "Trên thanh header màu xanh chỉ có chữ 'EShop' bên trái và các liên kết 'Giỏ hàng', 'Đăng nhập', 'Đăng ký' bên phải mà không có dấu hiệu trang đang mở hay số đếm giỏ hàng.",
+      "fix": "Thêm số lượng sản phẩm bên cạnh 'Giỏ hàng' (ví dụ: 'Giỏ hàng (0)') và bổ sung chỉ báo vị trí trang hiện tại trên thanh điều hướng."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "finding_id": "todomvc:todomvc-desktop#1",
+    "run": "todomvc",
+    "page": "todomvc",
+    "viewport": "desktop",
+    "shot": "shots/todomvc-desktop.png",
+    "heuristic": "H3",
+    "element": "Danh sách các mục công việc (\"Kiểm thử giao diện với Playwright\", \"Đánh giá 10 heuristic của Nielsen\")",
+    "problem": "Các mục công việc không hiển thị nút xóa hoặc tùy chọn chỉnh sửa trực tiếp trên từng dòng, khiến người dùng không có cách rõ ràng để xóa mục nhập nhầm hoặc sửa nội dung ngay lập tức.",
+    "severity": 3,
+    "evidence": "Hai dòng công việc \"Kiểm thử giao diện với Playwright\" và \"Đánh giá 10 heuristic của Nielsen\" ở giữa thẻ trắng chỉ có vòng tròn đánh dấu bên trái và văn bản, hoàn toàn trống ở phía bên phải.",
+    "fix": "Hiển thị rõ biểu tượng hoặc nút \"Sửa\" và \"Xóa\" ở bên phải mỗi dòng công việc thay vì ẩn hoàn toàn."
+  },
+  {
+    "finding_id": "todomvc:todomvc-desktop#2",
+    "run": "todomvc",
+    "page": "todomvc",
+    "viewport": "desktop",
+    "shot": "shots/todomvc-desktop.png",
+    "heuristic": "H6",
+    "element": "Ô nhập liệu \"What needs to be done?\" và dòng hướng dẫn \"Double-click to edit a todo\"",
+    "problem": "Giao diện buộc người dùng phải tự nhớ thao tác phím hoặc tìm đọc dòng chữ rất nhỏ ở xa vùng làm việc để biết cách thêm và sửa công việc, thay vì hiển thị trực quan các điều khiển tương tác.",
+    "severity": 2,
+    "evidence": "Ô nhập \"What needs to be done?\" không có nút \"Thêm\" hay gợi ý nhấn Enter; hướng dẫn \"Double-click to edit a todo\" nằm tách biệt ở phần chân trang bằng chữ xám rất nhỏ bên dưới thẻ danh sách.",
+    "fix": "Bổ sung nút \"Thêm\" (hoặc gợi ý \"Nhấn Enter để thêm\") ngay cạnh ô nhập liệu và đặt biểu tượng chỉnh sửa trực tiếp trên từng mục công việc."
+  },
+  {
+    "finding_id": "todomvc:todomvc-desktop#3",
+    "run": "todomvc",
+    "page": "todomvc",
+    "viewport": "desktop",
+    "shot": "shots/todomvc-desktop.png",
+    "heuristic": "H8",
+    "element": "Tiêu đề \"todos\", chữ gợi ý \"What needs to be done?\", các vòng tròn checkbox và chữ chân trang \"Double-click to edit a todo\"",
+    "problem": "Độ tương phản màu sắc giữa văn bản/biểu tượng và nền quá thấp, làm giảm khả năng đọc và khiến các thành phần tương tác trông như đang bị vô hiệu hóa.",
+    "severity": 2,
+    "evidence": "Tiêu đề \"todos\" màu hồng nhạt trên nền xám nhạt, chữ \"What needs to be done?\" và biểu tượng mũi tên \"⌄\" màu xám rất mờ trên nền trắng, cùng ba dòng chữ chân trang \"Double-click to edit a todo\", \"Created by Remo H. Jansen\", \"Part of TodoMVC\" rất khó đọc.",
+    "fix": "Tăng độ đậm và độ tương phản màu sắc cho tiêu đề, văn bản gợi ý, viền checkbox và chữ hướng dẫn đạt chuẩn tương phản tối thiểu WCAG AA (tối thiểu 4.5:1 cho văn bản)."
+  },
+  {
+    "finding_id": "todomvc:todomvc-desktop#4",
+    "run": "todomvc",
+    "page": "todomvc",
+    "viewport": "desktop",
+    "shot": "shots/todomvc-desktop.png",
+    "heuristic": "H4",
+    "element": "Biểu tượng mũi tên xuống \"⌄\" bên trái ô nhập \"What needs to be done?\"",
+    "problem": "Biểu tượng mũi tên chỉ xuống đặt ngay trong ô nhập liệu dễ gây hiểu nhầm là nút mở danh sách thả xuống (dropdown) của ô nhập thay vì chức năng đánh dấu hoàn thành tất cả công việc, và không có nhãn giải thích.",
+    "severity": 2,
+    "evidence": "Biểu tượng \"⌄\" màu xám mờ nằm sát lề trái bên trong hàng nhập liệu \"What needs to be done?\", không có chữ hay chú thích đi kèm.",
+    "fix": "Thay bằng ô đánh dấu (checkbox) kèm nhãn rõ ràng như \"Chọn tất cả\" và tách khỏi vùng ô nhập công việc mới."
+  }
+]

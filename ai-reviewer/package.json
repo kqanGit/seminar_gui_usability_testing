@@ -1,0 +1,17 @@
+{
+  "name": "nielsen-heuristic-reviewer",
+  "version": "2.0.0",
+  "description": "Agent-run Nielsen heuristic review: Playwright capture, reviewer subagent, schema validation, AI labeling, human-vs-AI metrics",
+  "type": "module",
+  "scripts": {
+    "capture": "node src/capture.js",
+    "validate": "node src/validate.js",
+    "report": "node src/report.js",
+    "labels:prepare": "node src/labels.js prepare",
+    "labels:merge": "node src/labels.js merge",
+    "compare": "node src/compare.js"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}

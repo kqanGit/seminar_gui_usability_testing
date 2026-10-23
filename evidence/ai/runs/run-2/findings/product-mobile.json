@@ -1,0 +1,30 @@
+{
+  "page": "product",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khung chi tiết sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Trang chi tiết sản phẩm thiếu nút 'Quay lại' hoặc đường dẫn breadcrumb để người dùng quay về trang danh sách sản phẩm.",
+      "severity": 3,
+      "evidence": "Toàn bộ thẻ sản phẩm chỉ có nút 'Thêm vào giỏ hàng' ở cuối, không có liên kết hay nút điều hướng quay lại danh sách.",
+      "fix": "Bổ sung nút '← Quay lại' hoặc thanh breadcrumb ở đầu khung thông tin sản phẩm."
+    },
+    {
+      "heuristic": "H2",
+      "element": "Khung hình ảnh sản phẩm 'iPhone 15'",
+      "problem": "Hình ảnh sản phẩm chỉ là khung giữ chỗ màu xám có chữ 'iPhone 15' thay vì ảnh thực tế của 'iPhone 15 Pro Max'.",
+      "severity": 2,
+      "evidence": "Phía trên tiêu đề 'iPhone 15 Pro Max' là một hình vuông màu xám chỉ chứa chữ 'iPhone 15'.",
+      "fix": "Hiển thị ảnh thực tế của sản phẩm 'iPhone 15 Pro Max'."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Ô nhập 'Số lượng:'",
+      "problem": "Ô chọn số lượng trên giao diện di động chỉ là một ô nhập văn bản đơn thuần chứa số '1', không có nút '-' và '+' hiển thị trực tiếp để người dùng chạm tăng/giảm nhanh mà không cần mở bàn phím ảo.",
+      "severity": 2,
+      "evidence": "Bên cạnh nhãn 'Số lượng:' là một ô vuông viền xám chứa số '1' mà không có nút cộng/trừ đi kèm.",
+      "fix": "Thêm hai nút bấm '-' và '+' kích thước lớn ở hai bên ô nhập số lượng để thuận tiện thao tác chạm trên di động."
+    }
+  ]
+}

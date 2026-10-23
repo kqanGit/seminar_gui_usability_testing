@@ -1,0 +1,38 @@
+{
+  "page": "product",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khu vực điều hướng quanh thẻ chi tiết sản phẩm",
+      "problem": "Trang chi tiết sản phẩm không có thanh điều hướng phân cấp (breadcrumb) hoặc nút quay lại danh sách sản phẩm, khiến người dùng thiếu lối thoát rõ ràng trên giao diện.",
+      "severity": 3,
+      "evidence": "Toàn bộ phần nội dung chính chỉ có khung sản phẩm 'iPhone 15 Pro Max' và nút 'Thêm vào giỏ hàng', không có nút '← Quay lại' hay đường dẫn 'Trang chủ > Điện thoại > iPhone 15 Pro Max'.",
+      "fix": "Bổ sung thanh breadcrumb hoặc nút '← Quay lại danh sách sản phẩm' ở phía trên khung thông tin sản phẩm."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Khung ảnh và mô tả của iPhone 15 Pro Max",
+      "problem": "Trang chi tiết sản phẩm thiếu hình ảnh thực tế và các thông tin thiết yếu như thông số kỹ thuật, màu sắc, dung lượng bộ nhớ và tình trạng tồn kho để hỗ trợ người dùng ra quyết định.",
+      "severity": 2,
+      "evidence": "Bên trái chỉ là khung xám ghi chữ 'iPhone 15', bên phải dưới giá '30,000,000 ₫' chỉ có duy nhất một câu mô tả ngắn 'Điện thoại cao cấp của Apple'.",
+      "fix": "Cung cấp hình ảnh thực tế của sản phẩm, bảng thông số kỹ thuật, tùy chọn phiên bản (dung lượng, màu sắc) và trạng thái còn hàng."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Ô nhập Số lượng",
+      "problem": "Trường chọn số lượng chỉ là một ô nhập đơn giản không có nút cộng/trừ hiển thị trực quan để người dùng điều chỉnh nhanh bằng chuột.",
+      "severity": 2,
+      "evidence": "Cạnh nhãn 'Số lượng:' chỉ có một khung trắng chứa số '1', không có hai nút '-' và '+' ở hai bên.",
+      "fix": "Thêm nút giảm '-' và tăng '+' ở hai bên ô nhập 'Số lượng:'."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết Giỏ hàng trên thanh điều hướng",
+      "problem": "Mục giỏ hàng trên thanh điều hướng không hiển thị số lượng sản phẩm hiện có trong giỏ.",
+      "severity": 2,
+      "evidence": "Ở góc trên bên phải thanh điều hướng màu xanh, chữ 'Giỏ hàng' chỉ hiển thị dạng văn bản thường mà không có số đếm sản phẩm.",
+      "fix": "Thêm badge hiển thị số lượng sản phẩm hiện có bên cạnh mục 'Giỏ hàng'."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "page": "checkout",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H5",
+      "element": "Trường 'Tổng tiền thanh toán (VND):'",
+      "problem": "Tổng số tiền thanh toán được hiển thị bên trong một ô nhập liệu (input box) giống như trường có thể chỉnh sửa thay vì văn bản cố định, dễ khiến người dùng hiểu nhầm hoặc vô tình làm sai lệch số tiền thanh toán.",
+      "severity": 4,
+      "evidence": "Ngay dưới nhãn 'Tổng tiền thanh toán (VND):' là một khung nhập liệu viền xám nền trắng chứa con số màu đỏ '30000000' có hình thức giống hệt ô nhập 'NHẬP MÃ GIẢM GIÁ...' phía dưới.",
+      "fix": "Hiển thị tổng tiền dưới dạng văn bản tĩnh chỉ đọc (read-only text), tuyệt đối không đặt trong ô input."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Khung nội dung 'Xác Nhận Đơn Hàng'",
+      "problem": "Trang xác nhận đơn hàng thiếu hoàn toàn thông tin địa chỉ giao hàng, người nhận và phương thức thanh toán trước khi người dùng bấm nút chốt đơn cuối cùng.",
+      "severity": 3,
+      "evidence": "Trong thẻ 'Xác Nhận Đơn Hàng', nội dung chỉ gồm mục 'Sản phẩm: • iPhone 15 Pro Max x 1 — 30,000,000 ₫', 'Tổng tiền thanh toán (VND): 30000000', khung 'Mã Giảm Giá', dòng 'Tổng thanh toán: 30,000,000 ₫' và nút 'Xác Nhận Thanh Toán', không có bất kỳ thông tin giao nhận hay thanh toán nào.",
+      "fix": "Hiển thị rõ thông tin người nhận, địa chỉ giao hàng, số điện thoại và phương thức thanh toán đã chọn để người dùng kiểm tra trước khi xác nhận."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Khu vực nút điều hướng trong thẻ 'Xác Nhận Đơn Hàng'",
+      "problem": "Trang xác nhận đơn hàng không có nút 'Quay lại giỏ hàng' hoặc 'Hủy' để người dùng dễ dàng thoát hoặc quay lại chỉnh sửa sản phẩm trước khi thanh toán.",
+      "severity": 3,
+      "evidence": "Ở cuối khung 'Xác Nhận Đơn Hàng' chỉ có duy nhất một nút màu xanh lá 'Xác Nhận Thanh Toán' chiếm toàn bộ chiều ngang, không có nút quay lại hay hủy bỏ.",
+      "fix": "Bổ sung nút phụ hoặc liên kết '← Quay lại giỏ hàng' bên cạnh hoặc phía dưới nút 'Xác Nhận Thanh Toán'."
+    },
+    {
+      "heuristic": "H4",
+      "element": "Giá trị số tiền '30000000' trong ô 'Tổng tiền thanh toán (VND):'",
+      "problem": "Định dạng tiền tệ hiển thị không nhất quán và khó đọc khi số tiền trong ô 'Tổng tiền thanh toán (VND):' viết liền không có dấu phân cách hàng nghìn, khác với định dạng có dấu phẩy và ký hiệu '₫' ở các mục còn lại.",
+      "severity": 2,
+      "evidence": "Trong ô 'Tổng tiền thanh toán (VND):' số tiền hiển thị là '30000000' (không có dấu phẩy), trong khi dòng trên hiển thị '30,000,000 ₫' và dòng dưới hiển thị 'Tổng thanh toán: 30,000,000 ₫'.",
+      "fix": "Đồng bộ định dạng tiền tệ có dấu phân cách hàng nghìn và đơn vị tiền tệ thống nhất (ví dụ: '30,000,000 ₫') trên toàn trang, đồng thời loại bỏ dòng tổng tiền bị lặp lại."
+    }
+  ]
+}

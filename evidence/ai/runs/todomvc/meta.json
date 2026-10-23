@@ -1,0 +1,20 @@
+{
+  "run": "todomvc",
+  "site": "TodoMVC (Playwright demo)",
+  "config": "config.todomvc.json",
+  "started_at": "2026-10-23T16:23:39.714Z",
+  "base_url": "https://demo.playwright.dev/todomvc/#",
+  "shots": [
+    {
+      "page": "todomvc",
+      "viewport": "desktop",
+      "file": "todomvc-desktop.png",
+      "url": "https://demo.playwright.dev/todomvc/#/"
+    }
+  ],
+  "captured_at": "2026-10-23T16:23:42.965Z",
+  "validated_at": "2026-10-23T16:28:37.528Z",
+  "model": "claude-opus-4-6",
+  "files": 1,
+  "findings": 4
+}

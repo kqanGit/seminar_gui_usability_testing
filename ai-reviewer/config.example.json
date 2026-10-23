@@ -1,15 +1,16 @@
 {
-  "baseUrl": "http://localhost:5173",
+  "siteName": "EShop SUT",
+  "baseUrl": "https://seminar-gui-usability-testing.vercel.app",
   "viewports": [
     { "name": "mobile", "width": 375, "height": 812 },
     { "name": "desktop", "width": 1440, "height": 900 }
   ],
   "pages": [
     { "name": "home", "path": "/" },
-    { "name": "product", "path": "/product/5" },
+    { "name": "product", "path": "/", "setup": "openProductDetail" },
+    { "name": "login", "path": "/", "setup": "openLoginPage" },
     { "name": "cart", "path": "/", "setup": "addFirstProductToCart" },
     { "name": "checkout", "path": "/", "setup": "goToCheckout" }
   ],
-  "model": "",
   "outDir": "out"
 }

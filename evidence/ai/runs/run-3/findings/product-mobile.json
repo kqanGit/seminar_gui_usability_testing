@@ -1,0 +1,38 @@
+{
+  "page": "product",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Khu vực phía trên thẻ chi tiết sản phẩm 'iPhone 15 Pro Max'",
+      "problem": "Trang chi tiết sản phẩm thiếu nút 'Quay lại' hoặc đường dẫn breadcrumb khiến người dùng trên di động không có lối thoát rõ ràng trên giao diện để quay về danh sách sản phẩm.",
+      "severity": 2,
+      "evidence": "Dưới thanh header màu xanh ('EShop', 'Giỏ hàng', 'Đăng nhập', 'Đăng ký') chỉ có khung thẻ sản phẩm 'iPhone 15 Pro Max', không có bất kỳ nút '← Quay lại' hay đường dẫn phân cấp nào.",
+      "fix": "Bổ sung liên kết '← Quay lại danh sách sản phẩm' hoặc thanh breadcrumb ngay phía trên thẻ sản phẩm."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Khung ảnh 'iPhone 15' và dòng mô tả 'Điện thoại cao cấp của Apple'",
+      "problem": "Thiếu hình ảnh sản phẩm thực tế và các thông tin chi tiết cần thiết như dung lượng bộ nhớ, màu sắc, cấu hình và tình trạng còn hàng.",
+      "severity": 2,
+      "evidence": "Khung ảnh phía trên chỉ là hình vuông màu xám ghi chữ 'iPhone 15', phần thông tin bên dưới tên 'iPhone 15 Pro Max' và giá '30,000,000 ₫' chỉ có một câu ngắn 'Điện thoại cao cấp của Apple'.",
+      "fix": "Cung cấp ảnh thực tế của 'iPhone 15 Pro Max' kèm theo thông số kỹ thuật, tùy chọn phiên bản và tình trạng tồn kho."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Trường nhập 'Số lượng: 1'",
+      "problem": "Ô nhập số lượng trên giao diện di động không có nút bấm tăng/giảm (+/-) thân thiện với thao tác chạm, buộc người dùng phải chạm vào ô và gõ từ bàn phím ảo.",
+      "severity": 2,
+      "evidence": "Bên cạnh nhãn 'Số lượng:' chỉ là một ô chữ nhật trắng chứa chữ số '1', không có hai nút '-' và '+' để chạm tăng/giảm nhanh.",
+      "fix": "Thiết kế bộ chọn số lượng có nút '-' và '+' đủ lớn hai bên ô số lượng để tối ưu thao tác chạm trên điện thoại."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết 'Giỏ hàng' trên thanh điều hướng phía trên",
+      "problem": "Mục 'Giỏ hàng' trên thanh điều hướng không hiển thị số đếm sản phẩm hiện có trong giỏ.",
+      "severity": 1,
+      "evidence": "Trên thanh điều hướng màu xanh phía trên cùng, mục 'Giỏ hàng' chỉ hiển thị chữ đơn thuần mà không có số lượng sản phẩm đi kèm.",
+      "fix": "Thêm số đếm sản phẩm bên cạnh chữ 'Giỏ hàng' để người dùng nắm bắt trạng thái giỏ hàng."
+    }
+  ]
+}

@@ -245,7 +245,7 @@
 **Slide 38 — Bài chính CHI 2024** (khoảng 1 phút)
 
 > "Câu này đã có người hỏi. Bài báo ở CHI 2024, hội nghị hạng A*, cho GPT-4 đánh giá giao diện theo 10 heuristic Nielsen rồi so với 12 chuyên gia. Kết quả: trong tất cả lỗi tìm được, 62% chỉ người thấy, 29% cả hai cùng thấy, chỉ 9% là AI thấy mà người bỏ sót. Precision của AI là 0,60, tức cứ 10 lỗi AI báo thì 4 cái là báo nhầm; người là 0,83.
-> Nhưng bài này dùng GPT-4 năm 2023 và chỉ đọc file JSON, không nhìn hình. Nhóm làm lại cùng câu hỏi với model mới, gửi ảnh chụp màn hình thật, và đo trên EShop."
+> Nhưng bài này dùng GPT-4 năm 2023 và chỉ đọc file JSON, không nhìn hình. Nhóm làm lại cùng câu hỏi, nhưng đóng gói thành một Agent Skill: agent tự xem ảnh chụp màn hình thật, và đo trên EShop."
 
 **Slide 39 — Nhóm làm khác ở đâu?** (khoảng 30 giây)
 
@@ -253,28 +253,28 @@
 
 **Slide 40 — Kiến trúc** (khoảng 30 giây)
 
-> "Kiến trúc gồm bốn bước: Playwright dựng trạng thái và chụp ảnh từng trang; gửi ảnh kèm prompt 10 heuristic cho LLM có vision; nhận JSON; rồi so với người và ground truth. Muốn chạy website khác chỉ cần đổi file config."
+> "Skill do agent chạy, cụ thể là Claude Code. Agent dùng Playwright dựng trạng thái và chụp ảnh từng trang. Sau đó giao ảnh cho một subagent riêng tự xem và chấm theo 10 heuristic. Subagent này chỉ được đưa ảnh và rubric, không đọc được đáp án trong repo. Kết quả được kiểm theo schema, rồi một subagent khác gán nhãn nháp so với ground truth, và người duyệt lại. Không cần API key riêng; muốn chạy website khác chỉ cần đổi file config."
 
 **Slide 41 — Prompt** (khoảng 30 giây)
 
-> "Bài báo chỉ ra AI hay bịa và lặp. Nên prompt ép bốn luật: chỉ báo cái nhìn thấy trên ảnh, mỗi lỗi phải có heuristic, vị trí, severity, cách sửa; không báo trùng; và chỉ trả JSON đúng schema, sai là gọi lại."
+> "Bài báo chỉ ra AI hay bịa và lặp. Nên rubric ép bốn luật: chỉ báo cái nhìn thấy trên ảnh, mỗi lỗi phải có heuristic, vị trí, severity, cách sửa; không báo trùng, tối đa 5 lỗi mỗi ảnh; và chỉ trả JSON đúng schema, sai là gọi lại. Rubric cũng không có ví dụ nào từ EShop, để không mớm đáp án cho AI."
 
 **Slide 42 — Demo 1 Cài đặt** (khoảng 15 giây)
 
-> "Cài đặt: npm install, điền API key, chạy smoke test ra JSON hợp lệ. Clip có link trên slide." *(không chiếu clip)*
+> "Cài đặt: npm install, cài Chromium cho Playwright, chép hai subagent vào thư mục .claude, rồi bảo agent chạy smoke test. Kết quả là JSON hợp lệ. Clip có link trên slide." *(không chiếu clip)*
 
 **Slide 43 — Demo 2 Giỏ hàng** (khoảng 1 phút, gồm clip 30 giây)
 
-> "Demo 2 chạy trên trang Giỏ hàng." *(chiếu clip AI-2)* "AI thấy [lỗi Xóa không hỏi lại, nhãn Tổng tạm tính]. Nhưng nó không thấy [thiếu thẻ h1], vì h1 không hiện trên ảnh; và [không biết nút xanh lá là sai], vì nó không có đặc tả."
+> "Demo 2 chạy trên trang Giỏ hàng." *(chiếu clip AI-2)* "AI thấy [..]. Nhưng nó không thấy [..] vì [..]." *(điền từ `report.md` của lần chạy thật; đối chiếu cột "Dự đoán" trên slide)*
 
 **Slide 44 — Demo 3 Toàn luồng** (khoảng 40 giây, gồm clip 20 giây)
 
-> "Demo 3 chạy toàn luồng: 5 trang, 2 kích thước, mỗi cấu hình 3 lần để đo độ ổn định. Cả ba thành viên chấm heuristic bằng tay **trước** khi xem kết quả AI, để không bị ảnh hưởng." *(chiếu đoạn clip AI-3 đổi config sang website khác)* "Và đổi config là chạy được trên website khác, không sửa code."
+> "Demo 3 chạy toàn luồng: 5 trang, 2 kích thước, chạy 3 lần, mỗi lần một subagent mới để đo độ ổn định. Sau đó một subagent khác gán nhãn nháp từng lỗi so với 11 lỗi ground truth, để luồng tự động không bị ngắt; nhóm duyệt lại toàn bộ nhãn trong file labels.csv." *(chiếu đoạn clip AI-3 đổi config sang TodoMVC)* "Và đổi config là chạy được trên website khác, không sửa code."
 
 **Slide 45 — Kết quả người vs AI** (khoảng 50 giây)
 
-> "Đặt cạnh bài báo: precision của AI trên EShop là [..], bài báo là 0,60. Recall [..]. Chỉ người thấy [..]%, cả hai [..]%, chỉ AI [..]%. Severity AI chấm lệch trung bình [..] mức. Qua 3 lần chạy, [..]% lỗi lặp lại ổn định.
-> Kết luận của nhóm: [model mới tốt hơn ở …, nhưng vẫn …]."
+> "Đặt cạnh bài báo: precision của AI trên EShop là [..], bài báo là 0,60. Recall [..]. Chỉ người thấy [..]%, cả hai [..]%, chỉ AI [..]%. Severity AI chấm lệch trung bình [..] mức. Qua 3 lần chạy, [..]% lỗi đúng lặp lại ổn định. Nhóm đã duyệt [..]/[..] nhãn, phải sửa [..] nhãn AI gán sai.
+> Kết luận của nhóm: [..]."
 
 **Slide 46 — Giới hạn** (khoảng 30 giây)
 
@@ -291,7 +291,7 @@
 > "Giờ tới lượt các bạn. Đây là trang Giỏ hàng của EShop. Các bạn có 60 giây, tìm càng nhiều vi phạm heuristic càng tốt. Bắt đầu."
 > *(bấm giờ 60 giây; người bấm giờ đếm to 10 giây cuối)*
 > "Hết giờ. Bạn nào tìm được nhiều nhất?" *(hỏi nhanh 2–3 bạn, mỗi bạn nói 1 lỗi)*
-> *(mở ảnh/kết quả AI đã chạy sẵn)* "Còn AI tìm được [..] lỗi: […]. Các bạn thấy [lỗi nút xanh lá] mà AI không thấy, còn AI thấy […] mà ít bạn để ý."
+> *(mở report.md của lần chạy Demo 2)* "Còn AI tìm được [..] lỗi: [..]. Các bạn thấy [..] mà AI không thấy, còn AI thấy [..] mà ít bạn để ý."
 
 > Nếu lớp im lặng: Quân tự gợi ý "có ai thấy nút Xóa không?" để mở đầu.
 
@@ -339,7 +339,7 @@
 | Checklist này chỉ dùng cho EShop hay dùng chung? | Câu hỏi theo control là dùng chung (ví dụ `type="password"`); một số câu lấy từ đặc tả riêng EShop (nhãn "Tổng cộng"). Nhóm áp dụng trên một luồng để vừa thời gian. | Quang |
 | GUI testing của nhóm khác đề T2 (web automation) chỗ nào? | Click và nhập chỉ để đưa trang về đúng trạng thái; điểm kiểm tra luôn là thuộc tính giao diện, không kiểm giảm giá đúng hay đơn có lưu vào CSDL không. | Quang |
 | Precision và recall tính thế nào? | Precision: trong số lỗi đã báo, bao nhiêu lỗi là thật. Recall: trong tất cả lỗi thật, tìm ra bao nhiêu. "Lỗi thật" lấy theo ground truth G01–G11 và kết quả người chấm. | Quân |
-| Làm sao biết AI không bịa? | Prompt bắt chỉ báo cái nhìn thấy trên ảnh, ép JSON theo schema; mọi lỗi AI báo được đối chiếu với ground truth, lỗi không khớp tính là báo nhầm. Chạy 3 lần để đo độ ổn định. | Quân |
+| Làm sao biết AI không bịa, không đọc đáp án? | Rubric bắt chỉ báo cái nhìn thấy trên ảnh, ép JSON theo schema. Subagent chấm ảnh chỉ được đưa ảnh và rubric, mỗi lần chạy là subagent mới; rubric không có ví dụ EShop. Nhãn AI gán được người duyệt lại toàn bộ; lỗi không khớp tính là báo nhầm. Giới hạn: lệnh cấm đọc file là chỉ dẫn, không phải quyền hệ thống. | Quân |
 | Vì sao UXtweak chỉ 5–6 người, có đủ tin cậy không? | 5 người đủ để tìm phần lớn vấn đề (Nielsen & Landauer), nhưng không đủ cho thống kê; SUS của nhóm chỉ để tham khảo. | Phúc |
 | Vì sao Proposal ghi Maze mà nhóm lại demo UXtweak? | Khi triển khai thực tế, Maze khóa khối Live Website Testing ở bản Free/Trial (yêu cầu gói trả phí ~\$99/tháng). Trong Proposal nhóm đã đặt sẵn UXtweak làm phương án dự phòng nên chuyển sang UXtweak. | Phúc |
 | Ground truth ở đâu ra, có khách quan không? | Lấy từ đặc tả FR-21–24 của EShop, đối chiếu mã nguồn, Quang chạy và chụp ảnh xác nhận ngày 15/10; có file `ground-truth/bugs.md`. | Quang |

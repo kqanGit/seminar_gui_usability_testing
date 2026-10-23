@@ -1,0 +1,38 @@
+{
+  "page": "cart",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Cột Số lượng trong bảng Giỏ Hàng",
+      "problem": "Người dùng không thể thay đổi số lượng sản phẩm trực tiếp trong giỏ hàng vì số lượng chỉ hiển thị dưới dạng văn bản tĩnh thay vì ô nhập liệu hoặc nút tăng/giảm.",
+      "severity": 3,
+      "evidence": "Trong bảng 'Giỏ Hàng', tại dòng sản phẩm 'iPhone 15 Pro Max', cột 'Số lượng' chỉ hiển thị chữ số tĩnh '1' không có khung nhập hay nút '+/-'.",
+      "fix": "Thay số tĩnh bằng bộ điều khiển tăng/giảm số lượng ('-' / '+') kèm ô nhập số để người dùng dễ dàng điều chỉnh ngay tại giỏ hàng."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết Giỏ hàng trên thanh điều hướng",
+      "problem": "Thanh điều hướng không hiển thị số lượng sản phẩm hiện có trong giỏ hàng để phản ánh trạng thái hệ thống.",
+      "severity": 2,
+      "evidence": "Ở góc trên bên phải thanh điều hướng màu xanh, mục 'Giỏ hàng' được gạch chân nhưng không có số đếm (badge) dù bảng bên dưới đang có 1 sản phẩm 'iPhone 15 Pro Max'.",
+      "fix": "Thêm huy hiệu (badge) hiển thị tổng số lượng sản phẩm hiện có bên cạnh liên kết 'Giỏ hàng' (ví dụ: 'Giỏ hàng (1)')."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Dòng thông tin sản phẩm trong bảng Giỏ Hàng",
+      "problem": "Sản phẩm trong giỏ chỉ hiển thị tên chữ mà thiếu hình ảnh thu nhỏ và thuộc tính phân loại, buộc người dùng phải tự ghi nhớ chi tiết mặt hàng đã chọn.",
+      "severity": 2,
+      "evidence": "Cột 'Sản phẩm' chỉ hiển thị dòng chữ 'iPhone 15 Pro Max' mà không có ảnh thu nhỏ (thumbnail) hay thông tin màu sắc, dung lượng.",
+      "fix": "Hiển thị thêm ảnh đại diện thu nhỏ của sản phẩm cùng các thông số phân loại đã chọn bên cạnh tên 'iPhone 15 Pro Max'."
+    },
+    {
+      "heuristic": "H5",
+      "element": "Nút Xóa trong cột Thao tác",
+      "problem": "Tác vụ xóa sản phẩm khỏi giỏ hàng chỉ được thể hiện bằng chữ đơn giản, thiếu biểu tượng hoặc cơ chế phòng ngừa thao tác nhầm.",
+      "severity": 2,
+      "evidence": "Cột 'Thao tác' ở phía bên phải dòng sản phẩm chỉ hiển thị chữ 'Xóa' màu đỏ không có khung nút hoặc biểu tượng thùng rác.",
+      "fix": "Thiết kế nút xóa rõ ràng hơn kèm biểu tượng thùng rác và hiển thị hộp thoại xác nhận hoặc thông báo hoàn tác (Undo) khi người dùng bấm xóa."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "page": "home",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Tiêu đề Danh sách sản phẩm và cụm Tìm kiếm",
+      "problem": "Tiêu đề trang và thanh tìm kiếm bị đặt chung trên một hàng ngang chật hẹp của màn hình di động khiến tiêu đề bị ép gãy thành 4 dòng rất khó đọc.",
+      "severity": 2,
+      "evidence": "Ở đầu trang bên trái ô 'Tìm kiếm...' và nút 'Tìm', tiêu đề 'Danh sách sản phẩm' bị ngắt thành 4 dòng dọc: 'Danh', 'sách', 'sản', 'phẩm'.",
+      "fix": "Đặt tiêu đề 'Danh sách sản phẩm' nằm trên một hàng riêng phía trên, sau đó đặt ô 'Tìm kiếm...' và nút 'Tìm' chiếm toàn bộ chiều ngang ở hàng bên dưới."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Hình ảnh trên các thẻ sản phẩm",
+      "problem": "Tất cả sản phẩm chỉ hiển thị khung màu xám với chữ giữ chỗ thay vì ảnh thực tế của sản phẩm, làm giảm khả năng nhận diện trực quan.",
+      "severity": 2,
+      "evidence": "Trong danh sách, cả 5 thẻ đều chỉ hiển thị khung xám với chữ 'iPhone 15', 'Samsung S24', 'Macbook Pro', 'AirPods Pro', 'Keychron Q1'.",
+      "fix": "Thay thế các khung xám bằng hình ảnh thực tế của từng sản phẩm."
+    },
+    {
+      "heuristic": "H7",
+      "element": "Khu vực tìm kiếm và điều hướng sản phẩm",
+      "problem": "Thiếu các công cụ lọc danh mục và sắp xếp sản phẩm theo giá để người dùng trên thiết bị di động tìm kiếm nhanh hơn mà không phải cuộn trang dài.",
+      "severity": 2,
+      "evidence": "Phía trên danh sách 5 sản phẩm chỉ có ô 'Tìm kiếm...' và nút 'Tìm', không có nút lọc hay sắp xếp.",
+      "fix": "Bổ sung nút lọc danh mục và tùy chọn sắp xếp theo giá ngay dưới thanh tìm kiếm."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Mục Giỏ hàng trên thanh điều hướng",
+      "problem": "Liên kết giỏ hàng trên thanh điều hướng không hiển thị số lượng sản phẩm hiện có.",
+      "severity": 2,
+      "evidence": "Trên thanh điều hướng màu xanh phía trên, chữ 'Giỏ hàng' không kèm theo con số thể hiện trạng thái giỏ hàng hiện tại.",
+      "fix": "Hiển thị thêm số đếm số lượng sản phẩm bên cạnh chữ 'Giỏ hàng'."
+    }
+  ]
+}

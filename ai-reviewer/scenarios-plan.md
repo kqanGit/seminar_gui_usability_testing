@@ -1,5 +1,8 @@
 # Kịch bản demo — AI Heuristic Reviewer (Quân · C)
 
+> **Cập nhật 23/10/2026:** kiến trúc đã đổi sang skill do agent chạy (subagent tự xem ảnh, không gọi API LLM, không cần API key; AI gán nhãn nháp, người duyệt lại). Quy trình hiện hành nằm ở [`SKILL.md`](SKILL.md) và [`README.md`](README.md). Các mục nhắc tới `review.js`, `.env`, `npm run smoke` bên dưới là bản kế hoạch cũ.
+
+
 Bám `docs/proposal/Proposal.md` §5, `docs/phan-cong-tasks.html` (vai C) và khảo sát `docs/khao-sat/`.
 Định dạng giống `tests/playwright/scenarios-plan.md` để ghép slide/báo cáo cho thống nhất.
 

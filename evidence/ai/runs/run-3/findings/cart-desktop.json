@@ -1,0 +1,30 @@
+{
+  "page": "cart",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H3",
+      "element": "Cột 'Số lượng' trong bảng Giỏ Hàng",
+      "problem": "Người dùng không thể tăng hoặc giảm số lượng sản phẩm trực tiếp trong giỏ hàng vì số lượng chỉ hiển thị dưới dạng văn bản tĩnh, chỉ có thao tác duy nhất là xóa toàn bộ sản phẩm.",
+      "severity": 3,
+      "evidence": "Trong bảng 'Giỏ Hàng', tại dòng sản phẩm 'iPhone 15 Pro Max', cột 'Số lượng' chỉ hiển thị chữ số tĩnh '1' mà không có ô nhập liệu hay nút tăng/giảm (+/-), bên cột 'Thao tác' chỉ có chữ 'Xóa'.",
+      "fix": "Thay số lượng tĩnh bằng bộ điều khiển có nút giảm (-), ô nhập số lượng và nút tăng (+) để người dùng dễ dàng điều chỉnh số lượng sản phẩm."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Cột 'Sản phẩm' trong bảng Giỏ Hàng",
+      "problem": "Sản phẩm trong giỏ hàng chỉ hiển thị tên dạng chữ mà không có ảnh thu nhỏ (thumbnail) hoặc thông tin phiên bản (màu sắc, dung lượng), buộc người dùng phải tự ghi nhớ chi tiết sản phẩm đã chọn.",
+      "severity": 2,
+      "evidence": "Dòng sản phẩm dưới cột 'Sản phẩm' chỉ hiển thị dòng chữ 'iPhone 15 Pro Max' bên cạnh giá '30,000,000 ₫', hoàn toàn không có hình ảnh đại diện hay thông số đi kèm.",
+      "fix": "Hiển thị thêm ảnh thu nhỏ của sản phẩm và các thuộc tính phân loại (như màu sắc, dung lượng bộ nhớ) ngay cạnh tên 'iPhone 15 Pro Max'."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết 'Giỏ hàng' trên thanh điều hướng phía trên",
+      "problem": "Mục 'Giỏ hàng' trên thanh điều hướng không hiển thị số lượng sản phẩm hiện có trong giỏ để phản hồi trực quan trạng thái giỏ hàng.",
+      "severity": 1,
+      "evidence": "Ở góc trên bên phải thanh điều hướng màu xanh, liên kết được gạch chân chỉ ghi 'Giỏ hàng' cạnh 'Đăng nhập' và 'Đăng ký', dù trong bảng giỏ hàng đang có '1' sản phẩm 'iPhone 15 Pro Max'.",
+      "fix": "Thêm huy hiệu (badge) hoặc số đếm bên cạnh chữ 'Giỏ hàng' (ví dụ: 'Giỏ hàng (1)') để hiển thị rõ số lượng mặt hàng hiện có."
+    }
+  ]
+}

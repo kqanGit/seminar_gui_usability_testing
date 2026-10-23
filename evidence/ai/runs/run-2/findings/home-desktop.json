@@ -1,0 +1,30 @@
+{
+  "page": "home",
+  "viewport": "desktop",
+  "findings": [
+    {
+      "heuristic": "H2",
+      "element": "Hình ảnh sản phẩm trên cả 5 thẻ sản phẩm",
+      "problem": "Tất cả sản phẩm đều chỉ hiển thị khung màu xám với chữ tên rút gọn thay vì hình ảnh thực tế của sản phẩm, khiến người dùng không thể nhận diện trực quan sản phẩm khi mua sắm.",
+      "severity": 2,
+      "evidence": "Cả 5 thẻ sản phẩm trong 'Danh sách sản phẩm' chỉ hiển thị hình chữ nhật nền xám chứa các chữ 'iPhone 15', 'Samsung S24', 'Macbook Pro', 'AirPods Pro', 'Keychron Q1'.",
+      "fix": "Hiển thị ảnh chụp thực tế của từng sản phẩm trong thẻ sản phẩm."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Thanh điều hướng phía trên và liên kết 'Giỏ hàng'",
+      "problem": "Thanh điều hướng không làm nổi bật trang hiện tại và liên kết 'Giỏ hàng' không hiển thị số lượng sản phẩm đang có trong giỏ.",
+      "severity": 2,
+      "evidence": "Trên thanh header màu xanh, cả logo 'EShop' và các liên kết 'Giỏ hàng', 'Đăng nhập', 'Đăng ký' đều hiển thị tĩnh, chữ 'Giỏ hàng' không kèm bộ đếm số lượng (ví dụ '(0)').",
+      "fix": "Bổ sung chỉ báo trạng thái trang hiện tại và hiển thị số lượng mặt hàng cạnh liên kết 'Giỏ hàng'."
+    },
+    {
+      "heuristic": "H8",
+      "element": "Dòng trạng thái 'Hiển thị 5 sản phẩm' ở cuối danh sách",
+      "problem": "Dòng thông tin 'Hiển thị 5 sản phẩm' có kích thước chữ nhỏ và màu xám nhạt trên nền sáng, độ tương phản thấp khiến người dùng khó nhận thấy.",
+      "severity": 1,
+      "evidence": "Phía dưới hàng sản phẩm thứ hai (dưới thẻ 'Bàn phím cơ Keychron Q1'), dòng chữ 'Hiển thị 5 sản phẩm' có màu xám mờ nhạt.",
+      "fix": "Tăng độ đậm và độ tương phản màu chữ cho dòng 'Hiển thị 5 sản phẩm'."
+    }
+  ]
+}

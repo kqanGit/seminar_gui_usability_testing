@@ -1,0 +1,38 @@
+{
+  "page": "cart",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H8",
+      "element": "Bảng danh sách sản phẩm trong Giỏ Hàng",
+      "problem": "Bố cục bảng 5 cột bị ép quá hẹp trên màn hình di động khiến các cột chữ và số tiền dính sát nhau, ngắt dòng vụn vặt và rất khó đọc.",
+      "severity": 3,
+      "evidence": "Trong thẻ 'Giỏ Hàng', các tiêu đề 'Sản phẩm', 'Giá', 'Số lượng', 'Thành tiền', 'Thao tác' và dữ liệu 'iPhone 15 Pro Max', '30,000,000 ₫', '1', '30,000,000 ₫', 'Xóa' bị ép sát vào nhau không có khoảng cách rõ ràng.",
+      "fix": "Chuyển đổi bố cục bảng nhiều cột sang dạng thẻ dọc (card layout) trên màn hình di động cho từng sản phẩm."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Cột Số lượng trong bảng Giỏ Hàng",
+      "problem": "Người dùng không thể tăng hoặc giảm số lượng sản phẩm trực tiếp trong giỏ hàng vì giá trị số lượng chỉ là văn bản tĩnh.",
+      "severity": 3,
+      "evidence": "Dưới cột 'Số lượng' của sản phẩm 'iPhone 15 Pro Max' chỉ hiển thị số '1' dạng chữ thường, không có nút cộng/trừ hay ô nhập liệu.",
+      "fix": "Bổ sung nút giảm '-' và tăng '+' đủ lớn cho thao tác chạm để người dùng dễ dàng chỉnh sửa số lượng."
+    },
+    {
+      "heuristic": "H8",
+      "element": "Cụm nút ← Mua tiếp và Tiến hành thanh toán",
+      "problem": "Hai nút điều hướng và tổng tiền đặt chung trên một hàng hẹp khiến các nút bị bóp ngang và chữ bị ngắt thành nhiều dòng mất cân đối.",
+      "severity": 2,
+      "evidence": "Ở cuối thẻ 'Giỏ Hàng', cạnh dòng 'Tổng tạm tính: 30,000,000 ₫', nút '← Mua tiếp' bị ngắt thành 3 dòng và nút màu xanh 'Tiến hành thanh toán' bị ngắt thành 4 dòng.",
+      "fix": "Xếp dòng 'Tổng tạm tính: 30,000,000 ₫' lên một hàng riêng và đặt hai nút '← Mua tiếp', 'Tiến hành thanh toán' dàn ngang toàn chiều rộng bên dưới."
+    },
+    {
+      "heuristic": "H1",
+      "element": "Liên kết Giỏ hàng trên thanh điều hướng",
+      "problem": "Liên kết giỏ hàng trên thanh điều hướng không hiển thị số lượng mặt hàng hiện có trong giỏ.",
+      "severity": 2,
+      "evidence": "Trên thanh điều hướng màu xanh phía trên, chữ 'Giỏ hàng' có gạch chân nhưng không hiển thị con số báo hiệu đang có 1 sản phẩm trong giỏ.",
+      "fix": "Bổ sung badge số lượng sản phẩm cạnh mục 'Giỏ hàng' trên thanh điều hướng."
+    }
+  ]
+}

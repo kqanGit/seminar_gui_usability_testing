@@ -1,0 +1,46 @@
+{
+  "page": "checkout",
+  "viewport": "mobile",
+  "findings": [
+    {
+      "heuristic": "H5",
+      "element": "Trường 'Tổng tiền thanh toán (VND):'",
+      "problem": "Tổng tiền cần thanh toán được đặt trong một ô nhập liệu thay vì văn bản tĩnh, dễ gây nhầm lẫn rằng người dùng phải tự nhập hoặc có thể sửa số tiền.",
+      "severity": 4,
+      "evidence": "Dưới dòng chữ 'Tổng tiền thanh toán (VND):' là một ô input viền xám chứa chuỗi số màu đỏ '30000000'.",
+      "fix": "Bỏ ô nhập liệu và hiển thị tổng tiền dưới dạng văn bản tĩnh không thể chỉnh sửa."
+    },
+    {
+      "heuristic": "H6",
+      "element": "Thẻ 'Xác Nhận Đơn Hàng'",
+      "problem": "Người dùng phải bấm 'Xác Nhận Thanh Toán' mà không được nhìn thấy thông tin địa chỉ nhận hàng, số điện thoại liên hệ hay phương thức thanh toán.",
+      "severity": 3,
+      "evidence": "Toàn bộ thẻ 'Xác Nhận Đơn Hàng' chỉ liệt kê 'Sản phẩm: • iPhone 15 Pro Max x 1 — 30,000,000 ₫', ô 'Tổng tiền thanh toán (VND):', khung 'Mã Giảm Giá' và 'Tổng thanh toán: 30,000,000 ₫', hoàn toàn vắng mặt thông tin giao hàng và phương thức thanh toán.",
+      "fix": "Bổ sung mục tóm tắt thông tin nhận hàng và phương thức thanh toán ngay trên trang xác nhận đơn hàng."
+    },
+    {
+      "heuristic": "H3",
+      "element": "Khu vực thao tác cuối thẻ 'Xác Nhận Đơn Hàng'",
+      "problem": "Thiếu nút 'Quay lại giỏ hàng' hoặc 'Hủy' để người dùng quay lui khi muốn thay đổi đơn hàng.",
+      "severity": 3,
+      "evidence": "Phía dưới dòng 'Tổng thanh toán: 30,000,000 ₫' chỉ có duy nhất nút màu xanh lá 'Xác Nhận Thanh Toán', không có liên kết hay nút quay lại.",
+      "fix": "Thêm nút hoặc liên kết '← Quay lại giỏ hàng' ở phía dưới hoặc phía trên biểu mẫu xác nhận."
+    },
+    {
+      "heuristic": "H4",
+      "element": "Số tiền '30000000' và dòng 'Tổng thanh toán: 30,000,000 ₫'",
+      "problem": "Định dạng hiển thị số tiền không nhất quán trên cùng một màn hình (một nơi dùng '(VND)' viết liền '30000000' không có dấu phẩy, nơi khác dùng '30,000,000 ₫') và lặp lại thông tin tổng tiền gây rối.",
+      "severity": 2,
+      "evidence": "Mục 'Tổng tiền thanh toán (VND):' hiển thị '30000000' không có dấu phân cách hàng nghìn, trong khi mục sản phẩm và dòng cuối hiển thị '30,000,000 ₫'.",
+      "fix": "Gộp hai mục tổng tiền trùng lặp thành một dòng duy nhất và định dạng thống nhất có dấu phân cách hàng nghìn '30,000,000 ₫'."
+    },
+    {
+      "heuristic": "H8",
+      "element": "Thanh điều hướng trên cùng và nút 'Áp dụng' trong khung 'Mã Giảm Giá'",
+      "problem": "Các phần tử trên giao diện di động bị ép sát trên một hàng ngang khiến chữ trên thanh điều hướng dính vào nhau và nhãn nút bấm bị ngắt dòng.",
+      "severity": 2,
+      "evidence": "Trên thanh header màu xanh, logo 'EShop' dính sát vào chữ 'Giỏ hàng' cùng 'Chào, Test User' và nút 'Thoát'; trong khung 'Mã Giảm Giá', nút màu cam bên phải bị hẹp chiều ngang khiến chữ 'Áp dụng' bị ngắt thành 2 dòng ('Áp' và 'dụng').",
+      "fix": "Tăng khoảng cách hoặc dùng menu thu gọn cho thanh điều hướng trên di động, và mở rộng chiều ngang hợp lý cho nút 'Áp dụng' để hiển thị trọn trên một dòng."
+    }
+  ]
+}
