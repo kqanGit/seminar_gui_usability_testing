@@ -1,4 +1,4 @@
-<!-- Phụ trách: Phúc. Bản nháp do Quân soạn (có dùng Claude), Phúc review và chỉnh trước khi trình bày. Mỗi slide ngăn cách bằng một dòng chỉ có --- -->
+<!-- Phụ trách: Phúc. Bản nháp do Quân soạn (có dùng Claude), Phúc review và chỉnh trước khi trình bày. Bản 30 phút: slide chi tiết ở 11-phu-luc. Mỗi slide ngăn cách bằng một dòng chỉ có --- -->
 
 <!-- .slide: class="divider" -->
 
@@ -7,11 +7,11 @@
 ## Lý thuyết Usability Testing
 
 - Usability là gì (ISO 9241-11)
-- Nguyên lý thiết kế: 10 heuristic của Nielsen, thang severity
+- 10 heuristic của Nielsen, thang severity 0–4
 - Heuristic evaluation và usability testing
-- Phương pháp, chỉ số (SUS, SEQ) và test plan
+- Chỉ số đo: success rate, SEQ, SUS
 
-Note: Phần này trả lời câu hỏi "người dùng có dùng được không".
+Note: Thời gian: 2,5 phút (Phúc). Phần này trả lời câu hỏi "người dùng có dùng được không".
 
 ---
 
@@ -29,55 +29,31 @@ Note: Ba thành phần này là gốc của mọi chỉ số ở cuối phần.
 
 ---
 
-## Usability, UX và Accessibility
+## 10 heuristic của Nielsen
 
-| Khái niệm | Phạm vi |
-| --- | --- |
-| **Usability** | Dùng có hiệu quả, nhanh, dễ chịu khi làm một nhiệm vụ cụ thể |
-| **UX** (trải nghiệm người dùng) | Toàn bộ cảm nhận trước, trong và sau khi dùng; rộng hơn usability |
-| **Accessibility** | Người khuyết tật (khiếm thị, chỉ dùng bàn phím…) vẫn dùng được |
+<div class="cols"><div>
+<table>
+<tr><th>#</th><th>Heuristic</th></tr>
+<tr><td><b>H1</b></td><td><b>Visibility of system status</b></td></tr>
+<tr><td>H2</td><td>Match with the real world</td></tr>
+<tr><td><b>H3</b></td><td><b>User control and freedom</b></td></tr>
+<tr><td><b>H4</b></td><td><b>Consistency and standards</b></td></tr>
+<tr><td><b>H5</b></td><td><b>Error prevention</b></td></tr>
+</table>
+</div><div>
+<table>
+<tr><th>#</th><th>Heuristic</th></tr>
+<tr><td>H6</td><td>Recognition rather than recall</td></tr>
+<tr><td>H7</td><td>Flexibility and efficiency</td></tr>
+<tr><td>H8</td><td>Aesthetic and minimalist design</td></tr>
+<tr><td>H9</td><td>Recover from errors</td></tr>
+<tr><td>H10</td><td>Help and documentation</td></tr>
+</table>
+</div></div>
 
-<p class="small">Một trang có thể đạt chuẩn WCAG mà vẫn khó dùng, và ngược lại.</p>
+<p class="small">In đậm: heuristic EShop vi phạm rõ — H1 thêm giỏ không phản hồi · H3 xóa không hoàn tác · H4 "Thoát"/"Đăng xuất" · H5 tổng tiền sửa được.</p>
 
-Note: Accessibility đã nói ở phần 2; phần này tập trung vào usability.
-
----
-
-## Nguyên lý: 10 heuristic của Nielsen (1/2)
-
-| # | Heuristic | Ví dụ trên EShop |
-| --- | --- | --- |
-| H1 | Visibility of system status — cho biết hệ thống đang làm gì | Thêm vào giỏ không có toast hay badge |
-| H2 | Match between system and the real world — dùng ngôn ngữ người dùng | Thuật ngữ quen thuộc như "Giỏ hàng", "Thanh toán" |
-| H3 | User control and freedom — có lối thoát, hoàn tác | Bấm "Xóa" không hoàn tác được |
-| H4 | Consistency and standards — nhất quán | "Thoát" và "Đăng xuất"; nút thanh toán xanh lá |
-| H5 | Error prevention — ngăn lỗi trước khi xảy ra | Ô tổng tiền cho sửa tay |
-
-Note: Bộ 10 heuristic của Jakob Nielsen (1994), vẫn được NN/g dùng đến nay. Mỗi heuristic là một nguyên lý chung, không phải quy tắc cứng.
-
----
-
-## Nguyên lý: 10 heuristic của Nielsen (2/2)
-
-| # | Heuristic | Ý chính |
-| --- | --- | --- |
-| H6 | Recognition rather than recall | Hiện sẵn lựa chọn, đừng bắt người dùng nhớ |
-| H7 | Flexibility and efficiency of use | Có lối tắt cho người dùng thành thạo |
-| H8 | Aesthetic and minimalist design | Chỉ hiện thông tin cần thiết |
-| H9 | Help users recognize, diagnose, and recover from errors | Lỗi nói rõ sai gì, sửa thế nào |
-| H10 | Help and documentation | Có hướng dẫn khi cần |
-
-Note: Khi đánh giá, ghi rõ vi phạm heuristic nào (H1–H10), ở đâu, nghiêm trọng mức nào.
-
----
-
-## Các bộ nguyên lý khác
-
-- **Shneiderman — 8 golden rules:** nhất quán, có lối tắt, phản hồi thông tin, hộp thoại có kết thúc rõ, ngăn lỗi, cho hoàn tác, để người dùng làm chủ, giảm tải trí nhớ
-- **Don Norman — nguyên lý thiết kế:** affordance (gợi ý cách dùng), signifier (dấu hiệu), feedback (phản hồi), mapping (ánh xạ), constraint (ràng buộc)
-- Các bộ này **chồng lấn nhiều** với Nielsen; nhóm chọn **Nielsen** làm chuẩn chung vì phổ biến nhất và có sẵn thang severity
-
-Note: Ví dụ chồng lấn: "cho hoàn tác" của Shneiderman tương ứng H3; "feedback" của Norman tương ứng H1.
+Note: Nielsen 1994, NN/g vẫn dùng. Không đọc hết 10 dòng, chỉ chỉ vào 4 dòng in đậm kèm ví dụ EShop. Bảng có ví dụ từng heuristic và các bộ nguyên lý khác (Shneiderman, Norman): Phụ lục.
 
 ---
 
@@ -114,134 +90,16 @@ Note: Phần 8 dùng AI làm "người đánh giá heuristic" và so với ngư�
 
 ---
 
-## Quy trình heuristic evaluation
-
-1. Chọn **3–5 người đánh giá**, làm **độc lập**
-2. Mỗi người đi qua giao diện **2 lượt**: lượt đầu làm quen luồng, lượt sau soi từng phần tử
-3. Ghi mỗi vấn đề: **heuristic · vị trí · mô tả · đề xuất sửa**
-4. Gộp danh sách, bỏ trùng
-5. Chấm **severity** cho từng vấn đề
-
-- Một người đánh giá thường chỉ tìm được khoảng **35%** vấn đề → cần nhiều người (NN/g)
-
-Note: Đây cũng là quy trình của hoạt động Heuristic Showdown ở phần 9.
-
----
-
-## Usability testing: 6 thành phần (Rubin)
-
-1. **Mục tiêu cụ thể:** câu hỏi cần trả lời, viết thành test plan
-2. **Người dùng đại diện:** đúng nhóm người dùng mục tiêu
-3. **Môi trường thật:** gần với điều kiện sử dụng thật
-4. **Quan sát:** xem người dùng làm, nghe họ nói
-5. **Dữ liệu định lượng + định tính:** số đo và cảm nhận
-6. **Phân tích và đề xuất:** danh sách vấn đề có ưu tiên
-
-Note: Theo Rubin & Chisnell, Handbook of Usability Testing.
-
----
-
-## Phương pháp usability testing
-
-| Cách chia | Lựa chọn |
-| --- | --- |
-| Có người điều phối? | **Moderated:** facilitator dẫn trực tiếp, hỏi lại được · **Unmoderated:** người tham gia tự làm qua link, dễ mở rộng |
-| Ở đâu? | In-lab · Remote đồng bộ (gọi video) · Remote bất đồng bộ (tự làm) |
-| Thu dữ liệu gì? | **Định tính:** think-aloud, phỏng vấn · **Định lượng:** tỷ lệ hoàn thành, thời gian, SUS |
-| Chi phí thấp | **Guerrilla / hallway:** nhờ người qua đường thử nhanh |
-
-- **Think-aloud:** người tham gia vừa làm vừa nói ra suy nghĩ
-
-Note: Maze (phần 7) là unmoderated, remote bất đồng bộ, thiên về định lượng.
-
----
-
-## Cần bao nhiêu người tham gia?
-
-- Nielsen & Landauer: **5 người** đã tìm được khoảng **85%** vấn đề usability
-- Thêm người thì mỗi người mới phát hiện ít vấn đề mới hơn
-- Tốt hơn: **nhiều vòng nhỏ** (5 người → sửa → 5 người) thay vì một vòng lớn
-- Lưu ý: cần nhiều người hơn khi muốn **số liệu thống kê** (ví dụ so sánh điểm SUS) hoặc có nhiều nhóm người dùng khác nhau
-
-Note: Nhóm chọn khoảng 5 người ngoài nhóm cho study Maze; thành viên nhóm không làm người tham gia vì đã biết rõ website.
-
----
-
-## Viết kịch bản nhiệm vụ (task scenario)
-
-- Bối cảnh thật + mục tiêu rõ + **không lộ tên nút / đường đi**
-
-| Viết chưa tốt | Viết tốt |
-| --- | --- |
-| "Bấm Thêm vào giỏ rồi bấm Tiến hành thanh toán, nhập mã VIP100." | "Bạn có 5.000.000 ₫ và muốn mua một phụ kiện máy tính. Hãy mua một sản phẩm và dùng mã giảm giá VIP100 khi thanh toán." |
-
-- Định nghĩa trước **thế nào là thành công**: ví dụ đến được trang xác nhận đơn hàng
-
-Note: Kịch bản lộ tên nút sẽ biến bài test thành bài đọc hướng dẫn, không đo được usability.
-
----
-
-## Chỉ số đo usability
+## Đo usability bằng gì?
 
 | Chỉ số | Cách tính | Thuộc |
 | --- | --- | --- |
 | Task success rate | % người hoàn thành nhiệm vụ | Hiệu quả |
-| Error rate / misclick rate | Số thao tác sai / tổng thao tác | Hiệu quả |
-| Time on task | Thời gian từ lúc bắt đầu đến lúc xong hoặc bỏ cuộc | Hiệu suất |
-| **SEQ** (Single Ease Question) | 1 câu sau mỗi nhiệm vụ: "Dễ hay khó?" thang 1–7 | Hài lòng |
-| **SUS** (System Usability Scale) | 10 câu sau cả buổi, quy ra điểm 0–100 | Hài lòng |
+| Misclick rate | Số click sai / tổng click | Hiệu quả |
+| Time on task | Thời gian làm xong hoặc bỏ cuộc | Hiệu suất |
+| **SEQ** | 1 câu sau mỗi nhiệm vụ, thang 1–7 | Hài lòng |
+| **SUS** | 10 câu, quy ra điểm 0–100; trung bình khoảng 68 | Hài lòng |
 
-Note: Ba nhóm chỉ số ứng với ba thành phần của ISO 9241-11.
+<p class="small">Khoảng 5 người mỗi vòng đã tìm được phần lớn vấn đề (Nielsen &amp; Landauer). Cách tính SUS, viết task scenario, test plan 9 phần: Phụ lục.</p>
 
----
-
-## SUS: cách tính điểm
-
-- 10 câu, thang 5 mức (1 = rất không đồng ý … 5 = rất đồng ý); câu lẻ nói tích cực, câu chẵn nói tiêu cực
-- **Câu lẻ:** điểm − 1 · **Câu chẵn:** 5 − điểm
-- Cộng 10 câu (0–40) rồi **× 2.5** → điểm SUS 0–100
-- Mốc tham khảo: điểm trung bình khoảng **68**; dưới 68 là dưới trung bình
-
-<p class="small">Ví dụ: tổng sau quy đổi = 26 → SUS = 26 × 2.5 = <b>65</b> (dưới trung bình).</p>
-
-- SUS **không phải phần trăm** và không chỉ ra lỗi cụ thể nằm ở đâu
-
-Note: SUS do John Brooke đề xuất năm 1996. Bài tập 3 cho lớp tự tính SUS.
-
----
-
-## Usability test plan: 9 phần
-
-| # | Phần | # | Phần |
-| --- | --- | --- | --- |
-| 1 | Mục đích và phạm vi | 6 | Vai trò: facilitator, người ghi chép |
-| 2 | Hồ sơ người dùng, cách tuyển | 7 | Chỉ số định lượng, ngưỡng đạt |
-| 3 | Thiết kế và phương pháp | 8 | Bảng hỏi sau test (SUS, SEQ) |
-| 4 | Kịch bản nhiệm vụ | 9 | Định dạng báo cáo |
-| 5 | Môi trường, thiết bị | | |
-
-Note: Phần 7 (Maze) trình bày test plan thật của nhóm theo đúng 9 phần này.
-
----
-
-## Công cụ usability testing
-
-| Mục đích | Công cụ |
-| --- | --- |
-| Test từ xa không điều phối | **Maze**, Lyssna, UXtweak |
-| Heatmap, ghi lại phiên dùng | Microsoft Clarity, Hotjar, FullStory |
-| Ghi hình, phỏng vấn | UserTesting, Lookback |
-| AI hỗ trợ phân tích | Maze AI, Attention Insight; **LLM có vision** để đánh giá heuristic |
-
-Note: Nhóm chọn Maze cho usability testing và tự xây AI Heuristic Reviewer cho phần AI; lý do chọn ở phần 5.
-
----
-
-## Tóm tắt phần 4
-
-- Usability = **hiệu quả + hiệu suất + hài lòng** trong bối cảnh cụ thể (ISO 9241-11)
-- Nguyên lý chung: **10 heuristic Nielsen**, chấm **severity 0–4**
-- **Heuristic evaluation** (chuyên gia, rẻ) bổ sung cho **usability testing** (người dùng thật)
-- Khoảng **5 người** cho mỗi vòng test; đo bằng success rate, time on task, **SEQ**, **SUS**
-
-Note: Chuyển sang phần 5: khảo sát và so sánh công cụ.
+Note: Ba nhóm chỉ số ứng với ba thành phần ISO 9241-11. Maze ở phần 07 đo đúng các chỉ số này.

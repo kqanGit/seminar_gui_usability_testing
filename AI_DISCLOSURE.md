@@ -11,6 +11,7 @@ Theo yêu cầu "chính chủ" của môn: nhóm được dùng AI hỗ trợ nh
 | 2026-10-19 | Quân | Claude | Tìm, tóm tắt bài báo (rank ≥ B) và skill GitHub về GUI/usability testing; soạn slide phần nghiên cứu liên quan; slide mở đầu các phần | `docs/khao-sat/bai-bao.md`, `docs/khao-sat/agent-skills.md`, `slides/sections/08-ai-reviewer.md`, `slides/sections/0[3,5-7,9]`, `10-tong-ket.md`, `slides/SKILL.md` | Quân | _(điền sau khi review: đối chiếu hạng CORE, số star)_ |
 | 2026-10-19 | Quân | Claude | Soạn kịch bản demo chi tiết phần AI (kiến trúc, 3 demo, bảng người vs AI, điểm yếu) và slide demo phần 08 | `ai-reviewer/scenarios-plan.md`, `slides/sections/08-ai-reviewer.md` | Quân | _(điền sau khi review)_ |
 | 2026-10-19 | Phúc (B) | Antigravity (Gemini) & Claude | Soạn kịch bản Maze, lý thuyết Usability, cấu hình SUT URL và bài tập 3 | `maze/`, `content/04-ly-thuyet-usability.md`, `exercises/`, `sut/` | Phúc | Xem chi tiết tại [`AI Usage Declaration.md`](./AI%20Usage%20Declaration.md) |
+| 2026-10-23 | Quân | Claude | Rút slide về bản trình bày 30 phút (chuyển slide chi tiết sang phụ lục), soạn khung slide 03, 05, 06, 07, 09, 10 | `slides/sections/*.md`, `slides/sections.json` | Quân; Quang (02, 03, 06), Phúc (04, 05, 07) | _(điền sau khi review)_ |
 
 Lưu ý:
 - Kết quả do **AI Heuristic Reviewer** sinh ra là *dữ liệu thí nghiệm*, không phải nội dung nhóm viết — ghi ở `evidence/ai/`, không cần khai báo ở đây.

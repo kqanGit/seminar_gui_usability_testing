@@ -1,4 +1,4 @@
-<!-- Phụ trách: Quân. Mỗi slide ngăn cách bằng một dòng chỉ có ---  -->
+<!-- Phụ trách: Quân. Bản trình bày 30 phút: slide chi tiết đã chuyển sang 11-phu-luc. Mỗi slide ngăn cách bằng một dòng chỉ có --- -->
 
 <!-- .slide: class="divider" -->
 
@@ -7,11 +7,10 @@
 ## Mở đầu
 
 - Vì sao cần kiểm thử giao diện và tính khả dụng?
-- SUT: luồng Checkout của EShop
-- Lỗi giao diện thật nhóm tìm thấy
-- Lộ trình buổi seminar
+- SUT: luồng mua hàng của EShop
+- Lộ trình 30 phút
 
-Note: Phần mở đầu khoảng 3 phút. Mục tiêu: cho lớp thấy phần mềm chạy đúng vẫn có thể thất bại, rồi giới thiệu SUT dùng xuyên suốt buổi.
+Note: Thời gian: 2 phút cho cả phần 01 (Quân). Mục tiêu: cho lớp thấy phần mềm chạy đúng vẫn có thể thất bại, rồi giới thiệu SUT dùng xuyên suốt buổi.
 
 ---
 
@@ -45,11 +44,11 @@ Note: Hai nửa của đề tài bổ sung cho nhau: giao diện đúng đặc t
 
 ---
 
-## SUT: EShop — luồng Checkout
+## SUT: EShop — luồng mua hàng
 
 - Website bán hàng mẫu của môn học: React + Vite, backend Node.js + SQLite
 
-<p class="flow">Trang chủ → Chi tiết sản phẩm → Giỏ hàng → Thanh toán (mã giảm giá)</p>
+<p class="flow">Đăng nhập → Trang chủ → Chi tiết sản phẩm → Giỏ hàng → Thanh toán (mã giảm giá)</p>
 
 | Đặc tả GUI có sẵn | Ví dụ yêu cầu |
 | --- | --- |
@@ -58,49 +57,34 @@ Note: Hai nửa của đề tài bổ sung cho nhau: giao diện đúng đặc t
 | **FR-23** Điều hướng | Highlight trang hiện tại, badge giỏ hàng |
 | **FR-24** Phản hồi | Toast khi thêm vào giỏ, dialog khi xóa |
 
-Note: FR-21 đến FR-24 nằm ở mục 8 của README EShop. Đây là "tiêu chí đúng/sai" cho GUI testing; usability thì không có đặc tả, phải đo trên người dùng.
+<p class="small">Phạm vi: checklist, Playwright, Maze và AI đều chạy trên <b>cùng một luồng</b> này. Phạm vi đầy đủ và 11 lỗi ground truth: Phụ lục.</p>
+
+Note: FR-21 đến FR-24 nằm ở mục 8 của README EShop. Đây là tiêu chí đúng/sai cho GUI testing; usability thì không có đặc tả, phải đo trên người dùng. Không đọc bảng, chỉ nói "giao diện có đặc tả sẵn, nên đúng/sai đo được".
 
 ---
 
-## Lỗi giao diện thật trong EShop
+## Lộ trình 30 phút
 
-| Trang | Hiện tại | Đặc tả yêu cầu |
-| --- | --- | --- |
-| Giỏ hàng | Nhãn "Tổng tạm tính" | "Tổng cộng" (FR-07) |
-| Giỏ hàng | Bấm "Xóa" xóa ngay | Có dialog xác nhận (FR-24) |
-| Giỏ hàng | Nút "Tiến hành thanh toán" màu xanh lá | Nút tích cực màu xanh dương (FR-21) |
-| Giỏ hàng, Thanh toán | Tiêu đề là `<h2>`, không có `<h1>` | Đúng 1 `<h1>` mỗi trang (FR-21) |
-| Thanh toán | Ô "Tổng tiền thanh toán" sửa được | Không cho sửa (FR-08) |
-| Header | Nút "Thoát", không có badge giỏ hàng | "Đăng xuất", có badge (FR-23) |
+<div class="cols"><div>
+<table>
+<tr><th>Phần</th><th>Phút</th><th>Người nói</th></tr>
+<tr><td>01 Mở đầu</td><td>2</td><td>Quân</td></tr>
+<tr><td>02 Lý thuyết GUI</td><td>2</td><td>Quang</td></tr>
+<tr><td>03 Checklist 50 câu</td><td>2</td><td>Quang</td></tr>
+<tr><td>04 Lý thuyết Usability</td><td>2,5</td><td>Phúc</td></tr>
+<tr><td>05 Chọn công cụ</td><td>1,5</td><td>Phúc</td></tr>
+</table>
+</div><div>
+<table>
+<tr><th>Phần</th><th>Phút</th><th>Người nói</th></tr>
+<tr><td>06 Playwright + axe</td><td>6</td><td>Quang</td></tr>
+<tr><td>07 Maze</td><td>4</td><td>Phúc</td></tr>
+<tr><td>08 AI Heuristic Reviewer</td><td>6</td><td>Quân</td></tr>
+<tr><td>09 Bài tập</td><td>2</td><td>Quân</td></tr>
+<tr><td>10 Tổng kết</td><td>2</td><td>Quân</td></tr>
+</table>
+</div></div>
 
-<p class="small">Đối chiếu từ mã nguồn (<code>Cart.jsx</code>, <code>Checkout.jsx</code>, <code>App.jsx</code>). Danh sách này là <b>ground truth</b> (đáp án) để chấm Playwright, AI và bài tập.</p>
+<p class="small">Lý thuyết chi tiết, bảng so sánh đầy đủ và khảo sát nằm ở Phụ lục cuối slide.</p>
 
-Note: Mỗi lỗi sẽ có ảnh chụp minh chứng trong evidence/gui-bugs. Các phần sau đều quay lại bảng này.
-
----
-
-## Lộ trình seminar
-
-| Lý thuyết | Công cụ, AI và thực hành |
-| --- | --- |
-| 1. Mở đầu | 5. Khảo sát & so sánh công cụ |
-| 2. Lý thuyết GUI Testing | 6. Playwright + axe-core (3 demo) |
-| 3. Checklist 50 câu trên EShop | 7. Maze (3 demo) |
-| 4. Lý thuyết Usability Testing | 8. AI Heuristic Reviewer: người vs AI |
-| | 9. Bài tập: Heuristic Showdown |
-| | 10. Tổng kết |
-
-Note: Đi từ lý thuyết → công cụ → AI → cho lớp thực hành.
-
----
-
-## Phạm vi
-
-| Trong phạm vi | Ngoài phạm vi |
-| --- | --- |
-| Bố cục, control, trạng thái giao diện | Kiểm thử chức năng E2E (thuộc đề T2) |
-| Visual regression, accessibility (WCAG) | Performance, security, API |
-| Heuristic evaluation, test theo nhiệm vụ, SUS/SEQ | Ứng dụng mobile (Expo) |
-| Compatibility mức nhẹ: 3 viewport, 2–3 trình duyệt | Device farm trả phí |
-
-Note: Ranh giới với T2: nhóm chỉ thao tác để đưa trang về đúng trạng thái cần soi; điểm kiểm tra luôn là thuộc tính giao diện, không phải kết quả nghiệp vụ.
+Note: Đi từ lý thuyết → checklist thủ công → công cụ tự động → AI → cho lớp thực hành. Nói nhanh, khoảng 15 giây.
