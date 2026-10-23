@@ -10,7 +10,7 @@ Checkpoint chỉ thuộc tính GUI (T1), không assert nghiệp vụ (T2).
 | S0 | Smoke cài đặt (title Playwright) | `tests/example.spec.js` | 1 | Init + report |
 | S1 | Cart — nhãn “Tổng cộng” | `tests/demo2-cart-tong-cong.spec.js` | 2 | codegen + checkpoint; fail = G01 |
 
-## Demo 3 — suite data-driven (làm tiếp)
+## Demo 3 — suite data-driven (**đã code**)
 
 Một file × `data/pages.json` × 3 viewport; mỗi vòng cùng bộ checkpoint. Dùng `expect.soft`.
 
