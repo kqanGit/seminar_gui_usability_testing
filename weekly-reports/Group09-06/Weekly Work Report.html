@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Weekly Work Report — Group 09 · WeekID 06</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --success: #059669;
+      --tag-bg: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      padding: 2.25rem 2.5rem;
+    }
+    h1 {
+      font-size: 1.65rem;
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.6rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      color: #374151;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    p, li { font-size: 0.95rem; color: #374151; }
+    ul { padding-left: 1.3rem; }
+    li { margin-bottom: 0.35rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1rem 0 1.5rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+      color: #111827;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #fafafa; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      background: #f1f5f9;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-success { background: #d1fae5; color: #065f46; }
+    .badge-primary { background: #dbeafe; color: #1e40af; }
+    .badge-info { background: #e0e7ff; color: #3730a3; }
+    .meta-box {
+      background: var(--tag-bg);
+      border-left: 4px solid var(--primary);
+      padding: 0.9rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+    }
+    .meta-box p { margin: 0.25rem 0; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Weekly Work Report — Group 09 · WeekID 06</h1>
+  
+  <div class="meta-box">
+    <p><strong>Kỳ báo cáo:</strong> 17/10/2026 – 23/10/2026 (Tuần thực hành 06 — Mốc nộp tiến độ &ge; 90%)</p>
+    <p><strong>Môn học:</strong> Software Testing (FIT@HCMUS) — <strong>GVTH:</strong> Thầy Hồ Tuấn Thanh</p>
+    <p><strong>Đề tài Seminar:</strong> T1 — GUI &amp; Usability Testing</p>
+    <p><strong>Repository:</strong> <a href="https://github.com/kqanGit/seminar_gui_usability_testing" target="_blank">https://github.com/kqanGit/seminar_gui_usability_testing</a></p>
+  </div>
+
+  <h2>1. Thông tin thành viên &amp; Phân công vai trò</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 12%;">MSSV</th>
+        <th style="width: 22%;">Họ và tên</th>
+        <th style="width: 15%;">Git Username</th>
+        <th>Vai trò đảm nhiệm</th>
+        <th style="width: 18%; text-align: center;">Tiến độ hoàn thành</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>20120359</strong></td>
+        <td><strong>Nguyễn Đức Quang</strong></td>
+        <td><code>ducquang2</code></td>
+        <td><strong>Vai A:</strong> GUI Testing &amp; Automation với Playwright</td>
+        <td style="text-align: center;"><span class="badge badge-success">100% Hoàn thành</span></td>
+      </tr>
+      <tr>
+        <td><strong>23120328</strong></td>
+        <td><strong>Bửu Huỳnh Vĩnh Phúc</strong></td>
+        <td><code>23120328</code></td>
+        <td><strong>Vai B:</strong> Usability Testing với UXtweak &amp; Microsoft Clarity</td>
+        <td style="text-align: center;"><span class="badge badge-success">95% Hoàn thành</span></td>
+      </tr>
+      <tr>
+        <td><strong>23120337</strong></td>
+        <td><strong>Bùi Minh Quân</strong> <em>(Trưởng nhóm)</em></td>
+        <td><code>kqanGit</code></td>
+        <td><strong>Vai C:</strong> AI Heuristic Reviewer &amp; Slide, Kịch bản, Tích hợp SUT</td>
+        <td style="text-align: center;"><span class="badge badge-success">100% Hoàn thành</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Chi tiết tiến độ trong kỳ (17/10 – 23/10)</h2>
+
+  <h3>2.1. Vai A — Nguyễn Đức Quang (<code>ducquang2</code>) — GUI Testing &amp; Playwright</h3>
+  <ul>
+    <li><strong>Playwright Demo 3 (Phức tạp):</strong> Hoàn thành <code>tests/playwright/setups.js</code> và <code>tests/demo3-gui-rules.spec.js</code> kiểm thử Data-driven (5 trang &times; 3 viewport) với Soft Assertions và Visual Regression.</li>
+    <li><strong>Checklist GUI 50 câu:</strong> Đánh giá đầy đủ 50 câu (12 Pass / 28 Fail / 10 N/A), kèm minh chứng khoanh đỏ tại <code>checklist/checklist-50.md</code>.</li>
+    <li><strong>Nội dung báo cáo:</strong> Biên soạn chi tiết <code>content/03-checklist.md</code> và <code>content/06-playwright.md</code>.</li>
+    <li><strong>Video Demo YouTube:</strong> Đã quay và xuất bản đủ 3 clip YouTube có thuyết minh tiếng Việt:
+      <ul>
+        <li>Demo 1 (Cài đặt, 4:51): <a href="https://youtu.be/mx3exWqNlwg" target="_blank">https://youtu.be/mx3exWqNlwg</a></li>
+        <li>Demo 2 (Cơ bản, 2:56): <a href="https://youtu.be/YKiv_qQGFvk" target="_blank">https://youtu.be/YKiv_qQGFvk</a></li>
+        <li>Demo 3 (Phức tạp, 4:06): <a href="https://youtu.be/E4NwNmcJ3EI" target="_blank">https://youtu.be/E4NwNmcJ3EI</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>2.2. Vai B — Bửu Huỳnh Vĩnh Phúc (<code>23120328</code>) — Usability Testing</h3>
+  <ul>
+    <li><strong>Chuyển đổi công cụ Usability:</strong> Chuyển sang bộ đôi <strong>UXtweak</strong> (Website Testing: Task T1, SEQ, SUS 10 câu Grid, Lostness) và <strong>Microsoft Clarity</strong> (Click Heatmap, Rage Click, Dead Click, Session Recording) do Maze khóa tính năng ở gói Free.</li>
+    <li><strong>Biên soạn tài liệu &amp; Khảo sát:</strong> Viết <code>content/04-ly-thuyet-usability.md</code>, khảo sát 4 công cụ tại <code>content/05-khao-sat-cong-cu.md</code>, và hoàn thiện <code>content/07-maze.md</code>.</li>
+    <li><strong>Bài tập 3:</strong> Hoàn thành đề và đáp án Bài tập 3 (Tính điểm SUS và phân tích hành vi) tại <code>exercises/bai-3-maze-sus.md</code>.</li>
+    <li><strong>Triển khai Study:</strong> Tạo study live trên UXtweak và chạy thử nghiệm thu thập kết quả.</li>
+  </ul>
+
+  <h3>2.3. Vai C — Bùi Minh Quân (<code>kqanGit</code>) — AI Heuristic Reviewer &amp; Tích hợp</h3>
+  <ul>
+    <li><strong>Triển khai SUT &amp; Tracking:</strong> Deploy SUT lên Vercel (<a href="https://seminar-gui-usability-testing.vercel.app" target="_blank">seminar-gui-usability-testing.vercel.app</a>), nhúng cả snippet UXtweak và Microsoft Clarity.</li>
+    <li><strong>Slide &amp; Kịch bản thuyết trình:</strong> Rút gọn toàn bộ slide về khung thời gian 30 phút (10 phần), viết kịch bản chi tiết từng phút tại <code>docs/kich-ban-trinh-bay.md</code>.</li>
+    <li><strong>Agent Skill <code>nielsen-heuristic-reviewer</code> (v2.0):</strong> Xây dựng skill chuẩn với 2 Subagent độc lập (<code>heuristic-reviewer</code> và <code>finding-labeler</code>), đảm bảo AI bị cách ly 100% không đọc trước đáp án Ground Truth.</li>
+    <li><strong>Thực nghiệm toàn luồng:</strong> Playwright tự động chụp 30 ảnh EShop (3 lần chạy) + 1 ảnh TodoMVC; các subagent phát hiện 105 vi phạm và vượt qua 100% schema validation. Đo đạc Precision đạt <strong>0,76</strong>, Recall đạt <strong>0,45</strong>, độ ổn định <strong>86,7%</strong>.</li>
+    <li><strong>Báo cáo &amp; Bài tập 2:</strong> Hoàn thành <code>content/08-ai-reviewer.md</code> và Bài tập 2 (Heuristic Showdown) kèm đáp án tại <code>exercises/</code>.</li>
+  </ul>
+
+  <h2>3. Tổng kết mức độ hoàn thành toàn bộ đề tài</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Hạng mục theo Đề cương Seminar</th>
+        <th style="width: 20%; text-align: center;">Mức độ hoàn thành</th>
+        <th>Ghi chú minh chứng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SUT EShop hoàn chỉnh</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>Backend SQLite + Frontend React, đã deploy live trên Vercel</td>
+      </tr>
+      <tr>
+        <td><strong>Checklist GUI 50 câu</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>Đủ 50 câu, có ảnh minh chứng lỗi khoanh đỏ và mã G01–G11</td>
+      </tr>
+      <tr>
+        <td><strong>Playwright Testing (3 Demo)</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>3 kịch bản test hoàn chỉnh + 3 video clip YouTube đã xuất bản</td>
+      </tr>
+      <tr>
+        <td><strong>Usability Testing (UXtweak + Clarity)</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">95%</span></td>
+        <td>Study live sẵn sàng, snippet ghi nhận Heatmap và Session Replay</td>
+      </tr>
+      <tr>
+        <td><strong>AI Heuristic Reviewer (3 Demo)</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>Skill chuẩn, 2 subagents cách ly, thực nghiệm 3 runs + TodoMVC</td>
+      </tr>
+      <tr>
+        <td><strong>Slide thuyết trình 30 phút</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>Đầy đủ 10 phần, đúng chuẩn 30 phút, có kịch bản MC chi tiết</td>
+      </tr>
+      <tr>
+        <td><strong>Bài tập thực hành (Showdown + SUS)</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">100%</span></td>
+        <td>2 bài tập lớn kèm đáp án chi tiết và thang điểm chấm</td>
+      </tr>
+      <tr style="background: #ecfdf5; font-weight: bold;">
+        <td>ĐÁNH GIÁ TỔNG THỂ ĐỀ TÀI</td>
+        <td style="text-align: center;"><span class="badge badge-success">&ge; 98%</span></td>
+        <td>Đạt và vượt mốc &ge; 90% yêu cầu của Tuần 06</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Kế hoạch tuần tiếp theo</h2>
+  <ul>
+    <li>Cả nhóm luyện tập thuyết trình khớp mốc thời gian 30 phút (Quang 10', Phúc 10', Quân 10').</li>
+    <li>Thu thập thêm các phản hồi của người dùng trên UXtweak Study để bổ sung vào slide kết quả.</li>
+    <li>Xuất slide bản PDF và chuẩn bị USB dự phòng trước buổi báo cáo seminar trên lớp.</li>
+  </ul>
+</div>
+</body>
+</html>

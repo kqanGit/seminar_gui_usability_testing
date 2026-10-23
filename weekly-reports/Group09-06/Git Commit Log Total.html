@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Git Commit Log Total — Group 09</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --line: #e5e7eb;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --success: #059669;
+      --tag-bg: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+    }
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      padding: 2.25rem 2.5rem;
+    }
+    h1 {
+      font-size: 1.65rem;
+      margin-top: 0;
+      color: #111827;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 0.6rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.4rem;
+    }
+    p, li { font-size: 0.95rem; color: #374151; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1rem 0 1.5rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+      color: #111827;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td { background: #fafafa; }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+      background: #f1f5f9;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-primary { background: #dbeafe; color: #1e40af; }
+    .badge-success { background: #d1fae5; color: #065f46; }
+    .badge-info { background: #e0e7ff; color: #3730a3; }
+    .meta-box {
+      background: var(--tag-bg);
+      border-left: 4px solid var(--primary);
+      padding: 0.9rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+    }
+    .meta-box p { margin: 0.25rem 0; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Git Commit Log Total — Group 09</h1>
+  
+  <div class="meta-box">
+    <p><strong>Repository:</strong> <a href="https://github.com/kqanGit/seminar_gui_usability_testing" target="_blank">https://github.com/kqanGit/seminar_gui_usability_testing</a></p>
+    <p><strong>Kỳ báo cáo:</strong> 17/10/2026 – 23/10/2026 (Tuần thực hành 06)</p>
+    <p><strong>Thời điểm xuất log:</strong> 2026-10-23 23:51:30 +0700 · <strong>Nhánh:</strong> <code>main</code></p>
+  </div>
+
+  <h2>1. Ánh xạ Git Username &harr; MSSV &amp; Họ tên Sinh viên</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Git Username</th>
+        <th>Git Author Email</th>
+        <th style="text-align: center;">MSSV</th>
+        <th>Họ và tên</th>
+        <th>Vai trò trong nhóm</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ducquang2</code></td>
+        <td><code>nducquangg@gmail.com</code></td>
+        <td style="text-align: center;"><strong>20120359</strong></td>
+        <td><strong>Nguyễn Đức Quang</strong></td>
+        <td><strong>Vai A:</strong> GUI Testing &amp; Automation Playwright</td>
+      </tr>
+      <tr>
+        <td><code>23120328</code></td>
+        <td><code>buuhuynhvinhphuc@gmail.com</code></td>
+        <td style="text-align: center;"><strong>23120328</strong></td>
+        <td><strong>Bửu Huỳnh Vĩnh Phúc</strong></td>
+        <td><strong>Vai B:</strong> Usability Testing UXtweak &amp; Clarity</td>
+      </tr>
+      <tr>
+        <td><code>kqanGit</code></td>
+        <td><code>bmquan.gd@gmail.com</code></td>
+        <td style="text-align: center;"><strong>23120337</strong></td>
+        <td><strong>Bùi Minh Quân</strong></td>
+        <td><strong>Vai C:</strong> Trưởng nhóm · AI Heuristic Reviewer &amp; Slide</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Thống kê Commit tổng cộng từ đầu Project</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Thành viên</th>
+        <th style="text-align: center;">Số commit đóng góp</th>
+        <th style="text-align: center;">Tỷ lệ đóng góp</th>
+        <th>Ghi chú nội dung chính</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Bùi Minh Quân</strong> (<code>kqanGit</code>)</td>
+        <td style="text-align: center;"><strong>10</strong></td>
+        <td style="text-align: center;"><span class="badge badge-primary">35.7%</span></td>
+        <td>Init repo, deploy SUT Vercel, rút gọn slide 30', kịch bản, AI Reviewer v2.0</td>
+      </tr>
+      <tr>
+        <td><strong>Nguyễn Đức Quang</strong> (<code>ducquang2</code>)</td>
+        <td style="text-align: center;"><strong>9</strong></td>
+        <td style="text-align: center;"><span class="badge badge-success">32.1%</span></td>
+        <td>Setup SUT, Checklist 50 câu, Playwright Demo 1–3, xuất bản 3 clip YouTube</td>
+      </tr>
+      <tr>
+        <td><strong>Bửu Huỳnh Vĩnh Phúc</strong> (<code>23120328</code>)</td>
+        <td style="text-align: center;"><strong>9</strong></td>
+        <td style="text-align: center;"><span class="badge badge-info">32.1%</span></td>
+        <td>Seed tài khoản, API env, lý thuyết Usability, Maze/UXtweak, Bài tập 3</td>
+      </tr>
+      <tr style="background: #f0fdf4; font-weight: bold;">
+        <td>TỔNG CỘNG TOÀN PROJECT</td>
+        <td style="text-align: center;"><strong>28</strong></td>
+        <td style="text-align: center;"><strong>100%</strong></td>
+        <td>Phân bổ commit đồng đều, cân bằng giữa cả 3 thành viên</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Danh sách Git Commit Log chi tiết (Mới nhất &rarr; Cũ nhất)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 5%; text-align: center;">#</th>
+        <th style="width: 10%;">Hash</th>
+        <th style="width: 12%;">Author</th>
+        <th style="width: 18%;">Thời gian</th>
+        <th>Commit Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="text-align: center;">1</td><td><code>5622135</code></td><td>kqanGit</td><td>2026-10-23 23:48</td><td>merge: sync Playwright clips and weekly W05 with AI Heuristic Reviewer</td></tr>
+      <tr><td style="text-align: center;">2</td><td><code>bd39dd7</code></td><td>ducquang2</td><td>2026-10-23 23:44</td><td>docs: cập nhật link + thời lượng 3 clip Playwright mới</td></tr>
+      <tr><td style="text-align: center;">3</td><td><code>f91bbf0</code></td><td>ducquang2</td><td>2026-10-23 23:00</td><td>docs: thêm link 3 clip Playwright YouTube + cập nhật weekly W05</td></tr>
+      <tr><td style="text-align: center;">4</td><td><code>ae52921</code></td><td>kqanGit</td><td>2026-10-23 23:47</td><td>feat(ai-reviewer): implement agent-run Nielsen heuristic reviewer skill, run 3-demo experiment, and update evaluation docs</td></tr>
+      <tr><td style="text-align: center;">5</td><td><code>49b89f7</code></td><td>ducquang2</td><td>2026-10-23 22:25</td><td>playwright: Demo 3 data-driven + checklist 50 + content clip scripts</td></tr>
+      <tr><td style="text-align: center;">6</td><td><code>2e58bbe</code></td><td>kqanGit</td><td>2026-10-23 20:59</td><td>docs(usability): update study design and 3-demo script for UXtweak and Microsoft Clarity</td></tr>
+      <tr><td style="text-align: center;">7</td><td><code>248bcea</code></td><td>kqanGit</td><td>2026-10-23 20:18</td><td>feat(sut): integrate Microsoft Clarity tracking snippet alongside UXtweak</td></tr>
+      <tr><td style="text-align: center;">8</td><td><code>0653b5a</code></td><td>kqanGit</td><td>2026-10-23 20:16</td><td>feat(usability): switch from Maze to UXtweak snippet and update slides, script, and AI disclosure</td></tr>
+      <tr><td style="text-align: center;">9</td><td><code>6df47bb</code></td><td>23120328</td><td>2026-10-23 01:02</td><td>content(tools): bo sung khao sat va so sanh nhom cong cu Usability (Maze, UXtweak, Clarity, Hotjar)</td></tr>
+      <tr><td style="text-align: center;">10</td><td><code>a522194</code></td><td>23120328</td><td>2026-10-23 01:02</td><td>content+slides(maze): hoan thien bao cao va slide phan 07 (Maze Usability Testing, 3 demo, SUS/SEQ)</td></tr>
+      <tr><td style="text-align: center;">11</td><td><code>18b8efa</code></td><td>23120328</td><td>2026-10-23 01:02</td><td>exercises(usability): soan de bai va dap an Bai tap 3 (Maze + SUS) kem danh gia heuristic doc lap</td></tr>
+      <tr><td style="text-align: center;">12</td><td><code>68cd5fb</code></td><td>kqanGit</td><td>2026-10-23 05:08</td><td>slides: rút về bản trình bày 30 phút, chuyển slide chi tiết sang phụ lục</td></tr>
+      <tr><td style="text-align: center;">13</td><td><code>d9f0ef6</code></td><td>23120328</td><td>2026-10-23 00:34</td><td>docs(ai): cap nhat AI_DISCLOSURE va bo sung AI Usage Declaration chi tiet cho Vai B</td></tr>
+      <tr><td style="text-align: center;">14</td><td><code>ec9c6ec</code></td><td>23120328</td><td>2026-10-23 00:18</td><td>sut(frontend): tich hop Maze Universal Snippet va cap nhat sut/README.md</td></tr>
+      <tr><td style="text-align: center;">15</td><td><code>59d4f86</code></td><td>kqanGit</td><td>2026-10-21 23:36</td><td>sut: prepare deploy (PORT from env for Render, vercel.json SPA rewrite)</td></tr>
+      <tr><td style="text-align: center;">16</td><td><code>862da06</code></td><td>kqanGit</td><td>2026-10-16 22:00</td><td>ai-reviewer: kịch bản demo chi tiết phần AI + slide demo phần 08</td></tr>
+      <tr><td style="text-align: center;">17</td><td><code>4d971ae</code></td><td>kqanGit</td><td>2026-10-16 21:38</td><td>docs+slides: khảo sát bài báo (rank ≥ B) và Agent Skills cho phần AI; sửa footer slide</td></tr>
+      <tr><td style="text-align: center;">18</td><td><code>9417291</code></td><td>23120328</td><td>2026-10-16 20:37</td><td>content(usability): viet noi dung ly thuyet Usability Testing (ISO 9241-11, Nielsen H1-H10, SUS/SEQ, Test Plan)</td></tr>
+      <tr><td style="text-align: center;">19</td><td><code>16f6451</code></td><td>23120328</td><td>2026-10-16 09:24</td><td>maze: hoan thien ban thiet ke study-design.md va kiem chung ky thuat Maze</td></tr>
+      <tr><td style="text-align: center;">20</td><td><code>267311a</code></td><td>23120328</td><td>2026-10-15 10:18</td><td>sut(backend): them tai khoan seed p1-p6 cho Maze va cap nhat sut/README.md</td></tr>
+      <tr><td style="text-align: center;">21</td><td><code>ed85e81</code></td><td>23120328</td><td>2026-10-14 21:45</td><td>sut(frontend): doi 13 cho URL API cung sang bien moi truong VITE_API_URL</td></tr>
+      <tr><td style="text-align: center;">22</td><td><code>21b2d79</code></td><td>kqanGit</td><td>2026-10-16 21:40</td><td>slides: viết phần lý thuyết (Mở đầu, GUI Testing, Usability Testing) và làm lại giao diện slide</td></tr>
+      <tr><td style="text-align: center;">23</td><td><code>533cbe9</code></td><td>ducquang2</td><td>2026-10-16 21:22</td><td>docs(playwright): plan scenarios Demo 3 + phụ S2–S8</td></tr>
+      <tr><td style="text-align: center;">24</td><td><code>047f819</code></td><td>ducquang2</td><td>2026-10-16 21:08</td><td>docs: sửa hash SUT và ngày xác nhận Evidence/checklist</td></tr>
+      <tr><td style="text-align: center;">25</td><td><code>8d2cba3</code></td><td>ducquang2</td><td>2026-10-16 20:45</td><td>playwright: Demo 1 cài đặt + Demo 2 checkpoint Tổng cộng</td></tr>
+      <tr><td style="text-align: center;">26</td><td><code>ec6fc02</code></td><td>ducquang2</td><td>2026-10-15 20:18</td><td>docs: biên bản họp + heuristic thủ công (Quang)</td></tr>
+      <tr><td style="text-align: center;">27</td><td><code>d3cb8e8</code></td><td>ducquang2</td><td>2026-10-15 17:41</td><td>checklist: bắt đầu 50 câu (chấm ~18) + Evidence Fail</td></tr>
+      <tr><td style="text-align: center;">28</td><td><code>1e3ac7b</code></td><td>ducquang2</td><td>2026-10-15 16:27</td><td>ground-truth: xác nhận lỗi GUI G01–G11 + ảnh</td></tr>
+      <tr><td style="text-align: center;">29</td><td><code>98a04fc</code></td><td>ducquang2</td><td>2026-10-15 15:12</td><td>evidence: EShop chạy được trên máy (setup)</td></tr>
+      <tr><td style="text-align: center;">30</td><td><code>867b8d9</code></td><td>kqanGit</td><td>2026-10-14 20:12</td><td>Initialize repo for seminar T1 GUI & Usability Testing (Team 09)</td></tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
