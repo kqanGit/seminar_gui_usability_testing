@@ -10,7 +10,7 @@
 | **Hệ thống được kiểm thử (SUT)** | EShop Frontend Web (React + Vite) kết nối EShop Backend (Express + SQLite) |
 | **URL Frontend public (Vercel)** | `https://seminar-gui-usability-testing.vercel.app` |
 | **URL Backend API (`VITE_API_URL`)** | `https://eshop-api-nhom09.onrender.com` *(đã thay 13 chỗ gọi cứng `http://localhost:3000`)* |
-| **Mã nhúng (Tracking Snippets)** | **UXtweak Snippet** (`56e349e0-e437-4d32-8fad-c6c12bc486b3`) + **Microsoft Clarity** (`z27wxp2oeb`) trong `sut/eshop/frontend-web/index.html` |
+| **Mã nhúng (Tracking Snippets)** | **UXtweak Snippet** (`0726db60-cf63-4364-af4e-82923f22dbfe`) + **Microsoft Clarity** (`z27wxp2oeb`) trong `sut/eshop/frontend-web/index.html` |
 | **Số lượng người tham gia** | 5–6 người tham gia (participant) ngoài nhóm (sinh viên lớp khác / bạn bè chưa từng biết mã nguồn EShop) |
 | **Tài khoản cấp riêng** | `p1@eshop.com` … `p6@eshop.com` · Mật khẩu chung: `Test1234!` (mỗi người tham gia dùng 1 tài khoản độc lập) |
 | **Quy trình chuẩn bị DB** | Mở `https://eshop-api-nhom09.onrender.com/api/products` để đánh thức backend Render (tự động seed lại SQLite DB) trước mỗi đợt test |

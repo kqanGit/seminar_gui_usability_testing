@@ -61,7 +61,7 @@ Theo yêu cầu đề cương Seminar T1, mỗi công cụ cần làm rõ sự h
 - **Mục tiêu:** Minh họa quy trình tạo Study trên UXtweak, tạo Project trên Microsoft Clarity, lấy mã nhúng gắn vào mã nguồn Frontend EShop và xác thực hoạt động trên URL Vercel.
 - **Các bước thực hiện trong clip:**
   1. Trên **UXtweak Dashboard** (`app.uxtweak.com`), bấm **Create a new study $\rightarrow$ Unmoderated study $\rightarrow$ Website Testing**. Đặt tên `EShop Checkout Usability Study`, điền domain `seminar-gui-usability-testing.vercel.app`, bật `Record respondent's screen`.
-  2. Bấm **Launch / Snippet** để lấy đoạn mã JavaScript **UXtweak Snippet** (`56e349e0-e437-4d32-8fad-c6c12bc486b3`).
+  2. Bấm **Launch / Snippet** để lấy đoạn mã JavaScript **UXtweak Snippet** (`0726db60-cf63-4364-af4e-82923f22dbfe`).
   3. Trên **Microsoft Clarity** (`clarity.microsoft.com`), tạo project `EShop Seminar T1` và lấy đoạn mã `<script>` (`z27wxp2oeb`).
   4. Mở VS Code tại file [`sut/eshop/frontend-web/index.html`](../sut/eshop/frontend-web/index.html), cho thấy cả 2 đoạn script đã được đặt trong thẻ `<head>` và push lên GitHub để Vercel tự động deploy.
   5. Mở `https://seminar-gui-usability-testing.vercel.app`, bấm `Ctrl + U` (View Source) xác nhận 2 đoạn mã đã có mặt trên bản production, và bấm **Verify** trên UXtweak báo xanh lá.

@@ -169,8 +169,8 @@
 
 **Slide 23 — So sánh công cụ** (khoảng 1 phút 20 giây)
 
-> "Nhóm khảo sát 11 công cụ, bảng đầy đủ nằm trong proposal và phụ lục. Nhóm chọn ba: Playwright vì miễn phí, tự động hoàn toàn và có đủ bộ ba record-playback, data-driven, checkpoint. Về usability, ban đầu nhóm chọn Maze và đặt UXtweak làm dự phòng, nhưng khi triển khai thật thì Maze khóa tính năng Live Website Testing ở bản miễn phí (đòi gói 99 đô mỗi tháng), nên nhóm chuyển sang UXtweak và đã deploy EShop lên mạng. Thứ ba là AI Heuristic Reviewer do nhóm tự xây.
-> Tóm lại: Playwright hỏi đúng đặc tả không, UXtweak hỏi dùng được không, AI làm lại cả hai để so với người. Mời Quang với Playwright."
+> "Nhóm khảo sát 11 công cụ, bảng đầy đủ nằm trong proposal và phụ lục. Nhóm chọn ba: Playwright vì miễn phí, tự động hoàn toàn và có đủ bộ ba record-playback, data-driven, checkpoint. Về usability, ban đầu nhóm chọn Maze và đặt UXtweak làm dự phòng, nhưng khi triển khai thật thì Maze khóa tính năng Live Website Testing ở bản miễn phí (đòi gói 99 đô mỗi tháng), nên nhóm chuyển sang UXtweak kết hợp Microsoft Clarity và đã deploy EShop lên mạng. Thứ ba là AI Heuristic Reviewer do nhóm tự xây.
+> Tóm lại: Playwright hỏi đúng đặc tả không, UXtweak + Clarity hỏi dùng được không, AI làm lại cả hai để so với người. Mời Quang với Playwright."
 
 > **Mốc giờ: lúc này phải khoảng 10:00.**
 
@@ -208,29 +208,29 @@
 
 ---
 
-### 16:00 — Phần 07 UXtweak (Phúc, 4 phút)
+### 16:00 — Phần 07 UXtweak & Microsoft Clarity (Phúc, 4 phút)
 
 **Slide 31 — divider:** bấm qua.
 
-**Slide 32 — UXtweak là gì?** (khoảng 40 giây)
+**Slide 32 — UXtweak & Microsoft Clarity là gì?** (khoảng 40 giây)
 
-> "UXtweak là nền tảng usability testing từ xa, không cần người điều phối: người tham gia tự làm qua một đường link. Trong công cụ Website Testing, nhóm gắn UXtweak Snippet lên trang EShop, giao nhiệm vụ (Task) kèm trang đích (/checkout) và đường đi tối ưu 4 trang. UXtweak tự ghi lại video thao tác, chia kết quả thành thành công trực tiếp, gián tiếp hoặc bỏ cuộc, và tự tính độ lạc đường (Lostness)."
+> "UXtweak là nền tảng usability testing từ xa, không cần người điều phối: người tham gia tự làm qua một đường link. Trong công cụ Website Testing, nhóm gắn UXtweak Snippet lên trang EShop, giao nhiệm vụ (Task) kèm trang đích (/checkout) và đường đi tối ưu 4 trang. UXtweak tự ghi lại video thao tác (Session Replay), chia kết quả thành thành công trực tiếp, gián tiếp hoặc bỏ cuộc, và tự tính độ lạc đường (Lostness). Song song đó, nhóm nhúng thêm Microsoft Clarity hoàn toàn miễn phí để tự động vẽ Click Heatmap và phát hiện Rage Click trong cùng một phiên làm bài."
 
 **Slide 33 — Study của nhóm** (khoảng 50 giây)
 
 > "Nhiệm vụ của nhóm: 'Bạn có tối đa 5 triệu, muốn mua một phụ kiện máy tính, hãy mua và dùng mã VIP100.' Kịch bản không nhắc tên nút nào, để đo được người dùng có tự tìm ra đường không. Nhóm chọn VIP100 thay vì SAVE10 vì mã phần trăm của EShop cố ý tính sai, sẽ làm nhiễu kết quả. [5–6] bạn ngoài nhóm tham gia, mỗi bạn một tài khoản riêng."
 
-**Slide 34 — 3 demo UXtweak** (khoảng 1 phút, gồm clip 30 giây)
+**Slide 34 — 3 demo UXtweak + Clarity** (khoảng 1 phút, gồm clip 30 giây)
 
-> "Ba demo: gắn UXtweak Snippet lên bản deploy Vercel; tạo Task với Success URL và câu hỏi SEQ rồi chạy thử 1 lượt xem Session Replay; và luồng đầy đủ gồm Welcome, Task, SEQ, bảng SUS 10 câu gửi cho 5 người tham gia, kèm Session Recording để lấy Heatmap." *(chiếu đoạn clip UXtweak-2 hoặc UXtweak-3)*
+> "Ba demo: gắn đồng thời UXtweak Snippet và Microsoft Clarity lên bản deploy Vercel; tạo Task với Success URL và câu hỏi SEQ rồi chạy thử 1 lượt xem Session Replay; và luồng đầy đủ gồm Welcome, Task, SEQ, bảng SUS 10 câu dạng Radio button grid gửi cho 5 người tham gia, đọc báo cáo UXtweak kết hợp Click Heatmap và Rage Click trên Clarity." *(chiếu đoạn clip UXtweak-2 hoặc UXtweak-3)*
 
 **Slide 35 — Kết quả study** (khoảng 50 giây)
 
-> "Kết quả: [..]% hoàn thành, [..] thành công trực tiếp, [..] đi vòng. SEQ trung bình [..] trên 7, SUS [..], [dưới/trên] mốc 68." *(chỉ vào heatmap / replay)* "Chỗ click lặp nhiều nhất là [..], khớp với lỗi [G10: phải bấm Thêm vào giỏ hai lần]."
+> "Kết quả: [..]% hoàn thành, [..] thành công trực tiếp, [..] đi vòng. SEQ trung bình [..] trên 7, SUS [..], [dưới/trên] mốc 68." *(chỉ vào heatmap / replay)* "Trên Clarity Heatmap và UXtweak Replay, chỗ bị Rage Click nhiều nhất là [nút Thêm vào giỏ], khớp với lỗi [G10: phải bấm Thêm vào giỏ hai lần]."
 
 **Slide 36 — Điểm yếu** (khoảng 40 giây)
 
-> "Điểm yếu: gói miễn phí của UXtweak chỉ cho 1 study đang chạy, tối đa 1 task mỗi study và chỉ giữ kết quả 14 ngày. Cần URL public. Và vì không có người điều phối, công cụ cho thấy người dùng kẹt ở đâu nhưng không hỏi được vì sao. Muốn biết vì sao thì cần heuristic evaluation, tức là cần chuyên gia. Vậy AI có làm thay chuyên gia được không? Mời Quân."
+> "Điểm yếu: gói miễn phí của UXtweak chỉ cho 1 study đang chạy, tối đa 1 task mỗi study và chỉ giữ kết quả 14 ngày nên nhóm phải gom 10 câu SUS vào 1 bảng lưới và dùng thêm Clarity để lấy Heatmap; Clarity thì có độ trễ tổng hợp khoảng 20–30 phút. Và vì không có người điều phối, bộ công cụ cho thấy người dùng kẹt ở đâu nhưng không hỏi được vì sao. Muốn biết vì sao thì cần heuristic evaluation, tức là cần chuyên gia. Vậy AI có làm thay chuyên gia được không? Mời Quân."
 
 > **Mốc giờ: lúc này phải khoảng 20:00.**
 
