@@ -1,6 +1,6 @@
 # Playwright + axe
 
-> Phụ trách: **Quang** · Trạng thái: đủ cho nộp ≥90% (Demo 1–3 code xong; clip ghi link khi đăng)
+> Phụ trách: **Quang** · Trạng thái: Demo 1–3 + 3 clip YouTube xong
 
 ## Thuật ngữ nhanh
 
@@ -46,4 +46,10 @@ Phần lớn soft-assert **fail** trên EShop cố ý lỗi — đó là kết q
 
 ## Clip YouTube
 
-Xem `videos/README.md` + `videos/clip-scripts-playwright.md` (kịch bản quay). Cập nhật link khi đăng.
+| Demo | Link |
+| --- | --- |
+| 1. Cài đặt | https://youtu.be/mx3exWqNlwg |
+| 2. Cơ bản (R&P + Checkpoint) | https://youtu.be/YKiv_qQGFvk |
+| 3. Phức tạp (data-driven + visual + a11y) | https://youtu.be/E4NwNmcJ3EI |
+
+Kịch bản quay: `videos/clip-scripts-playwright.md`. Bảng đủ nhóm: `videos/README.md`.
