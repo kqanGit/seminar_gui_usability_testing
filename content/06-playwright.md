@@ -48,8 +48,8 @@ Phần lớn soft-assert **fail** trên EShop cố ý lỗi — đó là kết q
 
 | Demo | Link |
 | --- | --- |
-| 1. Cài đặt | https://youtu.be/1o4PLV0NB64 |
-| 2. Cơ bản (R&P + Checkpoint) | https://youtu.be/xcXshuYuiY8 |
-| 3. Phức tạp (data-driven + visual + a11y) | https://youtu.be/JA4xz1wKk0g |
+| 1. Cài đặt | https://youtu.be/mx3exWqNlwg |
+| 2. Cơ bản (R&P + Checkpoint) | https://youtu.be/YKiv_qQGFvk |
+| 3. Phức tạp (data-driven + visual + a11y) | https://youtu.be/E4NwNmcJ3EI |
 
 Kịch bản quay: `videos/clip-scripts-playwright.md`. Bảng đủ nhóm: `videos/README.md`.
