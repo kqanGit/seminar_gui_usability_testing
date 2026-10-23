@@ -3,7 +3,7 @@
 **Đề tài Seminar:** T1 — GUI & Usability Testing (Nhóm 09)  
 **Thành viên thực hiện:** Bửu Huỳnh Vĩnh Phúc  
 **MSSV:** `23120328`  
-**Vai trò trong nhóm:** Vai B — Usability Testing, Công cụ UXtweak (thay thế Maze), Host/Deploy SUT EShop, Bài tập 3  
+**Vai trò trong nhóm:** Vai B — Usability Testing, Công cụ UXtweak & Microsoft Clarity (thay thế Maze), Host/Deploy SUT EShop, Bài tập 3  
 **Giai đoạn / Tuần khai báo:** Tuần chuẩn bị kỹ thuật & triển khai kịch bản kiểm thử (14/10/2026 – 23/10/2026)  
 
 ---
@@ -12,7 +12,7 @@
 
 | Tên công cụ AI | Nhà phát triển / Nền tảng | Phiên bản / Model | Mục đích sử dụng cụ thể |
 | :--- | :--- | :--- | :--- |
-| **Google Antigravity Agent** | Google DeepMind | Gemini 4 Argon & Gemini 3.8 Flash | Hỗ trợ phân tích mã nguồn SUT EShop, thiết lập bộ luật kiểm thử (Project Harness), tích hợp UXtweak Snippet (sau khi kiểm chứng Maze khóa tính năng Live Website Testing ở bản Free), tạo kịch bản nhiệm vụ Usability Study và sinh khung bài tập SUS. |
+| **Google Antigravity Agent** | Google DeepMind | Gemini 4 Argon & Gemini 3.8 Flash | Hỗ trợ phân tích mã nguồn SUT EShop, thiết lập bộ luật kiểm thử (Project Harness), tích hợp UXtweak Snippet & Microsoft Clarity (sau khi kiểm chứng Maze khóa tính năng Live Website Testing ở bản Free), tạo kịch bản nhiệm vụ Usability Study và sinh khung bài tập SUS. |
 | **Claude** | Anthropic | Claude 3.5 Sonnet & Claude Opus | Hỗ trợ tra cứu, đối chiếu chuẩn ISO 9241-11, hệ thống 10 nguyên lý Heuristic của Jakob Nielsen và rà soát tính khả thi của kịch bản nhiệm vụ (Task Scenarios). |
 
 ---
@@ -40,7 +40,7 @@ Mọi nội dung do AI hỗ trợ đều tuân thủ nghiêm ngặt **Quy địn
 ### Các can thiệp và hiệu chỉnh trọng tâm của con người:
 1. **Bảo toàn tính toàn vẹn của SUT EShop (Guardrails):** AI ban đầu có xu hướng tự động "sửa lỗi" giúp người dùng (như sửa nhãn "Tổng tạm tính", đổi màu nút hay fix sự kiện click đúp). Người thực hiện đã can thiệp thiết lập hàng rào bảo vệ (Guardrail) nghiêm ngặt để đảm bảo các lỗi GUI/Usability cố ý (`G01–G10`) phục vụ kiểm thử không bị thay đổi.
 2. **Kiểm chứng và chuẩn hóa công thức toán học SUS:** Khi AI sinh bảng dữ liệu khảo sát và tính điểm System Usability Scale (SUS), người thực hiện đã trực tiếp tính lại từng bước bằng tay theo công thức của John Brooke (câu lẻ: $X = R_i - 1$; câu chẵn: $Y = 5 - R_i$; tổng điểm nhân 2.5), sửa các sai lệch làm tròn để đảm bảo bài tập đạt chuẩn sư phạm.
-3. **Kiểm chứng giới hạn thực tế của Maze & chuyển đổi sang UXtweak:** AI ban đầu gợi ý Maze Free cho phép chạy Live Website Testing. Khi trực tiếp tạo study trên Maze và đối chiếu tài liệu chính thức (*Maze free trials*), nhóm phát hiện khối *Website test* bị loại khỏi gói Free/Trial (yêu cầu gói trả phí ~\$99/tháng). Nhóm đã chủ động kích hoạt phương án dự phòng trong Proposal là **UXtweak**, thay thế Maze Snippet bằng **UXtweak Snippet** trên bản deploy Vercel + Render và cấu hình bảng SUS 10 câu dạng `Radio button grid` để vượt qua giới hạn số lượng câu hỏi của gói Free.
+3. **Kiểm chứng giới hạn thực tế của Maze & chuyển đổi sang UXtweak + Microsoft Clarity:** AI ban đầu gợi ý Maze Free cho phép chạy Live Website Testing. Khi trực tiếp tạo study trên Maze và đối chiếu tài liệu chính thức (*Maze free trials*), nhóm phát hiện khối *Website test* bị loại khỏi gói Free/Trial (yêu cầu gói trả phí ~\$99/tháng). Nhóm đã chủ động kích hoạt phương án dự phòng trong Proposal là **UXtweak** (cho Website Testing, Session Replay, SEQ và bảng SUS 10 câu dạng `Radio button grid`) kết hợp nhúng song song **Microsoft Clarity** (miễn phí hoàn toàn để thu thập Click Heatmap và Rage Click trong cùng phiên làm bài) trên bản deploy Vercel + Render.
 
 ---
 
@@ -53,7 +53,7 @@ Mọi nội dung do AI hỗ trợ đều tuân thủ nghiêm ngặt **Quy địn
 | **16/10/2026** | Hoàn thiện bản thiết kế Usability Study & phân tích kỹ thuật | Claude & Antigravity | `maze/study-design.md` | Xác định rõ mã giảm giá `VIP100` (giảm cố định), loại bỏ mã `SAVE10` vì backend bị lỗi tính phần trăm. |
 | **16/10/2026** | Soạn thảo nội dung lý thuyết Usability Testing | Claude & Antigravity | `content/04-ly-thuyet-usability.md` | Bổ sung bảng ánh xạ 10 Heuristic Nielsen trực tiếp với các lỗi `G01–G10` trên EShop; chuẩn hóa công thức tính SUS của John Brooke. |
 | **17/10/2026** | Soạn đề bài Bài tập 3 (Usability + SUS) & đáp án mẫu | Antigravity (Gemini) | `exercises/bai-3-maze-sus.md`, `exercises/answers/bai-3-dap-an.md` | Kiểm tra tính toán từng bước của bảng SUS 10 câu, phân định rõ công thức câu lẻ $(R_i - 1)$ và câu chẵn $(5 - R_i)$. |
-| **19–23/10/2026** | Kiểm chứng Maze, chuyển sang tích hợp UXtweak Snippet & đồng bộ môi trường deploy | Antigravity (Gemini) | `sut/eshop/frontend-web/index.html`, `.env.example`, `slides/sections/07-maze.md` | Phát hiện Maze khóa Website Test ở bản Free; chuyển sang nhúng UXtweak Snippet trên Vercel, thiết lập Task + SEQ + SUS trên UXtweak. |
+| **19–23/10/2026** | Kiểm chứng Maze, chuyển sang tích hợp UXtweak Snippet + Microsoft Clarity & đồng bộ slide/báo cáo | Antigravity (Gemini) | `sut/eshop/frontend-web/index.html`, `.env.example`, `content/07-maze.md`, `slides/sections/07-maze.md` | Phát hiện Maze khóa Website Test ở bản Free; nhúng đồng thời UXtweak Snippet và Microsoft Clarity trên Vercel, thiết lập Task + SEQ + SUS trên UXtweak. |
 
 ---
 
@@ -118,17 +118,16 @@ Dưới đây là các đoạn tương tác tiêu biểu thể hiện quá trìn
 
 ---
 
-### Log 5: Chuyển đổi từ Maze sang UXtweak cho Live Website Testing trên Vercel
+### Log 5: Chuyển đổi từ Maze sang UXtweak & Microsoft Clarity cho Live Website Testing trên Vercel
 * **Thời gian:** 23/10/2026
 * **Prompt (User):**
-  > *"Phần usability tôi không sử dụng Maze nữa vì phải trả phí để dùng được tính năng web testing, bây giờ tôi dự định sẽ đổi sang UXtweak thì có ổn không và đủ thực hiện tất cả các chức năng tôi mong muốn trong demo?"*
+  > *"Phần usability tôi không sử dụng Maze nữa vì phải trả phí để dùng được tính năng web testing, bây giờ tôi đổi sang kết hợp UXtweak và Microsoft Clarity thì có ổn không và đủ thực hiện tất cả các chức năng tôi mong muốn trong demo?"*
 * **Phản hồi của AI (Tóm tắt):**
-  > AI tra cứu giới hạn gói Free (Starter Plan) của UXtweak và hướng dẫn:
-  > 1. UXtweak hỗ trợ công cụ **Website Testing** và **Session Recording** dùng chung 1 đoạn mã **UXtweak Snippet** dán trong thẻ `<head>` của `index.html`.
-  > 2. Thiết lập Task với `Start URL`, `Success URL (/checkout)`, `Optimal path (4 pages)` để đo tự động chỉ số **Lostness**, kèm câu hỏi **SEQ (7-point Likert scale)** sau nhiệm vụ và bảng **SUS 10 câu** dạng `Radio button grid` ở phần Post-study questionnaire.
-  > 3. Có thể chạy nối tiếp *Website Testing* (đo Task/SEQ/SUS/Session Replay) và *Session Recording* (vẽ Click Heatmap) trên cùng đoạn snippet đã gắn trên Vercel.
+  > AI tra cứu giới hạn gói Free của UXtweak và hướng dẫn cách kết hợp với Microsoft Clarity:
+  > 1. **UXtweak (`Website Testing`):** Dùng **UXtweak Snippet** để giao Task với `Start URL`, `Success URL (/checkout)`, `Optimal path (4 pages)` nhằm đo tự động **Task Success / Lostness**, quay **Session Replay**, kèm câu hỏi **SEQ (7-point Likert scale)** sau nhiệm vụ và bảng **SUS 10 câu** dạng `Radio button grid` ở phần Post-study questionnaire.
+  > 2. **Microsoft Clarity (miễn phí 100%):** Nhúng song song trong thẻ `<head>` của `index.html` để tự động tổng hợp **Click Heatmap** và phát hiện **Rage Click / Dead Click** trong cùng một lần làm bài của người tham gia (khắc phục giới hạn chỉ cho chạy 1 active study cùng lúc của gói UXtweak Free).
 * **Đánh giá / Can thiệp của con người:**
-  > Trực tiếp tạo study trên UXtweak, lấy mã UXtweak Snippet (`56e349e0-e437-4d32-8fad-c6c12bc486b3`) tích hợp vào `sut/eshop/frontend-web/index.html` thay cho Maze, và ghi nhận rõ giới hạn của cả Maze lẫn UXtweak vào phần điểm yếu công cụ.
+  > Trực tiếp tạo study trên UXtweak (`0726db60-cf63-4364-af4e-82923f22dbfe`) và project trên Microsoft Clarity (`z27wxp2oeb`), tích hợp cả 2 snippet vào `sut/eshop/frontend-web/index.html` thay cho Maze, và ghi nhận rõ ưu/nhược điểm của bộ công cụ vào slide và báo cáo.
 
 ---
 
