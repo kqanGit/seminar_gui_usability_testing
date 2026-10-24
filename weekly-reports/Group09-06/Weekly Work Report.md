@@ -64,6 +64,10 @@
 - [x] **Biên soạn Báo cáo Phần 08 & Bài tập 2:**
   - Hoàn thiện `content/08-ai-reviewer.md` và `slides/sections/08-ai-reviewer.md`.
   - Soạn đề và đáp án Bài tập 2 (Heuristic Showdown): `exercises/bai-2-heuristic-showdown.md` và `exercises/answers/bai-2-dap-an.md`.
+- [x] **Quay & Xuất bản 3 clip YouTube AI Heuristic Reviewer:**
+  - Demo 1 (Cài đặt Skill & Smoke Test): https://youtu.be/d2Rigi9dbls
+  - Demo 2 (Đánh giá Giỏ hàng & Phản biện AI): https://youtu.be/wXIQ4o7bVi8
+  - Demo 3 (Toàn luồng 3 Runs, CHI 2024 & TodoMVC): https://youtu.be/8I4n31fuWNc
 
 ---
 
@@ -75,7 +79,7 @@
 | **Checklist GUI 50 câu** | $100\%$ | Đủ 50 câu, có ảnh minh chứng lỗi khoanh đỏ |
 | **Playwright Testing (3 Demo)** | $100\%$ | 3 script hoàn chỉnh + 3 video clip YouTube đã xuất bản |
 | **Usability Testing (UXtweak + Clarity)** | $95\%$ | Study live sẵn sàng, snippet ghi nhận dữ liệu, báo cáo chi tiết |
-| **AI Heuristic Reviewer (3 Demo)** | $100\%$ | Skill chuẩn, 2 subagents cách ly, thực nghiệm 3 runs + TodoMVC, bảng Người vs AI |
+| **AI Heuristic Reviewer (3 Demo)** | $100\%$ | Skill chuẩn, 2 subagents cách ly, thực nghiệm 3 runs + TodoMVC, 3 clip YouTube đã xuất bản |
 | **Slide thuyết trình 30 phút** | $100\%$ | Đầy đủ 10 phần, đúng thời lượng, có kịch bản MC chi tiết |
 | **Bài tập thực hành (Showdown + SUS)** | $100\%$ | 2 bài tập lớn kèm đáp án chi tiết và biểu điểm |
 | **ĐÁNH GIÁ TỔNG THỂ ĐỀ TÀI** | **$\ge 98\%$** | **Đạt và vượt mốc $\ge 90\%$ yêu cầu của Tuần 06** |

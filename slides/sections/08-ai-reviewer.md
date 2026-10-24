@@ -88,7 +88,7 @@ Note: Các luật này rút từ điểm yếu mà bài CHI 2024 ghi nhận: AI 
 
 - **Checkpoint:** `VALID` — JSON đúng `schema.json`
 
-<p class="clip">▶ Clip AI-1 — Cài đặt: (đang quay)</p>
+<p class="clip">▶ Clip AI-1 — Cài đặt: <a href="https://youtu.be/d2Rigi9dbls">youtu.be/d2Rigi9dbls</a></p>
 
 Note: Không cần API key: model là model của agent.
 
@@ -106,7 +106,7 @@ Agent chạy skill với `--only cart --viewport desktop` → thêm sản phẩm
 | G04 Nút xanh lá | H4 · 2 | Khó: AI không biết đặc tả | _(sau khi chạy)_ |
 | G05 Không có `<h1>` | FR-21 | Không: không thấy trên ảnh | _(sau khi chạy)_ |
 
-<p class="clip">▶ Clip AI-2 — Giỏ hàng: (đang quay)</p>
+<p class="clip">▶ Clip AI-2 — Giỏ hàng: <a href="https://youtu.be/wXIQ4o7bVi8">youtu.be/wXIQ4o7bVi8</a></p>
 
 Note: Cột "Dự đoán" là giả thuyết trước khi chạy; cột cuối điền từ report.md của lần chạy thật.
 
@@ -119,7 +119,7 @@ Note: Cột "Dự đoán" là giả thuyết trước khi chạy; cột cuối �
 - **Checkpoint:** kiểm schema; subagent gán nhãn so 11 lỗi ground truth; **người duyệt `labels.csv`**; `npm run compare`
 - **Tái sử dụng:** `config.todomvc.json` chạy trên TodoMVC không sửa code
 
-<p class="clip">▶ Clip AI-3 — Toàn luồng: (đang quay)</p>
+<p class="clip">▶ Clip AI-3 — Toàn luồng: <a href="https://youtu.be/8I4n31fuWNc">youtu.be/8I4n31fuWNc</a></p>
 
 Note: AI gán nhãn nháp để luồng tự động không bị ngắt; người duyệt lại toàn bộ sau. Bản tóm tắt ghi rõ đã duyệt bao nhiêu dòng.
 

@@ -70,6 +70,7 @@
 
 ### 🎬 CLIP AI-1: Nạp Bộ Skill Độc Lập & Chạy Smoke Test Bằng Ngôn Ngữ Tự Nhiên (~3 phút)
 - **Tên clip đề xuất:** `Clip_AI1_Setup_Skill_Smoke_Test.mp4`
+- **Link YouTube:** https://youtu.be/d2Rigi9dbls
 - **Thông điệp chính:** Trình diễn bộ skill khả dụng độc lập, cơ chế tự động nạp skill (Auto-discovery), tương tác hoàn toàn bằng câu lệnh chat tự nhiên, và quy trình Main Agent điều phối Subagent chấm ảnh cô lập.
 
 #### Bảng kịch bản từng giây:
@@ -86,6 +87,7 @@
 
 ### 🎬 CLIP AI-2: Đánh giá Chuyên sâu Giỏ hàng & Đối thoại Phản biện Chất vấn AI (~3–4 phút)
 - **Tên clip đề xuất:** `Clip_AI2_Deep_Dive_Cart_Interactive.mp4`
+- **Link YouTube:** https://youtu.be/wXIQ4o7bVi8
 - **Thông điệp chính:** Trình diễn khả năng tự động dựng trạng thái giỏ hàng (Automated State Setup), nhập câu lệnh tự nhiên để đánh giá trang `/cart`, và thực hiện **hỏi đáp trực tiếp trong Chat để chất vấn AI về các lỗi nó bỏ sót**, từ đó nêu bật giới hạn cốt lõi của Vision AI khi đối chiếu với Ground Truth.
 
 #### Bảng kịch bản từng giây:
@@ -102,6 +104,7 @@
 
 ### 🎬 CLIP AI-3: Thực nghiệm Toàn luồng 3 Lần, Đối chiếu Ground Truth & Tái sử dụng trên TodoMVC (~5–6 phút)
 - **Tên clip đề xuất:** `Clip_AI3_Full_Flow_3Runs_GroundTruth_TodoMVC.mp4`
+- **Link YouTube:** https://youtu.be/8I4n31fuWNc
 - **Thông điệp chính:** Đánh giá toàn luồng mua sắm (5 trang $\times$ 2 viewports) lặp lại **3 lần độc lập (3 runs)** để đo độ ổn định; dùng Subagent gán nhãn nháp đối chiếu Ground Truth; phân tích bảng so sánh CHI 2024; và chứng minh tính độc lập, dùng chung (Data-driven) khi chạy trên ứng dụng TodoMVC.
 
 #### Bảng kịch bản từng giây:

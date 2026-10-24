@@ -171,9 +171,9 @@ Kết luận dự kiến: AI là **trợ lý tăng tốc** (dựng khung báo c�
 
 | Clip | Nội dung | Thời lượng | Link |
 | --- | --- | --- | --- |
-| AI-1 | Demo 1 cài đặt + smoke | ~3' | _(chưa quay)_ |
-| AI-2 | Demo 2 Giỏ hàng: 1 đúng, 1 sai/bỏ sót | ~4' | _(chưa quay)_ |
-| AI-3 | Demo 3 toàn luồng + bảng người vs AI + đổi website | ~6' | _(chưa quay)_ |
+| AI-1 | Demo 1 cài đặt + smoke | ~3' | https://youtu.be/d2Rigi9dbls |
+| AI-2 | Demo 2 Giỏ hàng: 1 đúng, 1 sai/bỏ sót | ~4' | https://youtu.be/wXIQ4o7bVi8 |
+| AI-3 | Demo 3 toàn luồng + bảng người vs AI + đổi website | ~6' | https://youtu.be/8I4n31fuWNc |
 
 Quy ước quay (yêu cầu môn): nền trắng, chữ đen (VS Code theme sáng, terminal nền trắng), phóng chữ to, **có thuyết minh**; che API key.
 

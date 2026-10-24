@@ -74,16 +74,27 @@ Ngoài ra, rubric **chỉ định nghĩa heuristic một cách chung**, không c
 ### 3.1. Demo 1 — Cài đặt Skill & Smoke Test
 * **Thao tác:** `npm install`, `npx playwright install chromium`; chép 2 subagent và skill vào `.claude/` (lệnh trong [`ai-reviewer/README.md`](../ai-reviewer/README.md)); mở Claude Code ở gốc repo và yêu cầu chạy smoke test.
 * **Kết quả mong đợi:** agent chụp `home-desktop.png`, subagent viết `findings/home-desktop.json`, `npm run validate` in `VALID`. Không cần API key.
+* **Clip YouTube:** https://youtu.be/d2Rigi9dbls (~3 phút)
 
 ### 3.2. Demo 2 — Trang Giỏ hàng
 * **Thao tác:** yêu cầu agent chạy skill với `--only cart --viewport desktop`, mở `out/cart-demo/report.md`.
 * **Giả thuyết trước khi chạy:** AI thấy được G02 (xóa không xác nhận), G03 (thiếu nút +/-), có thể thấy G01 (nhãn "Tổng tạm tính"); khó thấy G04 (cần đặc tả màu) và không thấy G05 (thẻ `<h1>` không hiện trên ảnh).
 * **Kết quả thật:** _(điền sau khi chạy)_
+* **Clip YouTube:** https://youtu.be/wXIQ4o7bVi8 (~4 phút)
 
 ### 3.3. Demo 3 — Toàn luồng 3 lần, người vs AI, đổi website
 * **3a.** Agent chạy skill 3 lần (`run-1`, `run-2`, `run-3`), mỗi lần 10 ảnh và một subagent chấm mới.
 * **3b.** Subagent `finding-labeler` gán nhãn nháp → `evidence/ai/labels.csv`; agent chạy `npm run compare`. Người duyệt từng dòng trong `labels.csv` (ghi `ok` hoặc nhãn đúng), rồi chạy lại `compare`.
 * **3c.** Agent chạy skill với `--config config.todomvc.json` trên TodoMVC, không sửa code.
+* **Clip YouTube:** https://youtu.be/8I4n31fuWNc (~5–6 phút)
+
+### 3.4. Danh sách Clip YouTube Demo
+
+| Demo | Kịch bản trình diễn | Link YouTube | Thời lượng | Trạng thái |
+| :---: | :--- | :--- | :---: | :---: |
+| **1** | Cài đặt Skill, Nạp Agent & Smoke Test | https://youtu.be/d2Rigi9dbls | ~3 phút | **Đã xuất bản** |
+| **2** | Đánh giá Giỏ hàng & Đối thoại phản biện chất vấn AI | https://youtu.be/wXIQ4o7bVi8 | ~4 phút | **Đã xuất bản** |
+| **3** | Toàn luồng 3 Runs, Đối chiếu Ground Truth (CHI 2024) & TodoMVC | https://youtu.be/8I4n31fuWNc | ~5–6 phút | **Đã xuất bản** |
 
 ---
 
