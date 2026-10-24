@@ -2,14 +2,17 @@
 
 Yêu cầu: nền trắng chữ đen (slide intro nếu có), thuyết minh rõ; Unlisted OK. Không commit file video lớn.
 
-Kịch bản quay Playwright: [`clip-scripts-playwright.md`](./clip-scripts-playwright.md).
+Kịch bản quay Playwright: [`clip-scripts-playwright.md`](./clip-scripts-playwright.md).  
+Kịch bản quay AI Reviewer: [`clip-scripts-ai-reviewer.md`](./clip-scripts-ai-reviewer.md).
 
 | #   | Công cụ           | Demo                                                                | Người làm   | Link                         | Thời lượng     | Trạng thái |
 | --- | ----------------- | ------------------------------------------------------------------- | ----------- | ---------------------------- | -------------- | ---------- |
-| 1   | Playwright        | Cài đặt                                                             | Quang       | https://youtu.be/mx3exWqNlwg | ~5 phút (4:51) | Đã đăng    |
-| 2   | Playwright        | Cơ bản — Record & Playback + Checkpoint                             | Quang       | https://youtu.be/YKiv_qQGFvk | ~3 phút (2:56) | Đã đăng    |
-| 3   | Playwright        | Phức tạp — Data-driven + visual + a11y                              | Quang       | https://youtu.be/E4NwNmcJ3EI | ~4 phút (4:06) | Đã đăng    |
-| 4   | UXtweak + Clarity | Cài đặt — Gắn 2 snippet lên EShop (Vercel) & xác thực               | Phúc        |                              |                |            |
-| 5   | UXtweak + Clarity | Cơ bản — 1 Task + Success URL (`/checkout`) + SEQ & Session Replay  | Phúc        |                              |                |            |
-| 6   | UXtweak + Clarity | Phức tạp — Study Checkout ~5 người + SUS 10 câu & Clarity Heatmap   | Phúc  |                              |                |            |
-| 7   | AI Reviewer       | Chạy script → báo cáo                                               | Quân        |                              |                |            |
+| 1   | Playwright        | Demo 1 — Cài đặt                                                    | Quang       | https://youtu.be/mx3exWqNlwg | 4:51           | Đã đăng    |
+| 2   | Playwright        | Demo 2 — Cơ bản (Record & Checkpoint)                               | Quang       | https://youtu.be/YKiv_qQGFvk | 2:56           | Đã đăng    |
+| 3   | Playwright        | Demo 3 — Phức tạp (Data-driven + a11y)                              | Quang       | https://youtu.be/E4NwNmcJ3EI | 4:06           | Đã đăng    |
+| 4   | UXtweak + Clarity | Demo 1 — Cài đặt snippet lên EShop (Vercel) & xác thực              | Phúc        |                              | ~3 phút        | Kịch bản sẵn sàng |
+| 5   | UXtweak + Clarity | Demo 2 — Cơ bản (1 Task Checkout + SEQ & Session Replay)            | Phúc        |                              | ~3 phút        | Kịch bản sẵn sàng |
+| 6   | UXtweak + Clarity | Demo 3 — Phức tạp (Study ~5 người + SUS 10 câu & Clarity Heatmap)   | Phúc        |                              | ~4 phút        | Kịch bản sẵn sàng |
+| 7   | AI Reviewer       | Demo 1 — Cài đặt, Nạp Skill & Smoke Test                            | Quân        |                              | ~3 phút        | Kịch bản sẵn sàng |
+| 8   | AI Reviewer       | Demo 2 — Đánh giá Giỏ hàng & Đối thoại chất vấn AI                  | Quân        |                              | ~4 phút        | Kịch bản sẵn sàng |
+| 9   | AI Reviewer       | Demo 3 — Toàn luồng 3 Runs, Đối chiếu CHI 2024 & TodoMVC            | Quân        |                              | ~5–6 phút      | Kịch bản sẵn sàng |
