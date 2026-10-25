@@ -45,15 +45,15 @@ Note: EShop đã đổi 13 chỗ gọi cứng `localhost:3000` sang `VITE_API_UR
 
 | Demo | Nội dung | Clip |
 | --- | --- | --- |
-| 1 — Cài đặt | Tạo study UXtweak + project Clarity, gắn 2 snippet vào `index.html` trên Vercel, xác thực kết nối | UXtweak-1: (đang quay) |
-| 2 — Chức năng cơ bản | Tạo Task + Success URL (`/checkout`) + câu hỏi SEQ, chạy thử 1 lượt và xem Session Replay | UXtweak-2: (đang quay) |
-| 3 — Luồng phức tạp | Đủ luồng (Welcome + Task + SEQ + SUS 10 câu `Radio button grid`), gửi link ~5 người, đọc báo cáo UXtweak & Heatmap / Rage Click trên Clarity | UXtweak-3: (đang quay) |
+| 1 — Cài đặt | Tạo study UXtweak + project Clarity, gắn 2 snippet vào `index.html` trên Vercel, xác thực kết nối | <a href="https://youtu.be/OuBjSEdTORQ">youtu.be/OuBjSEdTORQ</a> |
+| 2 — Chức năng cơ bản | Tạo Task + Success URL (`/checkout`) + câu hỏi SEQ, chạy thử 1 lượt và xem Session Replay | <a href="https://youtu.be/Nq31Rxb6lIk">youtu.be/Nq31Rxb6lIk</a> |
+| 3 — Luồng phức tạp | Đủ luồng (Welcome + Task + SEQ + SUS 10 câu `Radio button grid`), gửi link ~5 người, đọc báo cáo UXtweak & Heatmap / Rage Click trên Clarity | <a href="https://youtu.be/7HmEv2DnVJw">youtu.be/7HmEv2DnVJw</a> |
 
 <p class="small">Ánh xạ bộ ba: ghi lại phiên thao tác (Session Replay &amp; Heatmap) ≈ Record &amp; Playback · nhiều người cùng một study (<code>p1</code>…<code>p5</code>) ≈ Data-driven · Success URL, Optimal Path ≈ Checkpoint.</p>
 
-<p class="clip">▶ Clip UXtweak + Clarity 1–3: (đang quay)</p>
+<p class="clip">▶ Clip UXtweak + Clarity: <a href="https://youtu.be/OuBjSEdTORQ">Demo 1</a> · <a href="https://youtu.be/Nq31Rxb6lIk">Demo 2</a> · <a href="https://youtu.be/7HmEv2DnVJw">Demo 3</a></p>
 
-Note: Phúc thay "(đang quay)" bằng link YouTube từng clip.
+Note: Đã cập nhật đủ link YouTube 3 clip demo UXtweak + Microsoft Clarity của Phúc.
 
 ---
 

@@ -43,6 +43,10 @@
   - Hoàn thiện tài liệu thực hành `content/07-maze.md` và slide `slides/sections/07-maze.md`.
 - [x] **Soạn đề & đáp án Bài tập 3:** Hoàn thành `exercises/bai-3-maze-sus.md` và `exercises/answers/bai-3-dap-an.md` (tính điểm SUS và phân tích hành vi misclick).
 - [x] **Triển khai Study UXtweak:** Tạo study live `EShop Checkout Usability Study` và chạy thử nghiệm thu thập kết quả ban đầu.
+- [x] **Quay & Xuất bản 3 clip YouTube Usability Testing (UXtweak + Clarity):**
+  - Demo 1 (Cài đặt snippet & xác thực, ~2:30): https://youtu.be/OuBjSEdTORQ
+  - Demo 2 (Cơ bản — 1 Task, Checkpoint, SEQ & Replay, ~3:00): https://youtu.be/Nq31Rxb6lIk
+  - Demo 3 (Phức tạp — Data-driven 5 người, SUS & Heatmap, ~4:15): https://youtu.be/7HmEv2DnVJw
 
 ---
 
@@ -78,11 +82,11 @@
 | **SUT EShop hoàn chỉnh** | $100\%$ | Backend SQLite `:3000` + Frontend React `:5173`, đã deploy live trên Vercel |
 | **Checklist GUI 50 câu** | $100\%$ | Đủ 50 câu, có ảnh minh chứng lỗi khoanh đỏ |
 | **Playwright Testing (3 Demo)** | $100\%$ | 3 script hoàn chỉnh + 3 video clip YouTube đã xuất bản |
-| **Usability Testing (UXtweak + Clarity)** | $95\%$ | Study live sẵn sàng, snippet ghi nhận dữ liệu, báo cáo chi tiết |
+| **Usability Testing (UXtweak + Clarity)** | $100\%$ | Study live, snippet ghi nhận dữ liệu, 3 video clip YouTube đã xuất bản |
 | **AI Heuristic Reviewer (3 Demo)** | $100\%$ | Skill chuẩn, 2 subagents cách ly, thực nghiệm 3 runs + TodoMVC, 3 clip YouTube đã xuất bản |
 | **Slide thuyết trình 30 phút** | $100\%$ | Đầy đủ 10 phần, đúng thời lượng, có kịch bản MC chi tiết |
 | **Bài tập thực hành (Showdown + SUS)** | $100\%$ | 2 bài tập lớn kèm đáp án chi tiết và biểu điểm |
-| **ĐÁNH GIÁ TỔNG THỂ ĐỀ TÀI** | **$\ge 98\%$** | **Đạt và vượt mốc $\ge 90\%$ yêu cầu của Tuần 06** |
+| **ĐÁNH GIÁ TỔNG THỂ ĐỀ TÀI** | **$100\%$** | **Hoàn thành 100% mọi hạng mục cam kết trong Proposal** |
 
 ---
 

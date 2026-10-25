@@ -1,7 +1,14 @@
 # Phần 07 — Hướng dẫn & Thực nghiệm Công cụ UXtweak & Microsoft Clarity (Usability Testing)
 
 > Phụ trách: **Bửu Huỳnh Vĩnh Phúc (`23120328` — Vai B)** · Phối hợp kỹ thuật: **Bùi Minh Quân (`23120337` — Vai C)**
-> Trạng thái: **Đã hoàn thiện nội dung & kịch bản 3 Demo**
+> Trạng thái: **Đã hoàn thiện nội dung & xuất bản đủ 3 Video Demo YouTube**
+
+## Danh sách Clip YouTube Demo (Phúc thực hiện)
+| Demo | Kịch bản trình diễn | Link YouTube | Thời lượng | Trạng thái |
+| :---: | :--- | :--- | :---: | :---: |
+| **1** | Cài đặt & Xác thực Snippet trên EShop (Vercel) | https://youtu.be/OuBjSEdTORQ | ~2:30 | **Đã xuất bản** |
+| **2** | Kịch bản cơ bản: 1 Task + Checkpoint + SEQ & Session Replay | https://youtu.be/Nq31Rxb6lIk | ~3:00 | **Đã xuất bản** |
+| **3** | Luồng phức tạp: Study ~5 người + SUS 10 câu & Clarity Heatmap | https://youtu.be/7HmEv2DnVJw | ~4:15 | **Đã xuất bản** |
 
 ---
 
@@ -65,7 +72,7 @@ Theo yêu cầu đề cương Seminar T1, mỗi công cụ cần làm rõ sự h
   3. Trên **Microsoft Clarity** (`clarity.microsoft.com`), tạo project `EShop Seminar T1` và lấy đoạn mã `<script>` (`z27wxp2oeb`).
   4. Mở VS Code tại file [`sut/eshop/frontend-web/index.html`](../sut/eshop/frontend-web/index.html), cho thấy cả 2 đoạn script đã được đặt trong thẻ `<head>` và push lên GitHub để Vercel tự động deploy.
   5. Mở `https://seminar-gui-usability-testing.vercel.app`, bấm `Ctrl + U` (View Source) xác nhận 2 đoạn mã đã có mặt trên bản production, và bấm **Verify** trên UXtweak báo xanh lá.
-- **Link clip demo:** Xem tại [`videos/README.md`](../videos/README.md) (Clip UXtweak-1).
+- **Link clip demo:** https://youtu.be/OuBjSEdTORQ (~2:30, xem chi tiết tại [`videos/README.md`](../videos/README.md)).
 
 ---
 
@@ -78,7 +85,7 @@ Theo yêu cầu đề cương Seminar T1, mỗi công cụ cần làm rõ sự h
   3. Ở cột bên phải, tích chọn `Allow respondents to skip tasks` và `Ask questions after each task` để gắn câu hỏi **SEQ** thang 1–7 (*"Nhìn chung, nhiệm vụ vừa rồi dễ hay khó thực hiện?"*).
   4. Mở link Study (`study.uxtweak.com/...`), đăng nhập tài khoản `test@eshop.com`, thực hiện mua bàn phím Keychron Q1 (tại đây thấy rõ lỗi `G10`: bấm *"Thêm vào giỏ"* lần 1 không ăn, phải bấm lần 2), vào giỏ hàng, thanh toán với mã `VIP100` và chấm điểm SEQ.
   5. Mở tab **Results** trên UXtweak và tab **Recordings** trên Clarity: phát lại đoạn **Video Session Replay** ghi rõ cảnh con trỏ chuột bấm lặp vào nút *"Thêm vào giỏ"*.
-- **Link clip demo:** Xem tại [`videos/README.md`](../videos/README.md) (Clip UXtweak-2).
+- **Link clip demo:** https://youtu.be/Nq31Rxb6lIk (~3:00, xem chi tiết tại [`videos/README.md`](../videos/README.md)).
 
 ---
 
@@ -95,7 +102,7 @@ Theo yêu cầu đề cương Seminar T1, mỗi công cụ cần làm rõ sự h
   5. Mở tab **Dashboard & Heatmaps** trên Microsoft Clarity:
      - Chỉ vào cảnh báo **Rage Clicks** và tấm ảnh **Click Heatmap** đỏ rực tại nút *"Thêm vào giỏ"* trên trang chi tiết sản phẩm (khớp lỗi `G10` + `G08`).
      - Xem điểm click bất thường vào ô *"Tổng tiền thanh toán"* sửa được ở trang `/checkout` (khớp lỗi `G06`).
-- **Link clip demo:** Xem tại [`videos/README.md`](../videos/README.md) (Clip UXtweak-3).
+- **Link clip demo:** https://youtu.be/7HmEv2DnVJw (~4:15, xem chi tiết tại [`videos/README.md`](../videos/README.md)).
 
 ---
 
