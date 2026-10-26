@@ -1,0 +1,633 @@
+[
+  {
+    "id": "U01",
+    "pages": [
+      "home",
+      "product",
+      "login",
+      "cart",
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H1"
+    ],
+    "element": "Link \"Giỏ hàng\"",
+    "problem": "Không có số lượng/badge, không biết giỏ đang có gì nếu không bấm vào",
+    "severity": 2,
+    "related_g": "G08",
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U02",
+    "pages": [
+      "home",
+      "product",
+      "login",
+      "cart",
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H1"
+    ],
+    "element": "Thanh điều hướng",
+    "problem": "Không có dấu hiệu trang hiện tại; gạch chân thấy trên ảnh login/cart chỉ là hover của chuột (Quân đã kiểm tra trên site)",
+    "severity": 1,
+    "related_g": "G09",
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U03",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H2",
+      "H4"
+    ],
+    "element": "Nút \"Thoát\"",
+    "problem": "Dùng \"Thoát\" (cảm giác đóng ứng dụng) thay cho \"Đăng xuất\"; lại là nút đỏ đặc, nổi nhất thanh header dù không phải hành động chính",
+    "severity": 1,
+    "related_g": "G07",
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U04",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "Logo \"EShop\" + \"Giỏ hàng\"",
+    "problem": "Logo dính sát chữ \"Giỏ hàng\" (đọc thành \"EShopGiỏ hàng\"), header chật",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "K",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U05",
+    "pages": [
+      "home",
+      "product",
+      "cart",
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Định dạng tiền",
+    "problem": "Không thống nhất: home \"30,000,000 VND\", product/cart \"30,000,000 đ\", ô checkout \"30000000\" không phân cách; dùng dấu phẩy thay vì dấu chấm theo thói quen VN",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U06",
+    "pages": [
+      "home",
+      "product",
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H2"
+    ],
+    "element": "Giá tiền",
+    "problem": "Mọi giá đều tô đỏ — đỏ thường mang nghĩa lỗi/cảnh báo/giảm giá, dễ hiểu nhầm",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U07",
+    "pages": [
+      "home"
+    ],
+    "viewports": [
+      "mobile"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "Tiêu đề \"Danh sách sản phẩm\"",
+    "problem": "Tiêu đề bị ép chung hàng với ô tìm kiếm, gãy thành 4 dòng",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U08",
+    "pages": [
+      "home"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "\"Hiển thị 5 sản phẩm\"",
+    "problem": "Chữ xám nhạt trên nền xám rất nhạt, tương phản thấp",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U09",
+    "pages": [
+      "home",
+      "product"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Nút thêm giỏ",
+    "problem": "Cùng một hành động nhưng home là nút xanh dương \"Thêm vào giỏ\", trang chi tiết là nút xanh lá \"Thêm vào giỏ hàng\" — khác màu, khác chữ",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U10",
+    "pages": [
+      "product"
+    ],
+    "viewports": [
+      "desktop"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "Khối thông tin sản phẩm",
+    "problem": "Mô tả chỉ 1 dòng, khoảng trống lớn đẩy \"Số lượng\" và nút thêm giỏ xuống xa tiêu đề/giá",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U11",
+    "pages": [
+      "product"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H3"
+    ],
+    "element": "Điều hướng",
+    "problem": "Không có breadcrumb hay nút quay lại danh sách; chỉ còn logo/nút Back của trình duyệt",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U12",
+    "pages": [
+      "product"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H7"
+    ],
+    "element": "Ô \"Số lượng\"",
+    "problem": "Ô nhập trơn, không thấy nút +/- để chỉnh nhanh",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U13",
+    "pages": [
+      "login"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Tiêu đề form",
+    "problem": "Trang đăng nhập (nav đang ở \"Đăng nhập\", nút \"Sign In\") nhưng tiêu đề ghi \"Đăng Ký\"",
+    "severity": 3,
+    "related_g": "G11",
+    "votes": {
+      "Quan": "Đ/3",
+      "Quang": "Đ/3",
+      "Phuc": "Đ/3"
+    }
+  },
+  {
+    "id": "U14",
+    "pages": [
+      "login"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Nhãn \"Username\", nút \"Sign In\"",
+    "problem": "Trộn tiếng Anh vào giao diện tiếng Việt (\"Mật khẩu\", \"Quên mật khẩu?\" lại là tiếng Việt)",
+    "severity": 2,
+    "related_g": "G11",
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U15",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H3"
+    ],
+    "element": "Cột \"Số lượng\"",
+    "problem": "Số lượng là chữ tĩnh, không sửa được; muốn đổi phải xóa rồi thêm lại",
+    "severity": 2,
+    "related_g": "G03",
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U16",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H5"
+    ],
+    "element": "Liên kết \"Xóa\"",
+    "problem": "Hành động xóa chỉ là chữ đỏ nhỏ sát dòng dữ liệu, không biểu tượng, dễ bấm nhầm (ảnh tĩnh không cho biết có hỏi lại hay không)",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U17",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H2"
+    ],
+    "element": "Nhãn \"Tổng tạm tính\"",
+    "problem": "Đây là tổng duy nhất trên trang nhưng ghi \"tạm tính\" — người dùng không biết còn phí nào nữa không",
+    "severity": 1,
+    "related_g": "G01",
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U18",
+    "pages": [
+      "cart",
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Nút hành động chính",
+    "problem": "\"Tiến hành thanh toán\" và \"Xác Nhận Thanh Toán\" màu xanh lá, trong khi các nút chính khác (Tìm, Thêm vào giỏ, Sign In) đều xanh dương",
+    "severity": 2,
+    "related_g": "G04",
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U19",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "Nút \"← Mua tiếp\"",
+    "problem": "Chữ xám nhạt, viền mờ, trông như nút bị vô hiệu",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U20",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H6"
+    ],
+    "element": "Dòng sản phẩm",
+    "problem": "Chỉ có tên, không ảnh thu nhỏ hay thuộc tính — phải tự nhớ đã chọn gì",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U21",
+    "pages": [
+      "cart"
+    ],
+    "viewports": [
+      "mobile"
+    ],
+    "heuristics": [
+      "H8"
+    ],
+    "element": "Bảng giỏ hàng + nút",
+    "problem": "Bảng 5 cột bị ép: tên SP 3 dòng, \"30,000,000 / đ\" gãy dòng, tiêu đề cột gãy chữ; hai nút cuối gãy 3–4 dòng",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U22",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H5"
+    ],
+    "element": "Ô \"Tổng tiền thanh toán (VND)\"",
+    "problem": "Tổng tiền phải trả nằm trong ô nhập liệu trông như sửa được",
+    "severity": 3,
+    "related_g": "G06",
+    "votes": {
+      "Quan": "Đ/3",
+      "Quang": "Đ/3",
+      "Phuc": "Đ/3"
+    }
+  },
+  {
+    "id": "U23",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4",
+      "H8"
+    ],
+    "element": "Hai chỗ hiện tổng",
+    "problem": "Tổng hiện 2 lần, 2 định dạng (\"30000000\" trong ô và \"Tổng thanh toán: 30,000,000 đ\"), không rõ số nào là số cuối",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U24",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H8",
+      "H1"
+    ],
+    "element": "Nút \"Áp dụng\"",
+    "problem": "Cam nhạt chữ trắng, tương phản thấp, trông như đang bị vô hiệu; trên mobile gãy 2 dòng",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U25",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H3"
+    ],
+    "element": "Khung xác nhận",
+    "problem": "Không có nút quay lại giỏ / hủy ngay trong khung (chỉ còn link \"Giỏ hàng\" trên header)",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U26",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H6"
+    ],
+    "element": "Khung xác nhận",
+    "problem": "Bấm \"Xác Nhận Thanh Toán\" mà không thấy địa chỉ giao hàng, người nhận, phương thức thanh toán để kiểm tra lại",
+    "severity": 2,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/2",
+      "Quang": "Đ/2",
+      "Phuc": "Đ/2"
+    }
+  },
+  {
+    "id": "U27",
+    "pages": [
+      "cart",
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Kiểu viết hoa",
+    "problem": "Lẫn lộn Title Case (\"Xác Nhận Đơn Hàng\", \"Mã Giảm Giá\", \"Giỏ Hàng\") với viết hoa đầu câu (\"Danh sách sản phẩm\", \"Tiến hành thanh toán\")",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  },
+  {
+    "id": "U28",
+    "pages": [
+      "checkout"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "heuristics": [
+      "H4"
+    ],
+    "element": "Ô mã giảm giá",
+    "problem": "Placeholder viết hoa toàn bộ \"NHẬP MÃ GIẢM GIÁ...\" khác hẳn các ô khác; trên mobile bị cắt chữ",
+    "severity": 1,
+    "related_g": null,
+    "votes": {
+      "Quan": "Đ/1",
+      "Quang": "Đ/1",
+      "Phuc": "Đ/1"
+    }
+  }
+]
