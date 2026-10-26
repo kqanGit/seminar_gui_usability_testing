@@ -1,7 +1,7 @@
 # Ground truth heuristic — BẢN ĐÃ DUYỆT (Chốt)
 
 > **Nguồn gốc:** bản nháp do AI (Claude) soạn ngày 2026-10-26, chỉ dựa trên 10 ảnh chụp
-> `ai-reviewer/out/run-1/shots/*.png` (5 trang × 2 viewport; ảnh của run-1, run-2, run-3 giống hệt nhau từng byte)
+> `ground-truth/shots/*.png` (sao từ `ai-reviewer/out/run-1/shots/` lúc chốt, vì thư mục `out/` không được commit) (5 trang × 2 viewport; ảnh của run-1, run-2, run-3 giống hệt nhau từng byte)
 > và 10 heuristic Nielsen. 
 > **Trạng thái:** Đã hoàn thành duyệt bởi cả 3 thành viên (2026-10-26):
 > - **Quân:** đồng ý 27/28, bác U04.
@@ -13,7 +13,7 @@
 
 ## Cách duyệt (mỗi người làm riêng, chưa xem cột của người khác)
 
-1. Mở ảnh tương ứng trong `ai-reviewer/out/run-1/shots/`.
+1. Mở ảnh tương ứng trong `ground-truth/shots/`.
 2. Với mỗi dòng, ghi vào cột của mình:
    - `Đ` = đồng ý đây là vấn đề usability thật, nhìn thấy được trên ảnh
    - `K` = không đồng ý (ghi lý do ngắn ở cột Ghi chú duyệt)

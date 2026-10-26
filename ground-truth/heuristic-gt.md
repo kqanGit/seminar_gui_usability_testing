@@ -1,6 +1,6 @@
 # Ground truth heuristic (chính thức)
 
-- **Phạm vi:** vấn đề usability **nhìn thấy được** trên 10 ảnh `ai-reviewer/out/run-1/shots/*.png` (5 trang × 2 viewport), chấm theo 10 heuristic Nielsen, severity 0–4.
+- **Phạm vi:** vấn đề usability **nhìn thấy được** trên 10 ảnh `ground-truth/shots/*.png` (sao từ `ai-reviewer/out/run-1/shots/` lúc chốt, vì thư mục `out/` không được commit) (5 trang × 2 viewport), chấm theo 10 heuristic Nielsen, severity 0–4.
 - **Cách tạo:** AI (Claude) soạn nháp 28 dòng → 3 thành viên (Quân, Quang, Phúc) duyệt độc lập theo quy tắc ≥ 2/3 đồng ý, severity = trung vị. Quá trình duyệt lưu ở `heuristic-gt-draft.md`.
 - **Kết quả duyệt:** giữ 28/28 dòng (U04 có 1 người bác, giữ theo 2/3). Không ai thêm lỗi mới. Severity của cả 3 người trùng severity đề xuất ở 28/28 dòng.
 - **Chốt ngày:** 2026-10-26, trước khi chạy lại AI Reviewer. Không sửa file này sau khi đã chạy AI.
