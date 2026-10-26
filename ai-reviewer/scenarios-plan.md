@@ -135,13 +135,6 @@ Bảng kết quả (điền sau khi chạy):
 | Ổn định giữa các lần | lỗi xuất hiện ở cả 3 lần / tổng lỗi | | | | — |
 | Token · thời gian | từ log | | | | — |
 
-**3c. Đổi website (tái sử dụng)**
-
-| Bước | Thao tác | Kết quả |
-| --- | --- | --- |
-| 1 | Copy `config.json` → `config.todomvc.json`, đổi `baseUrl` sang `https://demo.playwright.dev/todomvc/`, 1–2 trang, bỏ setup | Không sửa dòng code nào |
-| 2 | `npm run review -- --config config.todomvc.json` | Báo cáo cho website khác |
-
 - **Record & Playback:** các hàm setup (đăng nhập, thêm giỏ, vào Checkout) được **ghi bằng `npx playwright codegen`** rồi dán vào `setups.js`; log từng bước + ảnh lưu lại trong `out/<run>/` (có thể bật Playwright trace).
 - **Data-driven:** trang × viewport × số lần chạy đọc từ `config.json`; đổi file config là đổi website.
 - **Checkpoint:** JSON đúng schema (tự động) + so ground truth / so người (`compare.js`).
@@ -183,5 +176,4 @@ Quy ước quay (yêu cầu môn): nền trắng, chữ đen (VS Code theme sán
 2. `review.js` + prompt + kiểm schema — chạy được Demo 2.
 3. Cả nhóm làm heuristic thủ công độc lập **trước khi xem output AI** (Phúc, Quân còn thiếu).
 4. `report.js` + `compare.js` + `labels.csv` — Demo 3a, 3b.
-5. Config website khác — Demo 3c.
-6. Quay 3 clip, điền link vào bảng mục 6 và slide phần 08.
+5. Quay 3 clip, điền link vào bảng mục 6 và slide phần 08.

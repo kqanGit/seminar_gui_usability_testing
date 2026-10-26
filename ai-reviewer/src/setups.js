@@ -65,12 +65,3 @@ export async function goToCheckout(page, baseUrl) {
   await btn.click();
   await page.locator('button:has-text("Xác Nhận Thanh Toán")').first().waitFor({ state: 'visible', timeout: 10000 });
 }
-
-export async function seedTodoItems(page, baseUrl) {
-  await page.goto(baseUrl, { waitUntil: 'networkidle' });
-  const input = page.locator('.new-todo').first();
-  await input.fill('Kiểm thử giao diện với Playwright');
-  await input.press('Enter');
-  await input.fill('Đánh giá 10 heuristic của Nielsen');
-  await input.press('Enter');
-}

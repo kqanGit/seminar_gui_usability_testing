@@ -12,7 +12,6 @@ ai-reviewer/
 │   └── finding-labeler.md     subagent gán nhãn nháp (đọc findings + ground truth)
 ├── install/skill-pointer.md   bản SKILL.md ngắn để đặt vào thư mục skill của agent
 ├── config.example.json      EShop: URL, 5 trang × 2 viewport, cách dựng trạng thái
-├── config.todomvc.json      website thứ hai: chứng minh tái sử dụng
 ├── prompts/
 │   ├── heuristic-review.md  rubric cho reviewer (chung chung, không gợi ý lỗi EShop)
 │   └── labeling-guide.md    luật gán nhãn cho labeler

@@ -21,7 +21,6 @@ All commands run from `ai-reviewer/`. Run outputs go to `<outDir>/<run>/`
 | Path | Role |
 | --- | --- |
 | `config.example.json` / `config.json` | Site, base URL, pages, viewports, state setups (EShop) |
-| `config.todomvc.json` | Second site, proves reuse without code changes |
 | `prompts/heuristic-review.md` | Rubric given to the reviewer subagent (generic, no site-specific hints) |
 | `prompts/labeling-guide.md` | Rules for the labeler subagent |
 | `schema.json` | Schema of one findings file (one screenshot) |
@@ -68,7 +67,7 @@ All commands run from `ai-reviewer/`. Run outputs go to `<outDir>/<run>/`
 | --- | --- |
 | 1 Smoke | Run workflow with `--run smoke --only home --viewport desktop` |
 | 2 Cart | Run workflow with `--run cart-demo --only cart --viewport desktop`; show `report.md` |
-| 3 Full flow | Run workflow 3 times: `run-1`, `run-2`, `run-3` (all pages × viewports), then "Labeling and comparison" below; then run workflow once with `--config config.todomvc.json --run todomvc` |
+| 3 Full flow | Run workflow 3 times: `run-1`, `run-2`, `run-3` (all pages × viewports), then "Labeling and comparison" below |
 
 ## Labeling and comparison (Demo 3)
 
