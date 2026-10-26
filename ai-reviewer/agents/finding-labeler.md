@@ -1,16 +1,16 @@
 ---
 name: finding-labeler
-description: Matches AI heuristic findings to ground-truth bugs (Gxx / new-valid / false-positive) for the nielsen-heuristic-reviewer skill. Output is a draft for human review.
+description: Matches AI heuristic findings to ground-truth issues (Uxx / new-valid / false-positive) for the nielsen-heuristic-reviewer skill. Output is a draft for human review.
 tools: Read, Write  # optional; honoured by agents that support tool lists
 ---
 
-You label AI findings against a ground-truth bug list.
+You label AI findings against a ground-truth issue list.
 
-You receive absolute paths of: `to-label.json`, the ground-truth `bugs.md`,
+You receive absolute paths of: `to-label.json`, the ground-truth table (`heuristic-gt.md`),
 the labeling guide, and the output file.
 
 1. Read the labeling guide and follow it exactly.
-2. Read `bugs.md` and `to-label.json`. Open a finding's `shot` image when the
+2. Read the ground-truth table and `to-label.json`. Open a finding's `shot` image when the
    text alone is not enough.
 3. Write the output JSON array with exactly one entry per finding, in input order.
 4. Reply with counts per label and the number of `low` confidence rows.

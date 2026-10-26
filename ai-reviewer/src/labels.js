@@ -5,7 +5,7 @@
 //       -> evidence/ai/labels.csv from to-label.json + labels-ai.json,
 //          keeping human_label / human_note already filled in.
 //
-// Label values in labels.csv: Gxx (or Gxx;Gyy) | Nxx (new valid issue) | false-positive
+// Label values in labels.csv: Uxx (or Uxx;Uyy) — or Gxx with --gt bugs.md | Nxx (new valid issue) | false-positive
 // human_label: empty = not reviewed · ok = agree with ai_label · otherwise the corrected label
 import fs from 'fs';
 import path from 'path';
@@ -14,7 +14,7 @@ import { EVIDENCE_AI_DIR, parseArgs, loadConfig, runDirOf, readJson, writeJson, 
 const TO_LABEL = path.join(EVIDENCE_AI_DIR, 'to-label.json');
 const AI_LABELS = path.join(EVIDENCE_AI_DIR, 'labels-ai.json');
 const CSV = path.join(EVIDENCE_AI_DIR, 'labels.csv');
-export const LABEL_RE = /^(G\d{2}(;G\d{2})*|N\d{2}|false-positive)$/;
+export const LABEL_RE = /^([GU]\d{2}(;[GU]\d{2})*|N\d{2}|false-positive)$/;
 
 const COLUMNS = ['finding_id', 'run', 'page', 'viewport', 'heuristic', 'ai_severity', 'element', 'problem',
   'ai_label', 'confidence', 'ai_reason', 'human_label', 'human_note'];

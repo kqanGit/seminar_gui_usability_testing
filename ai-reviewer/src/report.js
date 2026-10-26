@@ -34,9 +34,9 @@ function main() {
     `- Thời gian từ lúc chụp đến lúc kiểm schema xong: ${minutes} phút`,
     `- Số ảnh: ${meta.files ?? '?'} · Số phát hiện: ${rows.length} (severity ${bySev})`,
     '',
-    '| # | Trang | Viewport | Heuristic | Sev | Phần tử | Vấn đề | Vị trí trên ảnh | Gợi ý sửa |',
-    '| --- | --- | --- | --- | --- | --- | --- | --- | --- |',
-    ...rows.map((r, i) => `| ${i + 1} | ${r.page} | ${r.viewport} | ${r.heuristic} | ${r.severity} | ${cell(r.element)} | ${cell(r.problem)} | ${cell(r.evidence)} | ${cell(r.fix)} |`),
+    '| # | Trang | Viewport | Ảnh | Heuristic | Sev | Phần tử | Vấn đề | Vị trí trên ảnh | Gợi ý sửa |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |',
+    ...rows.map((r, i) => `| ${i + 1} | ${r.page} | ${r.viewport} | [${path.basename(r.shot)}](${r.shot}) | ${r.heuristic} | ${r.severity} | ${cell(r.element)} | ${cell(r.problem)} | ${cell(r.evidence)} | ${cell(r.fix)} |`),
     '',
     '_Sinh tự động từ findings của subagent `heuristic-reviewer`. Chưa qua người duyệt._',
     ''

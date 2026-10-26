@@ -74,11 +74,11 @@ All commands run from `ai-reviewer/`. Run outputs go to `<outDir>/<run>/`
 
 1. `npm run labels:prepare -- --runs run-1,run-2,run-3` → `../evidence/ai/to-label.json`
 2. Invoke the `finding-labeler` subagent with the absolute paths of
-   `to-label.json`, `../ground-truth/bugs.md`, `prompts/labeling-guide.md`
+   `to-label.json`, `../ground-truth/heuristic-gt.md`, `prompts/labeling-guide.md`
    and the output file `../evidence/ai/labels-ai.json`.
 3. `npm run labels:merge` → `../evidence/ai/labels.csv`
    (keeps any `human_label` / `human_note` already filled in).
-4. `npm run compare -- --runs run-1,run-2,run-3`
+4. `npm run compare -- --runs run-1,run-2,run-3` (ground truth mặc định: `../ground-truth/heuristic-gt.json`)
    → `../evidence/ai/comparison-summary.md` + archived runs in `../evidence/ai/runs/`.
 5. Tell the user: labels are AI-made and must be reviewed. Humans fill
    `human_label` (only where they disagree, or `ok` to confirm) and

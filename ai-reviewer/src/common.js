@@ -105,8 +105,15 @@ export function readCsvFile(file) {
   return parseCsv(text);
 }
 
-// Ground truth table in ground-truth/bugs.md: | G01 | page | description | spec/heuristic | code | severity | ...
-export function readGroundTruth(file = path.join(REPO_ROOT, 'ground-truth', 'bugs.md')) {
+// Ground truth. Default: ground-truth/heuristic-gt.json (U01..Unn, visible usability issues, human-reviewed).
+// Also accepts the spec bug table ground-truth/bugs.md: | G01 | page | description | spec/heuristic | code | severity | ...
+export const DEFAULT_GT = path.join(REPO_ROOT, 'ground-truth', 'heuristic-gt.json');
+export function readGroundTruth(file = DEFAULT_GT) {
+  if (file.endsWith('.json')) {
+    const rows = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    if (!rows.length) throw new Error(`No ground-truth rows found in ${file}`);
+    return rows.map((r) => ({ id: r.id, page: r.pages.join(', '), viewports: r.viewports, description: r.problem, heuristic: r.heuristics.join(', '), severity: r.severity }));
+  }
   const bugs = [];
   for (const line of fs.readFileSync(file, 'utf-8').split(/\r?\n/)) {
     const cells = line.split('|').map((c) => c.trim());

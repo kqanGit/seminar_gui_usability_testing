@@ -1,9 +1,9 @@
-// Human vs AI metrics from evidence/ai/labels.csv + ground-truth/bugs.md.
-// Usage: node src/compare.js --runs run-1,run-2,run-3 [--config <file>]
+// Human vs AI metrics from evidence/ai/labels.csv + ground truth (default ground-truth/heuristic-gt.json).
+// Usage: node src/compare.js --runs run-1,run-2,run-3 [--config <file>] [--gt <heuristic-gt.json | bugs.md>]
 // Writes evidence/ai/comparison-summary.md and archives the runs to evidence/ai/runs/<run>/.
 import fs from 'fs';
 import path from 'path';
-import { EVIDENCE_AI_DIR, parseArgs, loadConfig, runDirOf, readJson, readCsvFile, readGroundTruth } from './common.js';
+import { EVIDENCE_AI_DIR, REPO_ROOT, DEFAULT_GT, parseArgs, loadConfig, runDirOf, readJson, readCsvFile, readGroundTruth } from './common.js';
 import { LABEL_RE } from './labels.js';
 
 const PAPER = { precision: '0,60 (người 0,83)', recall: '0,38 (1 chuyên gia 0,34)', overlap: '62% / 29% / 9%' };
@@ -16,19 +16,15 @@ function finalLabel(r) {
 }
 
 function runMetrics(rows, gt) {
-  const gtSev = new Map(gt.map((g) => [g.id, g.severity]));
   const gtFound = new Set();
   const newFound = new Set();
   let correct = 0;
-  const sevDiffs = [];
   for (const r of rows) {
     const l = r.final;
-    if (l.startsWith('G')) {
+    if (/^[GU]/.test(l)) {
       correct++;
       const ids = l.split(';');
       ids.forEach((id) => gtFound.add(id));
-      const known = ids.filter((id) => gtSev.has(id)).map((id) => gtSev.get(id));
-      if (known.length) sevDiffs.push(Math.abs(Number(r.ai_severity) - known.reduce((a, b) => a + b, 0) / known.length));
     } else if (l.startsWith('N')) {
       correct++;
       newFound.add(l);
@@ -41,8 +37,7 @@ function runMetrics(rows, gt) {
     precision: rows.length ? correct / rows.length : null,
     gtFound,
     newFound,
-    recall: gtFound.size / gt.length,
-    mae: sevDiffs.length ? sevDiffs.reduce((a, b) => a + b, 0) / sevDiffs.length : null
+    recall: gtFound.size / gt.length
   };
 }
 
@@ -61,14 +56,15 @@ function main() {
   if (!args.runs || args.runs === true) throw new Error('Missing --runs run-1,run-2,...');
   const runs = String(args.runs).split(',').map((s) => s.trim()).filter(Boolean);
   const config = loadConfig(args.config);
-  const gt = readGroundTruth();
+  const gtFile = args.gt && args.gt !== true ? path.resolve(String(args.gt)) : DEFAULT_GT;
+  const gt = readGroundTruth(gtFile);
   const all = readCsvFile(path.join(EVIDENCE_AI_DIR, 'labels.csv'));
 
   const errors = [];
   for (const r of all) {
     r.final = finalLabel(r);
     if (!LABEL_RE.test(r.final)) errors.push(`${r.finding_id}: invalid label "${r.final}"`);
-    for (const id of r.final.startsWith('G') ? r.final.split(';') : []) {
+    for (const id of /^[GU]/.test(r.final) ? r.final.split(';') : []) {
       if (!gt.some((g) => g.id === id)) errors.push(`${r.finding_id}: ${id} not in ground truth`);
     }
   }
@@ -112,7 +108,7 @@ function main() {
     '# Người vs AI — kết quả AI Heuristic Reviewer',
     '',
     `- Website: ${config.siteName} · Lần chạy: ${runs.join(', ')} · Model reviewer: ${models.join(', ') || 'chưa ghi'}`,
-    `- Ground truth: ${gt.length} lỗi (\`ground-truth/bugs.md\`)`,
+    `- Ground truth: ${gt.length} lỗi (\`${path.relative(REPO_ROOT, gtFile).replace(/\\/g, '/')}\`)`,
     `- Nhãn: subagent \`finding-labeler\` gán nháp; **người đã duyệt ${reviewed}/${used.length} dòng**, sửa ${changed} dòng.` +
       (reviewed < used.length ? ' **Số liệu dưới đây CHƯA được người duyệt hết.**' : ''),
     '',
@@ -125,7 +121,6 @@ function main() {
       const u = gt.length + p.newFound.size;
       return `${pct(gt.length - p.gtFound.size, u)} / ${pct(p.gtFound.size, u)} / ${pct(p.newFound.size, u)}`;
     }, `${pct(gt.length - gtUnion.size, universe)} / ${pct(gtUnion.size, universe)} / ${pct(newUnion.size, universe)} (${gt.length - gtUnion.size} / ${gtUnion.size} / ${newUnion.size} lỗi)`, PAPER.overlap),
-    row('Lệch severity TB (so GT)', (p) => fmt(p.mae), fmt(mean('mae'))),
     row('Báo nhầm', (p) => p.fp, used.length - per.reduce((a, p) => a + p.correct, 0)),
     row('Thời gian chụp → kiểm schema (phút)', (p) => fmt(p.minutes, 1), fmt(mean('minutes'), 1)),
     row('Token', (p) => p.meta.tokens ?? '—', '—'),
